@@ -5,12 +5,10 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<MainLayout />}>
-
-        </Route>
+        <Route path="/" element={<MainLayout />}></Route>
       </Routes>
     </BrowserRouter>
-  )
+  );
 }
 
 export default App;
