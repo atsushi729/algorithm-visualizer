@@ -1,11 +1,27 @@
-import React from 'react'
+import { AppBar, Toolbar, styled, Typography } from "@mui/material";
+import colorConfigs from "../../configs/colorConfigs";
+import sizeConfigs from "../../configs/sizeConfigs";
 
-type Props = {}
-
-const Topbar = (props: Props) => {
+const Topbar = () => {
   return (
-    <div>Topbar</div>
-  )
-}
+    <StyledAppBar position="fixed">
+      <Toolbar>
+        <Typography variant="h6">React sidebar with dropdown</Typography>
+      </Toolbar>
+    </StyledAppBar>
+  );
+};
 
-export default Topbar
+//---------------------------------------------------------------------
+// Helpers
+//---------------------------------------------------------------------
+
+const StyledAppBar = styled(AppBar)({
+  width: `calc(100% - ${sizeConfigs.sidebar.width})`,
+  ml: sizeConfigs.sidebar.width,
+  boxShadow: "unset",
+  backgroundColor: colorConfigs.topbar.bg,
+  color: colorConfigs.topbar.color,
+});
+
+export default Topbar;
