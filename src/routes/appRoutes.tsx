@@ -14,6 +14,9 @@ import FormatListBulletedOutlinedIcon from "@mui/icons-material/FormatListBullet
 import FileDownloadOutlinedIcon from "@mui/icons-material/FileDownloadOutlined";
 import AlertPage from "../pages/component/AlertPage";
 import ButtonPage from "../pages/component/ButtonPage";
+import Stack from "../pages/data-structure/Stack";
+import Queue from "../pages/data-structure/Queue";
+import LinkedList from "../pages/data-structure/LinkedList";
 // import InstallationPage from "../pages/installation/InstallationPage";
 // import DocumentationPage from "../pages/documentation/DocumentationPage";
 
@@ -95,6 +98,41 @@ const appRoutes: RouteType[] = [
         state: "component.button",
         sidebarProps: {
           displayText: "Button",
+        },
+      },
+    ],
+  },
+  {
+    path: "/data-structure",
+    element: <ComponentPageLayout />,
+    state: "data-structure",
+    sidebarProps: {
+      displayText: "Data Structure",
+      icon: <AppsOutlinedIcon />,
+    },
+    child: [
+      {
+        path: "/data-structure/stack",
+        element: <Stack />,
+        state: "data-structure.stack",
+        sidebarProps: {
+          displayText: "Stack",
+        },
+      },
+      {
+        path: "/data-structure/queue",
+        element: <Queue />,
+        state: "data-structure.queue",
+        sidebarProps: {
+          displayText: "Queue",
+        },
+      },
+      {
+        path: "/data-structure/lined-list",
+        element: <LinkedList />,
+        state: "data-structure.lined-list",
+        sidebarProps: {
+          displayText: "Linked List",
         },
       },
     ],
