@@ -17,6 +17,9 @@ import ButtonPage from "../pages/component/ButtonPage";
 import Stack from "../pages/data-structure/Stack";
 import Queue from "../pages/data-structure/Queue";
 import LinkedList from "../pages/data-structure/LinkedList";
+import BubbleSort from "../pages/sort/BubbleSort";
+import MergeSort from "../pages/sort/MergeSort";
+import QuickSort from "../pages/sort/QuickSort";
 // import InstallationPage from "../pages/installation/InstallationPage";
 // import DocumentationPage from "../pages/documentation/DocumentationPage";
 
@@ -131,6 +134,41 @@ const appRoutes: RouteType[] = [
         path: "/data-structure/lined-list",
         element: <LinkedList />,
         state: "data-structure.lined-list",
+        sidebarProps: {
+          displayText: "Linked List",
+        },
+      },
+    ],
+  },
+  {
+    path: "/sort",
+    element: <ComponentPageLayout />,
+    state: "sort",
+    sidebarProps: {
+      displayText: "Sort",
+      icon: <AppsOutlinedIcon />,
+    },
+    child: [
+      {
+        path: "/sort/bubble-sort",
+        element: <BubbleSort />,
+        state: "sort.bubble-sort",
+        sidebarProps: {
+          displayText: "Bubble sort",
+        },
+      },
+      {
+        path: "/sort/merge-sort",
+        element: <MergeSort />,
+        state: "sort.merge-sort",
+        sidebarProps: {
+          displayText: "Merge sort",
+        },
+      },
+      {
+        path: "/sort/quick-sort",
+        element: <QuickSort />,
+        state: "sort.quick-sort",
         sidebarProps: {
           displayText: "Linked List",
         },
