@@ -6,14 +6,12 @@ import DashboardIndex from "../pages/dashboard/DashboardIndex";
 import ChangelogPage from "../pages/changelog/ChangelogPage";
 import AnalyticsPage from "../pages/dashboard/AnalyticsPage";
 import SaasPage from "../pages/dashboard/SaasPage";
-import ComponentPageLayout from "../pages/component/ComponentPageLayout";
 import DashboardOutlinedIcon from "@mui/icons-material/DashboardOutlined";
 import AppsOutlinedIcon from "@mui/icons-material/AppsOutlined";
 import ArticleOutlinedIcon from "@mui/icons-material/ArticleOutlined";
 import FormatListBulletedOutlinedIcon from "@mui/icons-material/FormatListBulletedOutlined";
 import FileDownloadOutlinedIcon from "@mui/icons-material/FileDownloadOutlined";
-import AlertPage from "../pages/component/AlertPage";
-import ButtonPage from "../pages/component/ButtonPage";
+import DataStructure from "../pages/data-structure/DataStructure";
 import Stack from "../pages/data-structure/Stack";
 import Queue from "../pages/data-structure/Queue";
 import LinkedList from "../pages/data-structure/LinkedList";
@@ -79,35 +77,8 @@ const appRoutes: RouteType[] = [
     ],
   },
   {
-    path: "/component",
-    element: <ComponentPageLayout />,
-    state: "component",
-    sidebarProps: {
-      displayText: "Components",
-      icon: <AppsOutlinedIcon />,
-    },
-    child: [
-      {
-        path: "/component/alert",
-        element: <AlertPage />,
-        state: "component.alert",
-        sidebarProps: {
-          displayText: "Alert",
-        },
-      },
-      {
-        path: "/component/button",
-        element: <ButtonPage />,
-        state: "component.button",
-        sidebarProps: {
-          displayText: "Button",
-        },
-      },
-    ],
-  },
-  {
     path: "/data-structure",
-    element: <ComponentPageLayout />,
+    element: <DataStructure />,
     state: "data-structure",
     sidebarProps: {
       displayText: "Data Structure",
@@ -142,7 +113,7 @@ const appRoutes: RouteType[] = [
   },
   {
     path: "/sort",
-    element: <ComponentPageLayout />,
+    element: <DataStructure />,
     state: "sort",
     sidebarProps: {
       displayText: "Sort",
@@ -177,7 +148,7 @@ const appRoutes: RouteType[] = [
   },
   {
     path: "/documentation",
-    element: <ButtonPage />,
+    element: <DataStructure />,
     state: "documentation",
     sidebarProps: {
       displayText: "Documentation",
