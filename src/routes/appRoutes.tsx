@@ -10,7 +10,6 @@ import DashboardOutlinedIcon from "@mui/icons-material/DashboardOutlined";
 import AppsOutlinedIcon from "@mui/icons-material/AppsOutlined";
 import ArticleOutlinedIcon from "@mui/icons-material/ArticleOutlined";
 import FormatListBulletedOutlinedIcon from "@mui/icons-material/FormatListBulletedOutlined";
-import FileDownloadOutlinedIcon from "@mui/icons-material/FileDownloadOutlined";
 import DataStructure from "../pages/data-structure/DataStructure";
 import Stack from "../pages/data-structure/Stack";
 import Queue from "../pages/data-structure/Queue";
