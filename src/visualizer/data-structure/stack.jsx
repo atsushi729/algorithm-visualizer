@@ -8,9 +8,9 @@ const CanvasComponent = () => {
   const squareSize = 50;
   const spacing = 10;
 
+  // Add squre 
   const addSquare = () => {
     if ((squares.length + 1) * (squareSize + spacing) <= 400) {
-      // 400はcanvasの高さです
       const randomNum = Math.floor(Math.random() * 100) + 1;
       const newSquare = {
         color: `rgb(${Math.random() * 255}, ${Math.random() * 255}, ${
@@ -22,6 +22,7 @@ const CanvasComponent = () => {
     }
   };
 
+  // Pop squre 
   const popSquare = () => {
     if (squares.length > 0) {
       setSquares((prevSquares) => prevSquares.slice(0, -1));
