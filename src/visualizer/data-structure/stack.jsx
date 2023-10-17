@@ -1,5 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
+import Button from "@mui/material/Button";
 import p5 from "p5";
+import { styled, Container } from "@mui/material";
 
 const CanvasComponent = () => {
   const [squares, setSquares] = useState([]);
@@ -8,7 +10,7 @@ const CanvasComponent = () => {
   const squareSize = 50;
   const spacing = 10;
 
-  // Add squre 
+  // Add squre
   const addSquare = () => {
     if ((squares.length + 1) * (squareSize + spacing) <= 400) {
       const randomNum = Math.floor(Math.random() * 100) + 1;
@@ -22,7 +24,7 @@ const CanvasComponent = () => {
     }
   };
 
-  // Pop squre 
+  // Pop squre
   const popSquare = () => {
     if (squares.length > 0) {
       setSquares((prevSquares) => prevSquares.slice(0, -1));
@@ -79,12 +81,29 @@ const CanvasComponent = () => {
   }, [squares]);
 
   return (
-    <div>
+    <VisualizeContainer>
       <div ref={myRef}></div>
-      <button onClick={addSquare}>Push</button>
-      <button onClick={popSquare}>Pop</button>
-    </div>
+      <ButtonContainer>
+        <Button onClick={addSquare} variant="contained" color="success">
+          Push
+        </Button>
+        <Button onClick={popSquare} variant="contained">
+          Pop
+        </Button>
+      </ButtonContainer>
+    </VisualizeContainer>
   );
 };
+
+//---------------------------------------------------------------------
+// Helpers
+//---------------------------------------------------------------------
+const VisualizeContainer = styled(Container)({
+  display: "column",
+});
+
+const ButtonContainer = styled(Container)({
+  display: "flex",
+});
 
 export default CanvasComponent;
