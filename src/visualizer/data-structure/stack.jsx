@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState, useRef, useCallback } from "react";
 import Button from "@mui/material/Button";
 import p5 from "p5";
 import { styled, Container } from "@mui/material";
@@ -11,7 +11,7 @@ const CanvasComponent = () => {
   const spacing = 10;
 
   // Add squre
-  const addSquare = () => {
+  const addSquare = useCallback(() => {
     if ((squares.length + 1) * (squareSize + spacing) <= 400) {
       const randomNum = Math.floor(Math.random() * 100) + 1;
       const newSquare = {
@@ -22,14 +22,14 @@ const CanvasComponent = () => {
       };
       setSquares((prevSquares) => [...prevSquares, newSquare]);
     }
-  };
+  }, [squares]);
 
-  // Pop squre
-  const popSquare = () => {
+  // Pop square
+  const popSquare = useCallback(() => {
     if (squares.length > 0) {
       setSquares((prevSquares) => prevSquares.slice(0, -1));
     }
-  };
+  }, [squares]);
 
   useEffect(() => {
     let sketch = (p) => {
@@ -78,18 +78,18 @@ const CanvasComponent = () => {
     return () => {
       canvas.remove();
     }; // クリーンアップ関数
-  }, [squares]);
+  }, [squares, addSquare, popSquare]);
 
   return (
     <VisualizeContainer>
       <div ref={myRef}></div>
       <ButtonContainer>
-        <Button onClick={addSquare} variant="contained" color="success">
+        <StyledButton onClick={addSquare} variant="contained" color="success">
           Push
-        </Button>
-        <Button onClick={popSquare} variant="contained">
+        </StyledButton>
+        <StyledButton onClick={popSquare} variant="contained">
           Pop
-        </Button>
+        </StyledButton>
       </ButtonContainer>
     </VisualizeContainer>
   );
@@ -99,11 +99,20 @@ const CanvasComponent = () => {
 // Helpers
 //---------------------------------------------------------------------
 const VisualizeContainer = styled(Container)({
-  display: "column",
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  flexDirection: "column",
+  maxWidth: "300px",
 });
 
 const ButtonContainer = styled(Container)({
   display: "flex",
+  justifyContent: "center",
+});
+
+const StyledButton = styled(Button)({
+  margin: "10px",
 });
 
 export default CanvasComponent;
