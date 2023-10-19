@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef, useCallback } from "react";
+import { useEffect, useState, useRef, useCallback } from "react";
 import Button from "@mui/material/Button";
 import p5 from "p5";
 import { styled, Container } from "@mui/material";
@@ -15,9 +15,6 @@ const CanvasComponent = () => {
     if ((squares.length + 1) * (squareSize + spacing) <= 400) {
       const randomNum = Math.floor(Math.random() * 100) + 1;
       const newSquare = {
-        color: `rgb(${Math.random() * 255}, ${Math.random() * 255}, ${
-          Math.random() * 255
-        })`,
         number: randomNum,
       };
       setSquares((prevSquares) => [...prevSquares, newSquare]);
@@ -31,38 +28,36 @@ const CanvasComponent = () => {
     }
   }, [squares]);
 
+  const handleAddSquareClick = (e) => {
+    e.preventDefault();
+    addSquare();
+  };
+
+  const handlePopSquareClick = (e) => {
+    e.preventDefault();
+    popSquare();
+  };
+
   useEffect(() => {
     let sketch = (p) => {
-      let generateButton;
-      let popButton;
       let squareSize = 50;
       let spacing = 10;
 
       p.setup = () => {
         p.createCanvas(400, 400);
         p.background(220);
-
-        generateButton = p.createButton("Push");
-        generateButton.position(10, 10);
-        generateButton.mousePressed(addSquare);
-
-        popButton = p.createButton("Pop");
-        popButton.position(140, 10);
-        popButton.mousePressed(popSquare);
       };
 
       p.draw = () => {
         p.background(220);
         for (let i = 0; i < squares.length; i++) {
           const square = squares[i];
-          p.fill(square.color);
           p.rect(
             p.width / 2 - squareSize / 2,
             p.height - (i + 1) * (squareSize + spacing),
             squareSize,
             squareSize
           );
-          p.fill(0);
           p.textAlign(p.CENTER, p.CENTER);
           p.text(
             square.number,
@@ -84,10 +79,14 @@ const CanvasComponent = () => {
     <VisualizeContainer>
       <div ref={myRef}></div>
       <ButtonContainer>
-        <StyledButton onClick={addSquare} variant="contained" color="success">
+        <StyledButton
+          onClick={handleAddSquareClick}
+          variant="contained"
+          color="success"
+        >
           Push
         </StyledButton>
-        <StyledButton onClick={popSquare} variant="contained">
+        <StyledButton onClick={handlePopSquareClick} variant="contained">
           Pop
         </StyledButton>
       </ButtonContainer>
