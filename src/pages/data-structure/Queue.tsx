@@ -2,65 +2,64 @@ import styled from "@emotion/styled";
 import { useRef } from "react";
 
 const Queue = () => {
-  const section1Ref = useRef<HTMLDivElement | null>(null);
+  const refs = {
+    section1: useRef<HTMLDivElement | null>(null),
+    section2: useRef<HTMLDivElement | null>(null),
+    section3: useRef<HTMLDivElement | null>(null),
+  };
 
-  const handleFeatureClick = () => {
-    console.log("Feature clicked!");
-
-    if (section1Ref.current) {
-      section1Ref.current.scrollIntoView({ behavior: "smooth" });
+  const handleFeatureClick = (section: keyof typeof refs) => () => {
+    const ref = refs[section];
+    if (ref.current) {
+      ref.current.scrollIntoView({ behavior: "smooth" });
     }
   };
+
   return (
     <Container>
       <Title>Queue</Title>
 
       <FeaturesContainer>
-        <Feature onClick={handleFeatureClick}>
-          <Icon>🔒</Icon>
-          <FeatureTitle>Trusted content</FeatureTitle>
-          <FeatureDescription>
-            Track the life cycle of software artifacts built on trusted content,
-            including Docker Official Images, Docker Verified Publishers, and
-            Docker-Sponsored Open Source, which form the foundation for reliable
-            and secure software applications.
-          </FeatureDescription>
-        </Feature>
-
-        <Feature>
-          <Icon>📊</Icon>
-          <FeatureTitle>Centralized view</FeatureTitle>
-          <FeatureDescription>
-            Operate from one view of centralized insights, for visibility and
-            control over all of the information in the software development
-            process from the software design phase into production.
-          </FeatureDescription>
-        </Feature>
-
-        <Feature>
-          <Icon>🔄</Icon>
-          <FeatureTitle>Recommended workflows</FeatureTitle>
-          <FeatureDescription>
-            Build faster and more reliable applications through context-aware
-            recommendations embedded into common developer workflows, all while
-            improving application security posture and ensuring compliance with
-            internal security requirements.
-          </FeatureDescription>
-        </Feature>
-
-        {/* Updated ref here */}
+        <FeatureItem
+          icon="🔒"
+          title="Trusted content"
+          description="Track the life cycle of software artifacts built on trusted content..."
+          onClick={handleFeatureClick("section1")}
+        />
+        <FeatureItem
+          icon="📊"
+          title="Centralized view"
+          description="Operate from one view of centralized insights..."
+          onClick={handleFeatureClick("section2")}
+        />
+        <FeatureItem
+          icon="🔄"
+          title="Recommended workflows"
+          description="Build faster and more reliable applications through context-aware recommendations..."
+          onClick={handleFeatureClick("section3")}
+        />
       </FeaturesContainer>
 
-      <div
-        ref={section1Ref}
-        id="section1"
-        style={{ height: "500px", background: "lightgray" }}
-      >
-        <h1>Section 1</h1>
-      </div>
+      <Section ref={refs.section1} id="section1">
+        Section 1
+      </Section>
+      <Section ref={refs.section2} id="section2">
+        Section 2
+      </Section>
+      <Section ref={refs.section3} id="section3">
+        Section 3
+      </Section>
     </Container>
   );
 };
+
+const FeatureItem = ({ icon, title, description, onClick }: any) => (
+  <Feature onClick={onClick}>
+    <Icon>{icon}</Icon>
+    <FeatureTitle>{title}</FeatureTitle>
+    <FeatureDescription>{description}</FeatureDescription>
+  </Feature>
+);
 
 //---------------------------------------------------------------------
 // Helpers
@@ -77,9 +76,19 @@ const FeaturesContainer = styled.div({
   flexWrap: "nowrap",
 });
 
+const Section = styled.div({
+  height: "500px",
+  background: "lightgray",
+  fontSize: "24px",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+});
+
 const Title = styled.h1({
   color: "black",
-  textAlign: "center", // この行を追加
+  textAlign: "center",
+  margin: "10%",
 });
 
 const Feature = styled.div({
@@ -90,6 +99,10 @@ const Feature = styled.div({
   borderRadius: "5px",
   cursor: "pointer",
   maxWidth: "300px",
+  transition: "transform 0.3s ease-in-out", // Smooth transition for the transform property
+  "&:hover": {
+    transform: "translateY(-10px)", // Moves the element up by 10 pixels on hover
+  },
 });
 
 const Icon = styled.div({
