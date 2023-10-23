@@ -67,7 +67,7 @@ const FeatureItem = ({ icon, title, description, onClick }: any) => (
 const Container = styled.div({
   maxWidth: "1200px",
   margin: "0 auto",
-  fontFamily: "Arial, sans-serif",
+  fontFamily: "'Archivo Black', sans-serif", // Applied the font here
 });
 
 const FeaturesContainer = styled.div({
@@ -99,9 +99,9 @@ const Feature = styled.div({
   borderRadius: "5px",
   cursor: "pointer",
   maxWidth: "300px",
-  transition: "transform 0.3s ease-in-out", // Smooth transition for the transform property
+  transition: "transform 0.3s ease-in-out",
   "&:hover": {
-    transform: "translateY(-10px)", // Moves the element up by 10 pixels on hover
+    transform: "translateY(-10px)",
   },
 });
 
