@@ -22,30 +22,55 @@ const Queue = () => {
       <FeaturesContainer>
         <FeatureItem
           icon="🔒"
-          title="Trusted content"
-          description="Track the life cycle of software artifacts built on trusted content..."
+          title="What is Queue"
+          description="What is a Queue, and how is it used in the real world?"
           onClick={handleFeatureClick("section1")}
         />
         <FeatureItem
           icon="📊"
-          title="Centralized view"
-          description="Operate from one view of centralized insights..."
+          title="Operation"
+          description="How to operate this data structure"
           onClick={handleFeatureClick("section2")}
         />
         <FeatureItem
           icon="🔄"
-          title="Recommended workflows"
-          description="Build faster and more reliable applications through context-aware recommendations..."
+          title="Playground"
+          description="Let's test the queue operations."
           onClick={handleFeatureClick("section3")}
         />
       </FeaturesContainer>
 
       <Section ref={refs.section1} id="section1">
-        Section 1
+        <SectionTitle>What is Queue??</SectionTitle>
+        <SectionDescription>
+          In computer science, a queue is a linear data structure that
+          represents a collection with two main operations: Enqueue and Dequeue.
+          Importantly, a queue abides by the First-In, First-Out (FIFO)
+          principle, which means that the first element added to the queue will
+          be the first one to be removed. This behavior can be likened to a
+          real-world queue, such as people standing in line at a ticket counter
+          where the first person in line gets served first.
+        </SectionDescription>
       </Section>
+
       <Section ref={refs.section2} id="section2">
-        Section 2
+        <SectionTitle>Operation</SectionTitle>
+        <SectionDescription>
+          There are two operations in queue
+          <ul>
+            <li>
+              Enqueue: Adds an element to the rear of the queue, ensuring it
+              waits its turn to be processed or removed.
+            </li>
+            <li>
+              Dequeue: Removes the front element of the queue based on the FIFO
+              principle. If the queue is empty, it usually results in an error
+              or a condition signaling no elements.
+            </li>
+          </ul>
+        </SectionDescription>
       </Section>
+
       <Section ref={refs.section3} id="section3">
         Section 3
       </Section>
@@ -74,21 +99,18 @@ const FeaturesContainer = styled.div({
   display: "flex",
   justifyContent: "space-between",
   flexWrap: "nowrap",
+  marginBottom: "20%",
 });
 
 const Section = styled.div({
-  height: "500px",
+  height: "700px",
   background: "lightgray",
   fontSize: "24px",
   display: "flex",
+  flexWrap: "wrap",
   alignItems: "center",
   justifyContent: "center",
-});
-
-const Title = styled.h1({
-  color: "black",
-  textAlign: "center",
-  margin: "10%",
+  margin: "5%",
 });
 
 const Feature = styled.div({
@@ -109,12 +131,26 @@ const Icon = styled.div({
   fontSize: "24px",
 });
 
+const Title = styled.h1({
+  color: "black",
+  textAlign: "center",
+  margin: "10%",
+});
+
+const SectionTitle = styled.h2({
+  color: "black",
+});
+
 const FeatureTitle = styled.h3({
   color: "white",
 });
 
 const FeatureDescription = styled.p({
   color: "white",
+});
+
+const SectionDescription = styled.p({
+  margin: "10%",
 });
 
 export default Queue;
