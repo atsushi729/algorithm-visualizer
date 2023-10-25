@@ -8,7 +8,7 @@ import Topbar from "../common/Topbar";
 const MainLayout = () => {
   return (
     <Container>
-      <Topbar />
+      {/* <Topbar /> */}
       <NavigationBox component="nav">
         <Sidebar />
       </NavigationBox>
