@@ -92,7 +92,6 @@ const FeatureItem = ({ icon, title, description, onClick }: any) => (
 const Container = styled.div({
   maxWidth: "1200px",
   margin: "0 auto",
-  fontFamily: "'Archivo Black', sans-serif", // Applied the font here
 });
 
 const FeaturesContainer = styled.div({
@@ -100,6 +99,7 @@ const FeaturesContainer = styled.div({
   justifyContent: "space-between",
   flexWrap: "nowrap",
   marginBottom: "20%",
+  margin: "10%",
 });
 
 const Section = styled.div({
