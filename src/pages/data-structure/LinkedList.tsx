@@ -1,5 +1,13 @@
 import styled from "@emotion/styled";
 import { useRef } from "react";
+import React from "react"; // For React.ReactNode and React.MouseEventHandler
+
+type FeatureItemProps = {
+  icon: React.ReactNode;
+  title: string;
+  description: string;
+  onClick: React.MouseEventHandler<HTMLElement>;
+};
 
 const LinkedList = () => {
   const refs = {
@@ -76,7 +84,12 @@ const LinkedList = () => {
   );
 };
 
-const FeatureItem = ({ icon, title, description, onClick }: any) => (
+const FeatureItem = ({
+  icon,
+  title,
+  description,
+  onClick,
+}: FeatureItemProps) => (
   <Feature onClick={onClick}>
     <Icon>{icon}</Icon>
     <FeatureTitle>{title}</FeatureTitle>

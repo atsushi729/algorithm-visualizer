@@ -1,6 +1,13 @@
 import styled from "@emotion/styled";
 import { useRef } from "react";
 
+type FeatureItemProps = {
+  icon: React.ReactNode;
+  title: string;
+  description: string;
+  onClick: React.MouseEventHandler<HTMLElement>;
+};
+
 const Queue = () => {
   const refs = {
     section1: useRef<HTMLDivElement | null>(null),
@@ -78,7 +85,12 @@ const Queue = () => {
   );
 };
 
-const FeatureItem = ({ icon, title, description, onClick }: any) => (
+const FeatureItem = ({
+  icon,
+  title,
+  description,
+  onClick,
+}: FeatureItemProps) => (
   <Feature onClick={onClick}>
     <Icon>{icon}</Icon>
     <FeatureTitle>{title}</FeatureTitle>
