@@ -62,16 +62,15 @@ const LinkedList = () => {
       <Section ref={refs.section2} id="section2">
         <SectionTitle>Operation</SectionTitle>
         <SectionDescription>
-          There are two operations in queue
+          There are two operations in Linked list
           <ul>
             <li>
-              Enqueue: Adds an element to the rear of the queue, ensuring it
-              waits its turn to be processed or removed.
+              Insertion: Adding a new node to the list. This can further be
+              categorized based on where the node is inserted:
             </li>
             <li>
-              Dequeue: Removes the front element of the queue based on the FIFO
-              principle. If the queue is empty, it usually results in an error
-              or a condition signaling no elements.
+              Deletion: Removing a node from the list. Like insertion, this can
+              be categorized based on which node is removed:
             </li>
           </ul>
         </SectionDescription>
