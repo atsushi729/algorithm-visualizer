@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import { useRef } from "react";
-import CanvasComponent from "../../visualizer/data-structure/stack";
+import StackCanvas from "../../visualizer/data-structure/StackCanvas";
 
 type FeatureItemProps = {
   icon: React.ReactNode;
@@ -76,7 +76,7 @@ const Stack = () => {
       </Section>
 
       <Section ref={refs.section3} id="section3">
-        <CanvasComponent />
+        <StackCanvas />
       </Section>
     </Container>
   );

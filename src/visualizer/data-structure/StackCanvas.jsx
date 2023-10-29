@@ -3,7 +3,7 @@ import Button from "@mui/material/Button";
 import p5 from "p5";
 import { styled, Container } from "@mui/material";
 
-const CanvasComponent = () => {
+const StackCanvas = () => {
   const [squares, setSquares] = useState([]);
   const myRef = useRef(null);
 
@@ -114,4 +114,4 @@ const StyledButton = styled(Button)({
   margin: "10px",
 });
 
-export default CanvasComponent;
+export default StackCanvas;
