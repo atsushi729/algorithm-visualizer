@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 import { useRef } from "react";
 import React from "react"; // For React.ReactNode and React.MouseEventHandler
+import LinkedListCanvas from "../../visualizer/data-structure/LinkedListCanvas";
 
 type FeatureItemProps = {
   icon: React.ReactNode;
@@ -77,7 +78,7 @@ const LinkedList = () => {
       </Section>
 
       <Section ref={refs.section3} id="section3">
-        Section 3
+        <LinkedListCanvas />
       </Section>
     </Container>
   );
@@ -114,7 +115,7 @@ const FeaturesContainer = styled.div({
 
 const Section = styled.div({
   height: "700px",
-  background: "lightgray",
+  // background: "lightgray",
   fontSize: "24px",
   display: "flex",
   flexWrap: "wrap",
