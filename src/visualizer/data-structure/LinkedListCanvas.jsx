@@ -6,9 +6,8 @@ import { styled, Container } from "@mui/material";
 const NodeCanvas = () => {
   const [nodes, setNodes] = useState([]);
   const canvasRef = useRef(null);
-
+  const nodeDistance = 150;
   const nodeDiameter = 50;
-  const nodeDistance = 100;
 
   const addNode = useCallback(() => {
     const randomValue = Math.floor(Math.random() * 999) + 1;
@@ -29,6 +28,7 @@ const NodeCanvas = () => {
       p.draw = () => {
         p.background(220);
 
+        // Draw links first to ensure nodes are drawn on top
         for (let i = 0; i < nodes.length - 1; i++) {
           drawLink(p, nodes[i], nodes[i + 1]);
         }
@@ -41,13 +41,27 @@ const NodeCanvas = () => {
       const drawNode = (p, node) => {
         p.fill(255);
         p.stroke(0);
-        p.ellipse(node.x, node.y, nodeDiameter, nodeDiameter);
+        // Displaying as a rectangle instead of ellipse to match your p5 code
+        p.rect(node.x - 50, node.y - 25, 100, 50); 
+
         p.fill(0);
         p.textAlign(p.CENTER, p.CENTER);
-        p.text(node.value, node.x, node.y);
+        p.text(node.value, node.x - 25, node.y); 
+        p.text("next", node.x + 25, node.y);
       };
 
-      const drawArrow = (x1, y1, x2, y2) => {
+      const drawLink = (p, node1, node2) => {
+        let linkLength = p.dist(node1.x, node1.y, node2.x, node2.y);
+        let arrowSize = 30;
+        let ratio = (linkLength - arrowSize - nodeDiameter / 2) / linkLength;
+
+        let endX = p.lerp(node1.x, node2.x, ratio);
+        let endY = p.lerp(node1.y, node2.y, ratio);
+
+        drawArrow(p, node1.x, node1.y, endX, endY);
+      };
+
+      const drawArrow = (p, x1, y1, x2, y2) => {
         p.stroke(0);
         p.line(x1, y1, x2, y2);
         p.push();
@@ -59,21 +73,9 @@ const NodeCanvas = () => {
         p.pop();
       };
 
-      const drawLink = (p, node1, node2) => {
-        let linkLength = p.dist(node1.x, node1.y, node2.x, node2.y);
-        let arrowSize = 10;
-        let ratio = (linkLength - arrowSize - nodeDiameter / 2) / linkLength;
-
-        let endX = p.lerp(node1.x, node2.x, ratio);
-        let endY = p.lerp(node1.y, node2.y, ratio);
-
-        drawArrow(node1.x, node1.y, endX, endY);
-      };
-
       p.mousePressed = () => {
         for (let node of nodes) {
-          let d = p.dist(p.mouseX, p.mouseY, node.x, node.y);
-          if (d < nodeDiameter / 2) {
+          if (p.dist(p.mouseX, p.mouseY, node.x, node.y) < nodeDiameter / 2) {
             node.isDragging = true;
             node.offsetX = node.x - p.mouseX;
             node.offsetY = node.y - p.mouseY;
