@@ -109,7 +109,7 @@ const NodeCanvas = () => {
       <div ref={canvasRef}></div>
       <ButtonContainer>
         <StyledButton onClick={addNode} variant="contained" color="primary">
-          Add Random Node
+          Insert Random Node
         </StyledButton>
       </ButtonContainer>
     </VisualizeContainer>

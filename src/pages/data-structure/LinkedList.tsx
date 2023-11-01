@@ -78,7 +78,11 @@ const LinkedList = () => {
       </Section>
 
       <Section ref={refs.section3} id="section3">
-        <LinkedListCanvas />
+        <SectionTitle>Playground</SectionTitle>
+        <SectionDescription>
+          You can click the button to add a new node and move it wherever you'd
+          like. <LinkedListCanvas />
+        </SectionDescription>
       </Section>
     </Container>
   );
