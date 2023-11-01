@@ -47,10 +47,53 @@ const NodeCanvas = () => {
         p.text(node.value, node.x, node.y);
       };
 
-      const drawLink = (p, node1, node2) => {
+      const drawArrow = (x1, y1, x2, y2) => {
         p.stroke(0);
-        p.line(node1.x, node1.y, node2.x, node2.y);
-        // Arrow drawing can be added here if needed
+        p.line(x1, y1, x2, y2);
+        p.push();
+        p.translate(x2, y2);
+        p.rotate(p.atan2(y2 - y1, x2 - x1));
+        let arrowSize = 10;
+        p.line(0, 0, -arrowSize, arrowSize / 2);
+        p.line(0, 0, -arrowSize, -arrowSize / 2);
+        p.pop();
+      };
+
+      const drawLink = (p, node1, node2) => {
+        let linkLength = p.dist(node1.x, node1.y, node2.x, node2.y);
+        let arrowSize = 10;
+        let ratio = (linkLength - arrowSize - nodeDiameter / 2) / linkLength;
+
+        let endX = p.lerp(node1.x, node2.x, ratio);
+        let endY = p.lerp(node1.y, node2.y, ratio);
+
+        drawArrow(node1.x, node1.y, endX, endY);
+      };
+
+      p.mousePressed = () => {
+        for (let node of nodes) {
+          let d = p.dist(p.mouseX, p.mouseY, node.x, node.y);
+          if (d < nodeDiameter / 2) {
+            node.isDragging = true;
+            node.offsetX = node.x - p.mouseX;
+            node.offsetY = node.y - p.mouseY;
+          }
+        }
+      };
+
+      p.mouseReleased = () => {
+        for (let node of nodes) {
+          node.isDragging = false;
+        }
+      };
+
+      p.mouseDragged = () => {
+        for (let node of nodes) {
+          if (node.isDragging) {
+            node.x = p.mouseX + node.offsetX;
+            node.y = p.mouseY + node.offsetY;
+          }
+        }
       };
     };
 
