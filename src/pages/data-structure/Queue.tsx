@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import { useRef } from "react";
+import QueueCanvas from "../../visualizer/data-structure/QueueCanvas";
 
 type FeatureItemProps = {
   icon: React.ReactNode;
@@ -79,7 +80,7 @@ const Queue = () => {
       </Section>
 
       <Section ref={refs.section3} id="section3">
-        Section 3
+        <QueueCanvas />
       </Section>
     </Container>
   );
@@ -116,7 +117,6 @@ const FeaturesContainer = styled.div({
 
 const Section = styled.div({
   height: "700px",
-  background: "lightgray",
   fontSize: "24px",
   display: "flex",
   flexWrap: "wrap",
