@@ -30,53 +30,90 @@ const BubbleSort = () => {
       <FeaturesContainer>
         <FeatureItem
           icon="🔒"
-          title="What is Stack"
-          description="What is a stack, and how is it used in the real world?"
+          title="What is bubble sort"
+          description="What is a bubble sort, and how is it used in the real world?"
           onClick={handleFeatureClick("section1")}
         />
         <FeatureItem
           icon="📊"
-          title="Operation"
-          description="How to operate this data structure"
+          title="Time complexity"
+          description="Time complexity of Bubble sort"
           onClick={handleFeatureClick("section2")}
         />
         <FeatureItem
           icon="🔄"
           title="Playground"
-          description="Let's test the stack operations."
+          description="Let's test the bubble sort operations."
           onClick={handleFeatureClick("section3")}
         />
       </FeaturesContainer>
 
       <Section ref={refs.section1} id="section1">
-        <SectionTitle>What is Stack??</SectionTitle>
+        <SectionTitle>What is Bubble sort??</SectionTitle>
         <SectionDescription>
-          A stack is a linear data structure that follows a particular order in
-          which operations are performed. The order is based on the Last In
-          First Out (LIFO) principle, which means that the last item added to
-          the stack is the first item to be removed.
+          Bubble Sort is a simple sorting algorithm that repeatedly steps
+          through the list to be sorted, compares each pair of adjacent items
+          and swaps them if they are in the wrong order.
         </SectionDescription>
       </Section>
 
       <Section ref={refs.section2} id="section2">
         <SectionTitle>Operation</SectionTitle>
         <SectionDescription>
-          There are two operations in stack:
           <ul>
             <li>
-              Push: Adds an item to the top of the stack. If the stack is full,
-              then it is considered an Overflow condition.
+              <strong>Best Case (Optimized Version):</strong>
+              <ul>
+                <li>
+                  <strong>Time Complexity:</strong> O(n)
+                </li>
+                <li>
+                  <strong>Condition:</strong> This occurs when the array is
+                  already sorted. An optimized version of Bubble Sort can detect
+                  this by checking if any swaps were made in the first pass. If
+                  no swaps occur, the algorithm can terminate early, leading to
+                  a linear time complexity.
+                </li>
+              </ul>
             </li>
             <li>
-              Pop: Removes the top item from the stack. If the stack is empty,
-              then it is said to be an Underflow condition.
+              <strong>Average Case:</strong>
+              <ul>
+                <li>
+                  <strong>Time Complexity:</strong> O(n<sup>2</sup>)
+                </li>
+                <li>
+                  <strong>Condition:</strong> In an average scenario, where the
+                  elements of the array are in a random order, Bubble Sort will
+                  need to perform a significant number of comparisons and swaps,
+                  leading to a quadratic time complexity.
+                </li>
+              </ul>
+            </li>
+            <li>
+              <strong>Worst Case:</strong>
+              <ul>
+                <li>
+                  <strong>Time Complexity:</strong> O(n<sup>2</sup>)
+                </li>
+                <li>
+                  <strong>Condition:</strong> This occurs when the array is
+                  sorted in reverse order. In such a case, each element needs to
+                  be compared with every other element, resulting in the maximum
+                  number of swaps and comparisons.
+                </li>
+              </ul>
             </li>
           </ul>
         </SectionDescription>
       </Section>
 
       <Section ref={refs.section3} id="section3">
-        <StackCanvas />
+        <SectionTitle>Playground</SectionTitle>
+        <SectionDescription>
+          You can click the button to add a new node and move it wherever you'd
+          like. <StackCanvas />
+        </SectionDescription>
       </Section>
     </Container>
   );
@@ -113,20 +150,19 @@ const FeaturesContainer = styled.div({
 
 const Section = styled.div({
   height: "700px",
-  background: "lightgray",
   fontSize: "24px",
   display: "flex",
   flexWrap: "wrap",
   alignItems: "center",
   justifyContent: "center",
-  margin: "5%",
+  margin: "20%",
 });
 
 const Feature = styled.div({
   backgroundColor: "#333",
   color: "white",
   padding: "20px",
-  margin: "20px 0",
+  // margin: "20px 0",
   borderRadius: "5px",
   cursor: "pointer",
   maxWidth: "300px",
