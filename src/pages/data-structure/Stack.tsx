@@ -76,7 +76,12 @@ const Stack = () => {
       </Section>
 
       <Section ref={refs.section3} id="section3">
-        <StackCanvas />
+        <SectionTitle>Playground</SectionTitle>
+        <SectionDescription>
+          You can click the button to add a new node and move it wherever you'd
+          like.
+          <StackCanvas />
+        </SectionDescription>
       </Section>
     </Container>
   );
@@ -113,7 +118,6 @@ const FeaturesContainer = styled.div({
 
 const Section = styled.div({
   height: "700px",
-  background: "lightgray",
   fontSize: "24px",
   display: "flex",
   flexWrap: "wrap",

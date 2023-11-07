@@ -80,7 +80,12 @@ const Queue = () => {
       </Section>
 
       <Section ref={refs.section3} id="section3">
-        <QueueCanvas />
+        <SectionTitle>Playground</SectionTitle>
+        <SectionDescription>
+          You can click the button to add a new node and move it wherever you'd
+          like.
+          <QueueCanvas />
+        </SectionDescription>
       </Section>
     </Container>
   );

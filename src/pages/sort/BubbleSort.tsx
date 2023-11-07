@@ -58,7 +58,7 @@ const BubbleSort = () => {
       </Section>
 
       <Section ref={refs.section2} id="section2">
-        <SectionTitle>Operation</SectionTitle>
+        <SectionTitle>Time complexity</SectionTitle>
         <SectionDescription>
           <ul>
             <li>
@@ -155,7 +155,7 @@ const Section = styled.div({
   flexWrap: "wrap",
   alignItems: "center",
   justifyContent: "center",
-  margin: "20%",
+  margin: "25% 0 ",
 });
 
 const Feature = styled.div({
