@@ -1,9 +1,9 @@
-import React, { useEffect, useRef } from 'react';
-import p5 from 'p5';
-import { Button, Container } from '@mui/material';
-import { styled } from '@mui/system';
+import React, { useEffect, useRef } from "react";
+import p5 from "p5";
+import { Button, Container } from "@mui/material";
+import { styled } from "@mui/system";
 
-const BubbleSort = () => {
+const BubbleSortCanvas = () => {
   const sketchRef = useRef();
 
   useEffect(() => {
@@ -44,7 +44,10 @@ const BubbleSort = () => {
           if (values[j].value > values[j + 1]?.value) {
             lerpStart = values[j].position;
             lerpEnd = values[j + 1].position;
-            [values[j].position, values[j + 1].position] = [values[j + 1].position, values[j].position];
+            [values[j].position, values[j + 1].position] = [
+              values[j + 1].position,
+              values[j].position,
+            ];
             [values[j], values[j + 1]] = [values[j + 1], values[j]];
             lerping = true;
           } else {
@@ -71,9 +74,10 @@ const BubbleSort = () => {
       const drawBars = () => {
         values.forEach((val, k) => {
           let w = p.width / values.length;
-          let posX = lerping && (val.position === lerpStart || val.position === lerpEnd) 
-                     ? p.lerp(k * w, val.position * w, lerpAmount) 
-                     : val.position * w;
+          let posX =
+            lerping && (val.position === lerpStart || val.position === lerpEnd)
+              ? p.lerp(k * w, val.position * w, lerpAmount)
+              : val.position * w;
 
           p.fill(k === j || k === j + 1 ? 255 : 50);
           p.rect(posX, p.height, w, -val.value);
@@ -89,6 +93,9 @@ const BubbleSort = () => {
 
     let myp5 = new p5(sketch, sketchRef.current);
 
+    // Attach the restartSorting function to the ref
+    sketchRef.current.restartSorting = () => myp5.restartSorting();
+
     // Return cleanup function
     return () => {
       myp5.remove();
@@ -103,7 +110,11 @@ const BubbleSort = () => {
     <VisualizeContainer>
       <div ref={sketchRef}></div>
       <ButtonContainer>
-        <StyledButton onClick={handleRestart} variant="contained" color="success">
+        <StyledButton
+          onClick={handleRestart}
+          variant="contained"
+          color="success"
+        >
           Restart
         </StyledButton>
       </ButtonContainer>
@@ -123,11 +134,11 @@ const VisualizeContainer = styled(Container)({
 const ButtonContainer = styled(Container)({
   display: "flex",
   justifyContent: "center",
-  marginTop: '20px'
+  marginTop: "20px",
 });
 
 const StyledButton = styled(Button)({
   margin: "10px",
 });
 
-export default BubbleSort;
+export default BubbleSortCanvas;
