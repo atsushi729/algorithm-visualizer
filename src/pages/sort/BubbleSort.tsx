@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import { useRef } from "react";
-import StackCanvas from "../../visualizer/data-structure/StackCanvas";
+import BubbleSortCanvas from "../../visualizer/sort/BubbleSort";
 
 type FeatureItemProps = {
   icon: React.ReactNode;
@@ -112,7 +112,7 @@ const BubbleSort = () => {
         <SectionTitle>Playground</SectionTitle>
         <SectionDescription>
           You can click the button to add a new node and move it wherever you'd
-          like. <StackCanvas />
+          like. <BubbleSortCanvas />
         </SectionDescription>
       </Section>
     </Container>
