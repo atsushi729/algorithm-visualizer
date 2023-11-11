@@ -1,8 +1,7 @@
 import DashboardPageLayout from "../pages/dashboard/DashboardPageLayout";
 import HomePage from "../pages/home/HomePage";
 import { RouteType } from "./config";
-import DefaultPage from "../pages/dashboard/DefaultPage";
-import DashboardIndex from "../pages/dashboard/DashboardIndex";
+import Algorithm from "../pages/dashboard/DashboardIndex";
 import ChangelogPage from "../pages/changelog/ChangelogPage";
 import AnalyticsPage from "../pages/dashboard/AnalyticsPage";
 import SaasPage from "../pages/dashboard/SaasPage";
@@ -46,15 +45,15 @@ const appRoutes: RouteType[] = [
     child: [
       {
         index: true,
-        element: <DashboardIndex />,
+        element: <Algorithm />,
         state: "dashboard.index",
       },
       {
         path: "/dashboard/default",
-        element: <DefaultPage />,
-        state: "dashboard.default",
+        element: <Algorithm />,
+        state: "dashboard.algorithm",
         sidebarProps: {
-          displayText: "Default",
+          displayText: "Algorithm",
         },
       },
       {
