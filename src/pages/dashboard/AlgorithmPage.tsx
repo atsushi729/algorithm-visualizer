@@ -1,16 +1,9 @@
 import React from "react";
 import { Box, styled } from "@mui/material";
+import Basic from "../../components/code/BasicCode";
 
 // React component
 const Algorithm = () => {
-  // Example code string
-  const codeString = `from openai import OpenAI
-client = OpenAI()
-response = client.completions.create(
-  model="gpt-3.5-turbo-instruct",
-  prompt="Write a tagline for an ice cream shop."
-)`.trim();
-
   return (
     <Container>
       <Content>
@@ -29,10 +22,7 @@ response = client.completions.create(
         <Note>
           Note: Input and output tokens count toward these quantities.
         </Note>
-        <CodeBlock component="pre">
-          <code>{codeString}</code>
-        </CodeBlock>
-        <code>{"body { color: blue; }"}</code>
+        <Basic />
       </Content>
     </Container>
   );

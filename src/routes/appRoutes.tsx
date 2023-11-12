@@ -1,7 +1,7 @@
 import DashboardPageLayout from "../pages/dashboard/DashboardPageLayout";
 import HomePage from "../pages/home/HomePage";
 import { RouteType } from "./config";
-import Algorithm from "../pages/dashboard/DashboardIndex";
+import Algorithm from "../pages/dashboard/AlgorithmPage";
 import ChangelogPage from "../pages/changelog/ChangelogPage";
 import AnalyticsPage from "../pages/dashboard/AnalyticsPage";
 import SaasPage from "../pages/dashboard/SaasPage";
@@ -18,7 +18,6 @@ import MergeSort from "../pages/sort/MergeSort";
 import QuickSort from "../pages/sort/QuickSort";
 // import InstallationPage from "../pages/installation/InstallationPage";
 // import DocumentationPage from "../pages/documentation/DocumentationPage";
-
 const appRoutes: RouteType[] = [
   {
     index: true,
