@@ -1,4 +1,3 @@
-import React from "react";
 import { Box, styled } from "@mui/material";
 import Basic from "../../components/code/BasicCode";
 
@@ -22,7 +21,7 @@ const Algorithm = () => {
         <Note>
           Note: Input and output tokens count toward these quantities.
         </Note>
-        <Basic />
+        <Basic codeString={code} language="javascript" />
       </Content>
     </Container>
   );
@@ -70,14 +69,16 @@ const Note = styled(Box)({
   component: "p",
 });
 
-// React component
-const CodeBlock = styled(Box)({
-  background: "#000", // Black background
-  color: "#fff", // White text color for contrast
-  fontFamily: "monospace", // Monospace font for code
-  padding: "1em",
-  borderRadius: "5px",
-  overflowX: "auto", // Allows scrolling on small screens
-});
+const code = `import SyntaxHighlighter from 'react-syntax-highlighter';
+import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+
+  const Component = () => {
+    const codeString = '(num) => num + 1';
+    return (
+      <SyntaxHighlighter language="javascript" style={docco}>
+      {codeString}
+      </SyntaxHighlighter>
+      );
+    };`;
 
 export default Algorithm;
