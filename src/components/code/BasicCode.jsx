@@ -1,20 +1,8 @@
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { atomOneDark } from "react-syntax-highlighter/dist/esm/styles/hljs";
-import React, { useState } from "react";
+import { useState } from "react";
 
-const Basic = () => {
-  const codeString = `import SyntaxHighlighter from 'react-syntax-highlighter';
-import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs';
-
-  const Component = () => {
-    const codeString = '(num) => num + 1';
-    return (
-      <SyntaxHighlighter language="javascript" style={docco}>
-      {codeString}
-      </SyntaxHighlighter>
-      );
-    };`;
-
+const Basic = ({ codeString = "", language = "javascript" }) => {
   const [copy, setCopy] = useState(false);
 
   return (
@@ -47,10 +35,9 @@ import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs';
         )}
       </div>
       <SyntaxHighlighter
-        language="jsx"
+        language={language}
         style={atomOneDark}
         customStyle={{ padding: "25px" }}
-        // wrapLongLines={true}
       >
         {codeString}
       </SyntaxHighlighter>
