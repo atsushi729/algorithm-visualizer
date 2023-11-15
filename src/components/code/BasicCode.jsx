@@ -9,30 +9,34 @@ const Basic = ({ codeString = "", language = "javascript" }) => {
   // Sub component
   //---------------------------------------------------------------------
   const CopiedButton = () => {
-    <button className="py-1 inline-flex items-center gap-1">
-      <span className="text-base mt-1">
-        <ion-icon name="checkmark-sharp"></ion-icon>
-      </span>
-      Copied
-    </button>;
+    return (
+      <button className="py-1 inline-flex items-center gap-1">
+        <span className="text-base mt-1">
+          <ion-icon name="checkmark-sharp"></ion-icon>
+        </span>
+        Copied
+      </button>
+    );
   };
 
   const CopyButton = () => {
-    <button
-      className="py-1 inline-flex items-center gap-1"
-      onClick={() => {
-        navigator.clipboard.writeText(codeString);
-        setCopy(true);
-        setTimeout(() => {
-          setCopy(false);
-        }, 3000);
-      }}
-    >
-      <span className="text-base mt-1">
-        <ion-icon name="clipboard-outline"></ion-icon>
-      </span>
-      Copy code
-    </button>;
+    return (
+      <button
+        className="py-1 inline-flex items-center gap-1"
+        onClick={() => {
+          navigator.clipboard.writeText(codeString);
+          setCopy(true);
+          setTimeout(() => {
+            setCopy(false);
+          }, 3000);
+        }}
+      >
+        <span className="text-base mt-1">
+          <ion-icon name="clipboard-outline"></ion-icon>
+        </span>
+        Copy code
+      </button>
+    );
   };
 
   //---------------------------------------------------------------------
