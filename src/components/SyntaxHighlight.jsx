@@ -2,7 +2,7 @@ import SyntaxHighlighter from "react-syntax-highlighter";
 import { atomOneDark } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import { useState } from "react";
 
-const Basic = ({ codeString = "", language = "javascript" }) => {
+const SyntaxHighlight = ({ codeString = "", language = "javascript" }) => {
   const [copy, setCopy] = useState(false);
 
   //---------------------------------------------------------------------
@@ -59,4 +59,4 @@ const Basic = ({ codeString = "", language = "javascript" }) => {
   );
 };
 
-export default Basic;
+export default SyntaxHighlight;
