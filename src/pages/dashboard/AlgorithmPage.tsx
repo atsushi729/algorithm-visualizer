@@ -1,84 +1,98 @@
-import { Box, styled } from "@mui/material";
-import Basic from "../../components/code/BasicCode";
+import SyntaxHighlight from "../../components/SyntaxHighlight";
 
-// React component
 const Algorithm = () => {
+  //---------------------------------------------------------------------
+  // Sub component
+  //---------------------------------------------------------------------
+  const AboutAlgorithm = () => {
+    return (
+      <div className="flex">
+        <div className="max-w-4xl m-auto p-8">
+          <h1 className="text-3xl mb-4 font-bold">Algorithm</h1>
+          <p className="text-lg mb-4">
+            An algorithm is a general and simple set of step-by-step
+            instructions that a digital computer can execute to solve problem.
+            For it to be practical, it must accomplish this within a limited
+            number of steps. Thus, An algorithm is defined on specified inputs
+            and generates an output.
+          </p>
+          <p className="text-base inline">
+            Algorithm is consist of 3 elements.
+          </p>
+          <ul className="list-decimal mb-2">
+            <li>
+              <strong>Input value </strong> : An algorithm has input values from
+              a specified set.
+            </li>
+            <li>
+              <strong>Process</strong> : Execute some process from input to
+              desire output value.
+            </li>
+            <li>
+              <strong>Output value </strong>: From each set of input values, an
+              algorithm produces output values from a specified set.
+            </li>
+          </ul>
+          <SyntaxHighlight codeString={code} language="javascript" />
+        </div>
+      </div>
+    );
+  };
+
+  const Pseudocode = () => {
+    return (
+      <div className="flex">
+        <div className="max-w-4xl m-auto p-8">
+          <h1 className="text-3xl mb-4 font-bold">Pseudocode</h1>
+          <p className="text-lg mb-4">
+            Pseudocode is a simplified, half-English, half-code outline of a
+            computer program's logic. It is not written in a specific
+            programming language but rather in a human-readable format that
+            resembles programming languages.
+          </p>
+          <p className="text-base inline">
+            Algorithm is consist of 3 elements.
+          </p>
+          <ul className="list-decimal mb-2">
+            <li>
+              <strong>Input value </strong> : An algorithm has input values from
+              a specified set.
+            </li>
+            <li>
+              <strong>Process</strong> : Execute some process from input to
+              desire output value.
+            </li>
+            <li>
+              <strong>Output value </strong>: From each set of input values, an
+              algorithm produces output values from a specified set.
+            </li>
+          </ul>
+          <SyntaxHighlight codeString={code} language="javascript" />
+        </div>
+      </div>
+    );
+  };
+
+  //---------------------------------------------------------------------
+  // Main component
+  //---------------------------------------------------------------------
   return (
-    <Container>
-      <Content>
-        <Title>Managing Tokens</Title>
-        <Description>
-          Language models read and write text in chunks called tokens. In
-          English, a token can be as short as one character or as long as one
-          word. Tokens play a crucial role in understanding and generating text
-          by the model.
-        </Description>
-        <List>
-          <li>The total number of tokens affects API call costs.</li>
-          <li>Writing more tokens takes more time.</li>
-          <li>Total tokens must be below the model’s maximum limit.</li>
-        </List>
-        <Note>
-          Note: Input and output tokens count toward these quantities.
-        </Note>
-        <Basic codeString={code} language="javascript" />
-      </Content>
-    </Container>
+    <>
+      <AboutAlgorithm />
+      <Pseudocode />
+    </>
   );
 };
 
-// Define any sizes or colors in a config object, if needed
-const sizeConfigs = {
-  maxWidth: "800px",
-  sidebarWidth: "250px", // example size for the sidebar
-};
+const code = `// Secondaly, addOne() get input value and execute function(algorithm).
+function addOne(value: number) {
+  // Finaly, return output value.
+  return value + 1;
+}
 
-// Styled components
-const Container = styled(Box)({
-  display: "flex",
-});
-
-const Content = styled(Box)({
-  maxWidth: sizeConfigs.maxWidth, // Use from sizeConfigs if needed
-  margin: "auto",
-  padding: "2rem",
-  fontFamily: '"Arial", sans-serif',
-});
-
-const Title = styled(Box)({
-  fontSize: "24px",
-  marginBottom: "1rem",
-  component: "h1",
-});
-
-const Description = styled(Box)({
-  fontSize: "16px",
-  marginBottom: "1rem",
-  component: "p",
-});
-
-const List = styled(Box)({
-  listStyle: "inside",
-  marginBottom: "1rem",
-  component: "ul",
-});
-
-const Note = styled(Box)({
-  fontSize: "14px",
-  fontWeight: "bold",
-  component: "p",
-});
-
-const code = `import SyntaxHighlighter from 'react-syntax-highlighter';
-import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs';
-
-  const Component = () => {
-    const codeString = '(num) => num + 1';
-    return (
-      <SyntaxHighlighter language="javascript" style={docco}>
-      {codeString}
-      </SyntaxHighlighter>
-      );
-    };`;
+// First of all, set input value to addOne().
+const result = addOne(1);
+// Output value is 2
+`;
 
 export default Algorithm;
