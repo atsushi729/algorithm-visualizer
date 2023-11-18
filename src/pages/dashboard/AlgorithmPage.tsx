@@ -8,7 +8,7 @@ const Algorithm = () => {
     return (
       <div className="flex">
         <div className="max-w-4xl m-auto p-8">
-          <h1 className="text-3xl mb-4 font-bold">Algorithm</h1>
+          <h1 className="text-3xl mb-4 mt-4 font-bold">Algorithm</h1>
           <p className="text-lg mb-4">
             An algorithm is a general and simple set of step-by-step
             instructions that a digital computer can execute to solve problem.
@@ -34,6 +34,7 @@ const Algorithm = () => {
             </li>
           </ul>
           <SyntaxHighlight codeString={code} language="javascript" />
+          <h3 className="text-2xl mb-4 mt-4 font-bold">Sample of Algorithm</h3>
         </div>
       </div>
     );
@@ -67,7 +68,7 @@ const Algorithm = () => {
               algorithm produces output values from a specified set.
             </li>
           </ul>
-          <SyntaxHighlight codeString={code} language="javascript" />
+          <SyntaxHighlight codeString={pseudocode} language="pseudocode" />
         </div>
       </div>
     );
@@ -93,6 +94,15 @@ function addOne(value: number) {
 // First of all, set input value to addOne().
 const result = addOne(1);
 // Output value is 2
+`;
+
+const pseudocode = `function find_maximum(L):
+    max_num <- L[0]
+    for each n in L:
+        if n > max_num:
+            max_num <- n
+    return max_num
+
 `;
 
 export default Algorithm;
