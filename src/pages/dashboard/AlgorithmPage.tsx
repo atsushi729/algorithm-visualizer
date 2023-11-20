@@ -85,24 +85,50 @@ const Algorithm = () => {
             programming language but rather in a human-readable format that
             resembles programming languages.
           </p>
-          <p className="text-base inline">
-            Algorithm is consist of 3 elements.
-          </p>
-          <ul className="list-decimal mb-2">
+          <p>Here is a simple example that adds one to the input value:</p>
+          <SyntaxHighlight codeString={pseudocode} language="pseudocode" />
+          <h5 className="text-lg mb-4 mt-4 font-bold">Sample of Algorithm</h5>
+          <ul className="marker:text-blue-600 list-decimal ps-5 space-y-2">
             <li>
-              <strong>Input value </strong> : An algorithm has input values from
-              a specified set.
+              <p className="no-underline hover:underline font-bold">
+                Algorithm Representation
+              </p>
+              <p>
+                Pseudocode provides a way to represent an algorithm's logic in a
+                format that is easier to understand than actual code. It focuses
+                on the algorithm's steps and structure without getting bogged
+                down in the syntax and idiosyncrasies of a specific programming
+                language.
+              </p>
             </li>
             <li>
-              <strong>Process</strong> : Execute some process from input to
-              desire output value.
+              <a
+                href="/dashboard/saas"
+                className="no-underline hover:underline font-bold"
+              >
+                Language Independence
+              </a>
+              <p>
+                Pseudocode is not tied to any specific programming language. It
+                can be understood by programmers who are familiar with different
+                programming languages, making it a universal tool for
+                communicating algorithms.
+              </p>
             </li>
             <li>
-              <strong>Output value </strong>: From each set of input values, an
-              algorithm produces output values from a specified set.
+              <a
+                href="/dashboard/saas"
+                className="no-underline hover:underline font-bold"
+              >
+                Simplifying Complex Logic
+              </a>
+              <p>
+                It helps in breaking down complex algorithmic logic into
+                simpler, more manageable steps. This makes it easier to
+                conceptualize and communicate the solution to a problem.
+              </p>
             </li>
           </ul>
-          <SyntaxHighlight codeString={pseudocode} language="pseudocode" />
         </div>
       </div>
     );
