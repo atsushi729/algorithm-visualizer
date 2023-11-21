@@ -1,6 +1,6 @@
 import SyntaxHighlight from "../../components/SyntaxHighlight";
 
-const Algorithm = () => {
+const AlgorithmPage = () => {
   //---------------------------------------------------------------------
   // Sub component
   //---------------------------------------------------------------------
@@ -35,7 +35,7 @@ const Algorithm = () => {
           </ul>
           <p>Here is a simple example that adds one to the input value:</p>
           <SyntaxHighlight codeString={code} language="javascript" />
-          <h3 className="text-2xl mb-4 mt-4 font-bold">Sample of Algorithm</h3>
+          <h5 className="text-lg mb-4 mt-4 font-bold">Sample of Algorithm:</h5>
           <ul className="marker:text-blue-600 list-disc ps-5 space-y-2">
             <li>
               <a
@@ -226,4 +226,4 @@ const pseudocode = `function find_maximum(L):
 
 `;
 
-export default Algorithm;
+export default AlgorithmPage;

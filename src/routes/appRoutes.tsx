@@ -1,9 +1,9 @@
 import DashboardPageLayout from "../pages/dashboard/DashboardPageLayout";
 import HomePage from "../pages/home/HomePage";
 import { RouteType } from "./config";
-import Algorithm from "../pages/dashboard/AlgorithmPage";
+import AlgorithmPage from "../pages/dashboard/AlgorithmPage";
 import ChangelogPage from "../pages/changelog/ChangelogPage";
-import AnalyticsPage from "../pages/dashboard/AnalyticsPage";
+import TimeComplexityPage from "../pages/dashboard/AnalyticsPage";
 import SaasPage from "../pages/dashboard/SaasPage";
 import DashboardOutlinedIcon from "@mui/icons-material/DashboardOutlined";
 import AppsOutlinedIcon from "@mui/icons-material/AppsOutlined";
@@ -44,12 +44,12 @@ const appRoutes: RouteType[] = [
     child: [
       {
         index: true,
-        element: <Algorithm />,
+        element: <AlgorithmPage />,
         state: "dashboard.index",
       },
       {
         path: "/dashboard/default",
-        element: <Algorithm />,
+        element: <AlgorithmPage />,
         state: "dashboard.algorithm",
         sidebarProps: {
           displayText: "Algorithm",
@@ -57,10 +57,10 @@ const appRoutes: RouteType[] = [
       },
       {
         path: "/dashboard/analytics",
-        element: <AnalyticsPage />,
+        element: <TimeComplexityPage />,
         state: "dashboard.analytics",
         sidebarProps: {
-          displayText: "Analytic",
+          displayText: "Time Complexity",
         },
       },
       {

@@ -1,8 +1,7 @@
-
 type Props = {};
 
-const AnalyticsPage = (props: Props) => {
-  return <div>AnalyticsPage</div>;
+const TimeComplexityPage = (props: Props) => {
+  return <div>TimeComplexityPage</div>;
 };
 
-export default AnalyticsPage;
+export default TimeComplexityPage;
