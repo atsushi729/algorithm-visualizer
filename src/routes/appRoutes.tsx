@@ -3,7 +3,7 @@ import HomePage from "../pages/home/HomePage";
 import { RouteType } from "./config";
 import AlgorithmPage from "../pages/dashboard/AlgorithmPage";
 import ChangelogPage from "../pages/changelog/ChangelogPage";
-import TimeComplexityPage from "../pages/dashboard/AnalyticsPage";
+import TimeComplexityPage from "../pages/dashboard/TimeComplexityPage";
 import SaasPage from "../pages/dashboard/SaasPage";
 import DashboardOutlinedIcon from "@mui/icons-material/DashboardOutlined";
 import AppsOutlinedIcon from "@mui/icons-material/AppsOutlined";
