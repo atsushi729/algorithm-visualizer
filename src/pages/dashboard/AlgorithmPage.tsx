@@ -97,6 +97,20 @@ const AlgorithmPage = () => {
                 href="/data-structure/stack"
                 className="no-underline hover:underline hover:text-blue-500 font-bold"
               >
+                Array
+              </a>
+              <p>
+                An array in data structures is essentially a linear collection
+                of similar elements stored at contiguous memory locations and
+                accessible via indices. The size of a traditional array is
+                predetermined and remains constant throughout its lifetime.
+              </p>
+            </li>
+            <li>
+              <a
+                href="/data-structure/stack"
+                className="no-underline hover:underline hover:text-blue-500 font-bold"
+              >
                 Stack
               </a>
               <p>
