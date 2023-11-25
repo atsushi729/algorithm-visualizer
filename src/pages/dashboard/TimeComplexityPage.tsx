@@ -1,5 +1,3 @@
-import { dividerClasses } from "@mui/material";
-
 type Props = {};
 
 const TimeComplexityPage = (props: Props) => {
