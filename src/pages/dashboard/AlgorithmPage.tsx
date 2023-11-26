@@ -69,6 +69,39 @@ const AlgorithmPage = () => {
               </p>
             </li>
           </ul>
+          <h5 className="text-lg mb-4 mt-4 font-bold">
+            Why are these algorithms important?
+          </h5>
+          <ul className="marker:text-blue-600 list-decimal ps-5 space-y-2">
+            <li>
+              <p className="no-underline font-bold">Efficiency and speed:</p>
+              <p>
+                Binary search is an example of how an appropriate algorithm can
+                save time. If you have a list of one million numbers, linear
+                search could, in the worst case, require one million checks,
+                while binary search would only require a maximum of 20 checks!
+              </p>
+            </li>
+            <li>
+              <p className="no-underline font-bold">Resource management:</p>
+              <p>
+                In computational terms, linear search could take hours and
+                significant processing power for large datasets, whereas binary
+                search could take seconds, saving energy and freeing up
+                computational resources for other tasks.
+              </p>
+            </li>
+            <li>
+              <p className="no-underline font-bold">Scalability:</p>
+              <p>
+                As datasets grow larger, the shortcomings of linear search
+                become more apparent, and the benefits of binary search become
+                more valuable. This is true in many areas of computing, such as
+                database lookups, file retrieval, and handling large-scale web
+                services.
+              </p>
+            </li>
+          </ul>
         </div>
       </div>
     );
