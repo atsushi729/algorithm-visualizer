@@ -26,15 +26,10 @@ const TimeComplexityPage = (props: Props) => {
 
   const TimeComplexityTable = () => {
     return (
-      // <div className="flex flex-col max-w-4xl mx-auto p-8">
-      //   <p className="text-base inline m-auto p-8">
-      //     Here's a brief explanation of common time complexity terms:
-      //   </p>
       <div className="flex flex-col max-w-4xl mx-auto p-8">
         <div className="overflow-x-auto">
-          {/* <div className="inline-block min-w-full align-middle"> */}
           <table className="min-w-full text-left text-sm font-light">
-            <thead className="border-b font-medium dark:border-neutral-500 dark:bg-neutral-500">
+            <thead className="border-b font-medium border-neutral-500 bg-neutral-500">
               <tr>
                 <th scope="col" className="px-6 py-4">
                   Complexity
@@ -49,7 +44,7 @@ const TimeComplexityPage = (props: Props) => {
             </thead>
             <tbody>
               <tr
-                className="border-b transition duration-300 ease-in-out hover:bg-neutral-100 dark:border-neutral-500 dark:hover:bg-neutral-300"
+                className="border-b transition duration-300 ease-in-out hover:bg-neutral-100 border-neutral-500 hover:bg-neutral-300"
                 key="complexity-o1"
               >
                 <td className="px-6 py-4 font-medium">O(1)</td>
@@ -61,8 +56,8 @@ const TimeComplexityPage = (props: Props) => {
                 </td>
               </tr>
               <tr
-                className="border-b transition duration-300 ease-in-out hover:bg-neutral-100 dark:border-neutral-500 dark:hover:bg-neutral-300"
-                key="complexity-o1"
+                className="border-b transition duration-300 ease-in-out hover:bg-neutral-100 border-neutral-500 hover:bg-neutral-300"
+                key="complexity-ologn"
               >
                 <td className="px-6 py-4 font-medium">O(log n)</td>
                 <td className="px-6 py-4">Logarithmic Time</td>
@@ -73,8 +68,8 @@ const TimeComplexityPage = (props: Props) => {
                 </td>
               </tr>
               <tr
-                className="border-b transition duration-300 ease-in-out hover:bg-neutral-100 dark:border-neutral-500 dark:hover:bg-neutral-300"
-                key="complexity-o1"
+                className="border-b transition duration-300 ease-in-out hover:bg-neutral-100 border-neutral-500 hover:bg-neutral-300"
+                key="complexity-on"
               >
                 <td className="px-6 py-4 font-medium">O(n)</td>
                 <td className="px-6 py-4">Linear Time</td>
@@ -84,8 +79,8 @@ const TimeComplexityPage = (props: Props) => {
                 </td>
               </tr>
               <tr
-                className="border-b transition duration-300 ease-in-out hover:bg-neutral-100 dark:border-neutral-500 dark:hover:bg-neutral-300"
-                key="complexity-o1"
+                className="border-b transition duration-300 ease-in-out hover:bg-neutral-100 border-neutral-500 hover:bg-neutral-300"
+                key="complexity-onlogn"
               >
                 <td className="px-6 py-4 font-medium">O(n log n)</td>
                 <td className="px-6 py-4">Log-linear Time</td>
@@ -96,8 +91,8 @@ const TimeComplexityPage = (props: Props) => {
                 </td>
               </tr>
               <tr
-                className="border-b transition duration-300 ease-in-out hover:bg-neutral-100 dark:border-neutral-500 dark:hover:bg-neutral-300"
-                key="complexity-o1"
+                className="border-b transition duration-300 ease-in-out hover:bg-neutral-100 border-neutral-500 hover:bg-neutral-300"
+                key="complexity-on2"
               >
                 <td className="px-6 py-4 font-medium">O(n^2)</td>
                 <td className="px-6 py-4">Quadratic Time</td>
@@ -108,8 +103,8 @@ const TimeComplexityPage = (props: Props) => {
                 </td>
               </tr>
               <tr
-                className="border-b transition duration-300 ease-in-out hover:bg-neutral-100 dark:border-neutral-500 dark:hover:bg-neutral-300"
-                key="complexity-o1"
+                className="border-b transition duration-300 ease-in-out hover:bg-neutral-100 border-neutral-500 hover:bg-neutral-300"
+                key="complexity-o2n"
               >
                 <td className="px-6 py-4 font-medium">O(2^n)</td>
                 <td className="px-6 py-4">Exponential Time</td>
@@ -120,8 +115,8 @@ const TimeComplexityPage = (props: Props) => {
                 </td>
               </tr>
               <tr
-                className="border-b transition duration-300 ease-in-out hover:bg-neutral-100 dark:border-neutral-500 dark:hover:bg-neutral-300"
-                key="complexity-o1"
+                className="border-b transition duration-300 ease-in-out hover:bg-neutral-100 border-neutral-500 hover:bg-neutral-300"
+                key="complexity-onfact"
               >
                 <td className="px-6 py-4 font-medium">O(n!)</td>
                 <td className="px-6 py-4">Factorial Time</td>
@@ -135,8 +130,6 @@ const TimeComplexityPage = (props: Props) => {
           </table>
         </div>
       </div>
-      // </div>
-      // </div>
     );
   };
 
