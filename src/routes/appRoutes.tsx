@@ -4,7 +4,7 @@ import { RouteType } from "./config";
 import AlgorithmPage from "../pages/dashboard/AlgorithmPage";
 import ChangelogPage from "../pages/changelog/ChangelogPage";
 import TimeComplexityPage from "../pages/dashboard/TimeComplexityPage";
-import SaasPage from "../pages/dashboard/SaasPage";
+import TechniquePage from "../pages/dashboard/TechniquePage";
 import DashboardOutlinedIcon from "@mui/icons-material/DashboardOutlined";
 import AppsOutlinedIcon from "@mui/icons-material/AppsOutlined";
 import ArticleOutlinedIcon from "@mui/icons-material/ArticleOutlined";
@@ -48,7 +48,7 @@ const appRoutes: RouteType[] = [
         state: "dashboard.index",
       },
       {
-        path: "/dashboard/default",
+        path: "/dashboard/algorithm",
         element: <AlgorithmPage />,
         state: "dashboard.algorithm",
         sidebarProps: {
@@ -56,19 +56,19 @@ const appRoutes: RouteType[] = [
         },
       },
       {
-        path: "/dashboard/analytics",
+        path: "/dashboard/timecomplexity",
         element: <TimeComplexityPage />,
-        state: "dashboard.analytics",
+        state: "dashboard.timecomplexity",
         sidebarProps: {
           displayText: "Time Complexity",
         },
       },
       {
-        path: "/dashboard/saas",
-        element: <SaasPage />,
-        state: "dashboard.saas",
+        path: "/dashboard/technique",
+        element: <TechniquePage />,
+        state: "dashboard.technique",
         sidebarProps: {
-          displayText: "Saas",
+          displayText: "Technique",
         },
       },
     ],
