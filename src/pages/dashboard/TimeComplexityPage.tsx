@@ -133,6 +133,27 @@ const TimeComplexityPage = (props: Props) => {
     );
   };
 
+  const AboutSpaceComplexity = () => {
+    return (
+      <div className="flex">
+        <div className="max-w-4xl m-auto p-8">
+          <h1 className="text-3xl mb-4 mt-4 font-bold">Space complexity</h1>
+          <p className="text-lg mb-4">
+            Space complexity is a measure used in computer science to describe
+            the amount of memory space required by an algorithm to run as a
+            function of the length of the input. It's a way to quantify the
+            amount of memory an algorithm needs to store data, such as
+            variables, allocated objects, and function calls. The space
+            complexity is analyzed similarly to time complexity, often using Big
+            O notation. This analysis helps in understanding how efficient an
+            algorithm is in terms of memory usage, which is particularly
+            important in environments with limited memory resources.
+          </p>
+        </div>
+      </div>
+    );
+  };
+
   //---------------------------------------------------------------------
   // Main component
   //---------------------------------------------------------------------
@@ -140,6 +161,7 @@ const TimeComplexityPage = (props: Props) => {
     <>
       <AboutTimeComplexity />
       <TimeComplexityTable />
+      <AboutSpaceComplexity />
     </>
   );
 };
