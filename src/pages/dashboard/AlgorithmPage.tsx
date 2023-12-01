@@ -241,6 +241,64 @@ const AlgorithmPage = () => {
     );
   };
 
+  const AboutFlowChart = () => {
+    return (
+      <div className="flex">
+        <div className="max-w-4xl m-auto p-8">
+          <h1 className="text-3xl mb-4 font-bold">
+            Flowcharts in Computer Science
+          </h1>
+          <p className="text-lg mb-4">
+            A flowchart is a diagrammatic representation used to illustrate the
+            sequence of operations to solve a problem. In computer science,
+            flowcharts serve as visual documentation of the steps involved in a
+            program or process.
+          </p>
+          <p>
+            Flowcharts utilize standard symbols like ovals for start/end,
+            rectangles for instructions, diamonds for decisions, parallelograms
+            for input/output, and arrows to show the flow direction.
+          </p>
+          <h5 className="text-lg mb-4 mt-4 font-bold">
+            Benefits of Flowcharts
+          </h5>
+          <ul className="marker:text-blue-600 list-decimal ps-5 space-y-2">
+            <li>
+              <p className="no-underline font-bold">Clarity</p>
+              <p>
+                They simplify the understanding of complex processes, allowing
+                for a clearer visualization of a sequence of actions.
+              </p>
+            </li>
+            <li>
+              <p className="no-underline font-bold">Communication</p>
+              <p>
+                Flowcharts act as a bridge between stakeholders to discuss and
+                refine processes, enhancing overall communication.
+              </p>
+            </li>
+            <li>
+              <p className="no-underline font-bold">Efficiency</p>
+              <p>
+                They help in identifying inefficiencies and potential
+                improvements within a process, contributing to a more efficient
+                design.
+              </p>
+            </li>
+            <li>
+              <p className="no-underline font-bold">Documentation</p>
+              <p>
+                Serving as a guide for programmers, flowcharts facilitate the
+                comprehension of logic before the coding phase and serve as a
+                reference for future maintenance.
+              </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    );
+  };
+
   //---------------------------------------------------------------------
   // Main component
   //---------------------------------------------------------------------
@@ -249,6 +307,7 @@ const AlgorithmPage = () => {
       <AboutAlgorithm />
       <AboutDataStructure />
       <AboutPseudocode />
+      <AboutFlowChart />
     </>
   );
 };
