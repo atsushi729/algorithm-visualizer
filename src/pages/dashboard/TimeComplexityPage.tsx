@@ -25,6 +25,64 @@ const TimeComplexityPage = (props: Props) => {
   };
 
   const TimeComplexityTable = () => {
+    // Define the data as a JavaScript object
+    const timeComplexities = [
+      {
+        complexity: "O(1)",
+        time: "Constant Time",
+        description:
+          "The execution time of the algorithm is the same, regardless of the size of the input data. An example is accessing a specific element in an array by index.",
+      },
+      {
+        complexity: "O(log n)",
+        time: "Logarithmic Time",
+        description:
+          "The execution time of the algorithm increases logarithmically with the input size. A common example is a binary search in a sorted array.",
+      },
+      {
+        complexity: "O(n)",
+        time: "Linear Time",
+        description:
+          "The execution time increases linearly with the input size. For instance, iterating through all elements in an array.",
+      },
+      {
+        complexity: "O(n log n)",
+        time: "Log-linear Time",
+        description:
+          "More complex than linear time but more efficient than quadratic time, common in efficient sorting algorithms like mergesort and heapsort.",
+      },
+      {
+        complexity: "O(n^2)",
+        time: "Quadratic Time",
+        description:
+          "The execution time is proportional to the square of the input size. An example of this is the bubble sort algorithm, where you might have to iterate through the elements multiple times.",
+      },
+      {
+        complexity: "O(2^n)",
+        time: "Exponential Time",
+        description:
+          "The execution time doubles with each addition to the input data set. Algorithms with exponential time complexity become infeasible to run with larger inputs.",
+      },
+      {
+        complexity: "O(n!)",
+        time: "Factorial Time",
+        description:
+          "The execution time grows factorially with the input size. An example would be the brute-force solution to the traveling salesman problem using permutation.",
+      },
+    ];
+
+    // Map over the data to create table rows
+    const rows = timeComplexities.map((item, index) => (
+      <tr
+        className="border-b transition duration-300 ease-in-out hover:bg-neutral-100 border-neutral-500 hover:bg-neutral-300"
+        key={`complexity-${index}`}
+      >
+        <td className="px-6 py-4 font-medium">{item.complexity}</td>
+        <td className="px-6 py-4">{item.time}</td>
+        <td className="px-6 py-4">{item.description}</td>
+      </tr>
+    ));
+
     return (
       <div className="flex flex-col max-w-4xl mx-auto p-8">
         <div className="overflow-x-auto">
@@ -42,91 +100,7 @@ const TimeComplexityPage = (props: Props) => {
                 </th>
               </tr>
             </thead>
-            <tbody>
-              <tr
-                className="border-b transition duration-300 ease-in-out hover:bg-neutral-100 border-neutral-500 hover:bg-neutral-300"
-                key="complexity-o1"
-              >
-                <td className="px-6 py-4 font-medium">O(1)</td>
-                <td className="px-6 py-4">Constant Time</td>
-                <td className="px-6 py-4">
-                  The execution time of the algorithm is the same, regardless of
-                  the size of the input data. An example is accessing a specific
-                  element in an array by index.
-                </td>
-              </tr>
-              <tr
-                className="border-b transition duration-300 ease-in-out hover:bg-neutral-100 border-neutral-500 hover:bg-neutral-300"
-                key="complexity-ologn"
-              >
-                <td className="px-6 py-4 font-medium">O(log n)</td>
-                <td className="px-6 py-4">Logarithmic Time</td>
-                <td className="px-6 py-4">
-                  The execution time of the algorithm increases logarithmically
-                  with the input size. A common example is a binary search in a
-                  sorted array.
-                </td>
-              </tr>
-              <tr
-                className="border-b transition duration-300 ease-in-out hover:bg-neutral-100 border-neutral-500 hover:bg-neutral-300"
-                key="complexity-on"
-              >
-                <td className="px-6 py-4 font-medium">O(n)</td>
-                <td className="px-6 py-4">Linear Time</td>
-                <td className="px-6 py-4">
-                  The execution time increases linearly with the input size. For
-                  instance, iterating through all elements in an array.
-                </td>
-              </tr>
-              <tr
-                className="border-b transition duration-300 ease-in-out hover:bg-neutral-100 border-neutral-500 hover:bg-neutral-300"
-                key="complexity-onlogn"
-              >
-                <td className="px-6 py-4 font-medium">O(n log n)</td>
-                <td className="px-6 py-4">Log-linear Time</td>
-                <td className="px-6 py-4">
-                  More complex than linear time but more efficient than
-                  quadratic time, common in efficient sorting algorithms like
-                  mergesort and heapsort.
-                </td>
-              </tr>
-              <tr
-                className="border-b transition duration-300 ease-in-out hover:bg-neutral-100 border-neutral-500 hover:bg-neutral-300"
-                key="complexity-on2"
-              >
-                <td className="px-6 py-4 font-medium">O(n^2)</td>
-                <td className="px-6 py-4">Quadratic Time</td>
-                <td className="px-6 py-4">
-                  The execution time is proportional to the square of the input
-                  size. An example of this is the bubble sort algorithm, where
-                  you might have to iterate through the elements multiple times.
-                </td>
-              </tr>
-              <tr
-                className="border-b transition duration-300 ease-in-out hover:bg-neutral-100 border-neutral-500 hover:bg-neutral-300"
-                key="complexity-o2n"
-              >
-                <td className="px-6 py-4 font-medium">O(2^n)</td>
-                <td className="px-6 py-4">Exponential Time</td>
-                <td className="px-6 py-4">
-                  The execution time doubles with each addition to the input
-                  data set. Algorithms with exponential time complexity become
-                  infeasible to run with larger inputs.
-                </td>
-              </tr>
-              <tr
-                className="border-b transition duration-300 ease-in-out hover:bg-neutral-100 border-neutral-500 hover:bg-neutral-300"
-                key="complexity-onfact"
-              >
-                <td className="px-6 py-4 font-medium">O(n!)</td>
-                <td className="px-6 py-4">Factorial Time</td>
-                <td className="px-6 py-4">
-                  The execution time grows factorially with the input size. An
-                  example would be the brute-force solution to the traveling
-                  salesman problem using permutation.
-                </td>
-              </tr>
-            </tbody>
+            <tbody>{rows}</tbody>
           </table>
         </div>
       </div>
