@@ -1,3 +1,9 @@
+import React from "react";
+import { useState } from "react";
+import SyntaxHighlight from "../../components/SyntaxHighlight";
+import ArrowDropDownCircleOutlinedIcon from "@mui/icons-material/ArrowDropDownCircleOutlined";
+// import your desired theme
+
 type Props = {};
 
 const TimeComplexityPage = (props: Props) => {
@@ -25,6 +31,14 @@ const TimeComplexityPage = (props: Props) => {
   };
 
   const TimeComplexityTable = () => {
+    // State to keep track of the expanded row
+    const [expandedRow, setExpandedRow] = useState(null);
+
+    // Function to handle row click
+    const toggleRow = (index: any) => {
+      setExpandedRow(expandedRow === index ? null : index);
+    };
+
     // Define the data as a JavaScript object
     const timeComplexities = [
       {
@@ -160,8 +174,8 @@ const TimeComplexityPage = (props: Props) => {
     ));
 
     return (
-      <div className="flex flex-col max-w-4xl mx-auto p-8">
-        <div className="overflow-x-auto">
+      <div className="flex">
+        <div className="max-w-4xl m-auto p-8">
           <table className="min-w-full text-left text-sm font-light">
             <thead className="border-b font-medium border-neutral-500 bg-neutral-500">
               <tr>
@@ -174,9 +188,43 @@ const TimeComplexityPage = (props: Props) => {
                 <th scope="col" className="px-6 py-4">
                   Description
                 </th>
+                <th scope="col" className="px-6 py-4">
+                  Example
+                </th>
               </tr>
             </thead>
-            <tbody>{rows}</tbody>
+            <tbody>
+              {timeComplexities.map((item, index) => (
+                <React.Fragment key={item.complexity}>
+                  <tr className="border-neutral-500 hover:bg-neutral-100">
+                    <td className="px-6 py-4 font-medium">{item.complexity}</td>
+                    <td className="px-6 py-4">{item.time}</td>
+                    <td className="px-6 py-4">{item.description}</td>
+                    <td className="px-6 py-4">
+                      {expandedRow === index ? (
+                        <ArrowDropDownCircleOutlinedIcon
+                          onClick={() => toggleRow(index)}
+                        />
+                      ) : (
+                        <ArrowDropDownCircleOutlinedIcon
+                          onClick={() => toggleRow(index)}
+                        />
+                      )}
+                    </td>
+                  </tr>
+                  {expandedRow === index && (
+                    <tr className="border-b border-neutral-500">
+                      <td colSpan={4} className="px-6 py-4">
+                        <SyntaxHighlight
+                          codeString={item.code}
+                          language="javascript"
+                        />
+                      </td>
+                    </tr>
+                  )}
+                </React.Fragment>
+              ))}
+            </tbody>
           </table>
         </div>
       </div>
