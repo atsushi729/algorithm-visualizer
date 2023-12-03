@@ -33,6 +33,7 @@ const AlgorithmPage = () => {
               algorithm produces output values from a specified set.
             </li>
           </ul>
+          <img src="/images/about-algorithm.png" alt="About Algorithm" className="mb-5"/>
           <p>Here is a simple example that adds one to the input value:</p>
           <SyntaxHighlight codeString={code} language="javascript" />
           <h5 className="text-lg mb-4 mt-4 font-bold">Sample of Algorithm:</h5>
