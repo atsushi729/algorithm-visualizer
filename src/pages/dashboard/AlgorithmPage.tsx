@@ -260,6 +260,7 @@ const AlgorithmPage = () => {
             rectangles for instructions, diamonds for decisions, parallelograms
             for input/output, and arrows to show the flow direction.
           </p>
+          <img src="/images/about-flowchart.png" alt="About Flowchart" className="mb-5"/>
           <h5 className="text-lg mb-4 mt-4 font-bold">
             Benefits of Flowcharts
           </h5>
