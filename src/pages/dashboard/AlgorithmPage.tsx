@@ -33,7 +33,11 @@ const AlgorithmPage = () => {
               algorithm produces output values from a specified set.
             </li>
           </ul>
-          <img src="/images/about-algorithm.png" alt="About Algorithm" className="mb-5"/>
+          <img
+            src="/images/about-algorithm.png"
+            alt="About Algorithm"
+            className="mb-5"
+          />
           <p>Here is a simple example that adds one to the input value:</p>
           <SyntaxHighlight codeString={code} language="javascript" />
           <h5 className="text-lg mb-4 mt-4 font-bold">Sample of Algorithm:</h5>
@@ -78,9 +82,9 @@ const AlgorithmPage = () => {
               <p className="no-underline font-bold">Efficiency and speed:</p>
               <p>
                 Binary search is an example of how an appropriate algorithm can
-                save time. If you have a list of one million numbers, linear
-                search could, in the worst case, require one million checks,
-                while binary search would only require a maximum of 20 checks!
+                save time. If you have a list of 1,000,000 numbers, linear
+                search could, in the worst case, require 1,000,000 checks, while
+                binary search would only require a maximum of 20 checks!
               </p>
             </li>
             <li>
@@ -185,6 +189,11 @@ const AlgorithmPage = () => {
               </p>
             </li>
           </ul>
+          <img
+            src="/images/about-datastructure.png"
+            alt="About Datastructure"
+            className="mb-5 mt-5"
+          />
         </div>
       </div>
     );
@@ -260,7 +269,11 @@ const AlgorithmPage = () => {
             rectangles for instructions, diamonds for decisions, parallelograms
             for input/output, and arrows to show the flow direction.
           </p>
-          <img src="/images/about-flowchart.png" alt="About Flowchart" className="mb-5"/>
+          <img
+            src="/images/about-flowchart.png"
+            alt="About Flowchart"
+            className="mb-5"
+          />
           <h5 className="text-lg mb-4 mt-4 font-bold">
             Benefits of Flowcharts
           </h5>
