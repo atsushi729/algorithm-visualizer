@@ -36,7 +36,7 @@ const AlgorithmPage = () => {
           <img
             src="/images/about-algorithm.png"
             alt="About Algorithm"
-            className="mb-5"
+            className="mb-5 shadow-lg rounded-lg border"
           />
           <p>Here is a simple example that adds one to the input value:</p>
           <SyntaxHighlight codeString={code} language="javascript" />
@@ -192,7 +192,7 @@ const AlgorithmPage = () => {
           <img
             src="/images/about-datastructure.png"
             alt="About Datastructure"
-            className="mb-5 mt-5"
+            className="mb-5 mt-5 shadow-lg rounded-lg border"
           />
         </div>
       </div>
@@ -272,7 +272,7 @@ const AlgorithmPage = () => {
           <img
             src="/images/about-flowchart.png"
             alt="About Flowchart"
-            className="mb-5"
+            className="mb-5 shadow-lg rounded-lg border"
           />
           <h5 className="text-lg mb-4 mt-4 font-bold">
             Benefits of Flowcharts
