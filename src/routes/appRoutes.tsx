@@ -11,6 +11,7 @@ import ArticleOutlinedIcon from "@mui/icons-material/ArticleOutlined";
 import FormatListBulletedOutlinedIcon from "@mui/icons-material/FormatListBulletedOutlined";
 import DataStructure from "../pages/data-structure/DataStructure";
 import Stack from "../pages/data-structure/Stack";
+import Array from "../pages/data-structure/Array";
 import Queue from "../pages/data-structure/Queue";
 import LinkedList from "../pages/data-structure/LinkedList";
 import BubbleSort from "../pages/sort/BubbleSort";
@@ -88,6 +89,14 @@ const appRoutes: RouteType[] = [
         state: "data-structure.stack",
         sidebarProps: {
           displayText: "Stack",
+        },
+      },
+      {
+        path: "/data-structure/array",
+        element: <Array />,
+        state: "data-structure.array",
+        sidebarProps: {
+          displayText: "Array",
         },
       },
       {
