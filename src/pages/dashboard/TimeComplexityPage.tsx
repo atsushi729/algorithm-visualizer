@@ -161,18 +161,6 @@ const TimeComplexityPage = (props: Props) => {
       },
     ];
 
-    // Map over the data to create table rows
-    const rows = timeComplexities.map((item, index) => (
-      <tr
-        className="border-b transition duration-300 ease-in-out hover:bg-neutral-100 border-neutral-500 hover:bg-neutral-300"
-        key={`complexity-${index}`}
-      >
-        <td className="px-6 py-4 font-medium">{item.complexity}</td>
-        <td className="px-6 py-4">{item.time}</td>
-        <td className="px-6 py-4">{item.description}</td>
-      </tr>
-    ));
-
     return (
       <div className="flex">
         <div className="max-w-4xl m-auto p-8">
