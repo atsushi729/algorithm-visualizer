@@ -1,4 +1,5 @@
 import SyntaxHighlight from "../../components/SyntaxHighlight";
+import AnchorLinks from "../../components/common/AnchorLinks";
 
 const AlgorithmPage = () => {
   //---------------------------------------------------------------------
@@ -314,50 +315,6 @@ const AlgorithmPage = () => {
     );
   };
 
-  const AnchorLinks = () => {
-    return (
-      <div className="fixed right-10 top-1/4 w-35 hidden lg:block">
-        <div className="bg-white p-4 shadow-lg rounded">
-          <h5 className="text-xl font-bold mb-4">On this page</h5>
-          <ul className="space-y-2">
-            <li>
-              <a
-                href="#about-algorithm"
-                className="text-blue-600 hover:underline"
-              >
-                About Algorithm
-              </a>
-            </li>
-            <li>
-              <a
-                href="#about-data-structure"
-                className="text-blue-600 hover:underline"
-              >
-                About Data Structure
-              </a>
-            </li>
-            <li>
-              <a
-                href="#about-pseudocode"
-                className="text-blue-600 hover:underline"
-              >
-                About Pseudocode
-              </a>
-            </li>
-            <li>
-              <a
-                href="#about-flow-chart"
-                className="text-blue-600 hover:underline"
-              >
-                About Flow Chart
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    );
-  };
-
   //---------------------------------------------------------------------
   // Main component
   //---------------------------------------------------------------------
@@ -371,7 +328,7 @@ const AlgorithmPage = () => {
       </div>
 
       <div className="flex-grow" style={{ flex: "1" }}>
-        <AnchorLinks />
+        <AnchorLinks links={anchorLinksData} />
       </div>
     </div>
   );
@@ -396,5 +353,12 @@ const pseudocode = `function find_maximum(L):
     return max_num
 
 `;
+
+export const anchorLinksData = [
+  { href: "#about-algorithm", label: "About Algorithm" },
+  { href: "#about-data-structure", label: "About Data Structure" },
+  { href: "#about-pseudocode", label: "About Pseudo code" },
+  { href: "#about-flow-chart", label: "About Flow chart" },
+];
 
 export default AlgorithmPage;
