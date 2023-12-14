@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import SyntaxHighlight from "../../components/SyntaxHighlight";
 import ArrowDropDownCircleOutlinedIcon from "@mui/icons-material/ArrowDropDownCircleOutlined";
+import AnchorLinks from "../../components/common/AnchorLinks";
 
 type Props = {};
 
@@ -121,11 +122,21 @@ const TimeComplexityPage = (props: Props) => {
   // Main component
   //---------------------------------------------------------------------
   return (
-    <>
-      <AboutTimeComplexity />
-      <TimeComplexityTable />
-      <AboutSpaceComplexity />
-    </>
+    <div className="container mx-auto p-8 flex">
+      <div className="flex-grow" style={{ flex: "4" }}>
+        <div id="time-complexity">
+          <AboutTimeComplexity />
+        </div>
+        <TimeComplexityTable />
+        <div id="space-complexity">
+          <AboutSpaceComplexity />
+        </div>
+      </div>
+
+      <div className="flex-grow" style={{ flex: "1" }}>
+        <AnchorLinks links={anchorLinksData} />
+      </div>
+    </div>
   );
 };
 
@@ -251,4 +262,9 @@ const timeComplexities = [
       }
     }`,
   },
+];
+
+export const anchorLinksData = [
+  { href: "#time-complexity", label: "Time Complexity" },
+  { href: "#space-complexity", label: "Space Complexity" },
 ];
