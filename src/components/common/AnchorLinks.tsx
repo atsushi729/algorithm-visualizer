@@ -8,6 +8,21 @@ interface AnchorLinksProps {
 }
 
 const AnchorLinks = ({ links }: AnchorLinksProps) => {
+  // スムーズスクロールのためのハンドラ
+  const handleLinkClick = (
+    event: React.MouseEvent<HTMLAnchorElement>,
+    href: string
+  ) => {
+    // デフォルトのアンカーの挙動を無効にする
+    event.preventDefault();
+
+    // hrefが示す要素へスムーズにスクロールする
+    const element = document.querySelector(href);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <div className="fixed right-10 top-1/4 w-35 hidden lg:block">
       <div className="bg-white p-4 shadow-lg rounded">
@@ -15,7 +30,12 @@ const AnchorLinks = ({ links }: AnchorLinksProps) => {
         <ul className="space-y-2">
           {links.map((link, index) => (
             <li key={index}>
-              <a href={link.href} className="text-blue-600 hover:underline">
+              {/* onClickイベントを追加 */}
+              <a
+                href={link.href}
+                className="text-blue-600 hover:underline"
+                onClick={(event) => handleLinkClick(event, link.href)}
+              >
                 {link.label}
               </a>
             </li>
