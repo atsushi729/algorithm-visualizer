@@ -32,7 +32,7 @@ const LinkedList = () => {
             </li>
           </ul>
           <img
-            src="/images/about-algorithm.png"
+            src="/images/linked-list/linked-list.png"
             alt="About Algorithm"
             className="mb-5 shadow-lg rounded-lg border"
           />
