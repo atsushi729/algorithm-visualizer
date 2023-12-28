@@ -3,7 +3,7 @@ import { Box, Toolbar, styled } from "@mui/material";
 import colorConfigs from "../../configs/colorConfigs";
 import sizeConfigs from "../../configs/sizeConfigs";
 import Sidebar from "../common/Sidebar";
-import Topbar from "../common/Topbar";
+// import Topbar from "../common/Topbar";
 
 const MainLayout = () => {
   return (
