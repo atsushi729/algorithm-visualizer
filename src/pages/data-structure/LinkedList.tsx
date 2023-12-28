@@ -194,15 +194,6 @@ const result = addOne(1);
 // Output value is 2
 `;
 
-const pseudocode = `function find_maximum(L):
-    max_num <- L[0]
-    for each n in L:
-        if n > max_num:
-            max_num <- n
-    return max_num
-
-`;
-
 export const anchorLinksData = [
   { href: "#about-algorithm", label: "About Linked list" },
   { href: "#about-data-structure", label: "Operation" },
