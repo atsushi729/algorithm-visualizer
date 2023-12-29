@@ -83,18 +83,17 @@ const LinkedList = () => {
     return (
       <div id="about-data-structure" className="flex">
         <div className="max-w-4xl m-auto p-8">
-          <h1 className="text-3xl mb-4 font-bold">Data Structure</h1>
+          <h1 className="text-3xl mb-4 font-bold">Operation</h1>
           <p className="text-lg mb-4">
-            Data Structure is a particular way of organizing data in a computer
-            so that it can be used effectively. Common examples of data
-            structures include arrays, linked lists, stacks, queues, trees, and
-            graphs. The choice of a data structure often depends on the specific
-            needs of the algorithm or application, such as how data is accessed,
-            manipulated, and stored. Efficient data structures can significantly
-            improve the performance of an algorithm.
+            Linked lists are fundamental data structures in computer science,
+            often used due to their efficient insertion and deletion operations
+            compared to arrays. A linked list is a collection of nodes, where
+            each node contains data and a reference (or link) to the next node
+            in the sequence. Here are the primary operations that can be
+            performed on linked lists:
           </p>
           <h5 className="text-lg mb-4 mt-4 font-bold">
-            Example of Data Structure:
+            Operation of Data structure:
           </h5>
           <ul className="marker:text-blue-600 list-disc ps-5 space-y-2">
             <li>
@@ -102,58 +101,41 @@ const LinkedList = () => {
                 href="/data-structure/stack"
                 className="no-underline hover:underline hover:text-blue-500 font-bold"
               >
-                Array
+                Insertion
               </a>
-              <p>
-                An array in data structures is essentially a linear collection
-                of similar elements stored at contiguous memory locations and
-                accessible via indices. The size of a traditional array is
-                predetermined and remains constant throughout its lifetime.
-              </p>
+              <ul>
+                <li>
+                  - At the Head (Front): Add a new node at the beginning of the
+                  list.
+                </li>
+                <li>
+                  - At the Tail (End): Add a new node at the end of the list.
+                </li>
+                <li>
+                  - At a Specific Position: Insert a new node at a specified
+                  position in the list.
+                </li>
+              </ul>
             </li>
             <li>
               <a
                 href="/data-structure/stack"
                 className="no-underline hover:underline hover:text-blue-500 font-bold"
               >
-                Stack
+                Deletion
               </a>
-              <p>
-                A stack is a linear data structure that follows the Last In,
-                First Out (LIFO) principle. The last element added to the stack
-                will be the first one to be removed. It's analogous to a stack
-                of plates.
-              </p>
-            </li>
-            <li>
-              <a
-                href="/data-structure/queue"
-                className="no-underline hover:underline hover:text-blue-500 font-bold"
-              >
-                Queue
-              </a>
-              <p>
-                A queue is a linear data structure that follows the First In,
-                First Out (FIFO) principle. The first element added will be the
-                first one to be removed. This is similar to a queue of people
-                waiting in line; the first person in line is the first to be
-                served.
-              </p>
-            </li>
-            <li>
-              <a
-                href="/data-structure/lined-list"
-                className="no-underline hover:underline hover:text-blue-500 font-bold"
-              >
-                Linkd list
-              </a>
-              <p>
-                A linked list is a linear data structure where each element
-                (commonly called a node) contains a reference (or link) to the
-                next node in the sequence. In a singly linked list, each node
-                points to the next node. In a doubly linked list, each node has
-                two links, one to the next node and one to the previous node.
-              </p>
+              <ul>
+                <li>
+                  - From the Head (Front): Remove the first node of the list.
+                </li>
+                <li>
+                  - From the Tail (End): Remove the last node of the list.
+                </li>
+                <li>
+                  - A Specific Node: Remove a specific node from the list,
+                  usually identified by its value or position.
+                </li>
+              </ul>
             </li>
           </ul>
           <img
