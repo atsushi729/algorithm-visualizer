@@ -1,6 +1,6 @@
 import SyntaxHighlight from "../../components/SyntaxHighlight";
 import AnchorLinks from "../../components/common/AnchorLinks";
-
+import LinkedListCanvas from "../../visualizer/data-structure/LinkedListCanvas";
 const LinkedList = () => {
   //---------------------------------------------------------------------
   // Sub component
@@ -143,6 +143,17 @@ const LinkedList = () => {
     );
   };
 
+  const PlayGround = () => {
+    return (
+      <div id="playground" className="flex justify-start">
+        <div className="w-full p-8">
+          <h1 className="text-3xl mb-4 mt-4 font-bold text-left">Playground</h1>
+          <LinkedListCanvas />
+        </div>
+      </div>
+    );
+  };
+
   //---------------------------------------------------------------------
   // Main component
   //---------------------------------------------------------------------
@@ -151,6 +162,7 @@ const LinkedList = () => {
       <div className="flex-grow" style={{ flex: "4" }}>
         <AboutLinkedList />
         <AboutOperation />
+        <PlayGround />
       </div>
 
       <div className="flex-grow" style={{ flex: "1" }}>
@@ -248,6 +260,7 @@ console.log(list.toString()); // Outputs: 1 -> 3 -> null
 export const anchorLinksData = [
   { href: "#about-algorithm", label: "About Linked list" },
   { href: "#about-data-structure", label: "Operation" },
+  { href: "#playground", label: "Playground" },
 ];
 
 export default LinkedList;
