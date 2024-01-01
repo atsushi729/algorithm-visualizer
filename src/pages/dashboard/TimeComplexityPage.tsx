@@ -92,6 +92,16 @@ const TimeComplexityPage = (props: Props) => {
               ))}
             </tbody>
           </table>
+          <img
+            src="/images/time-complexity.png"
+            alt="Time-complexity"
+            className="mb-5 shadow-lg rounded-lg border"
+          />
+          <div>
+            Reference:Algorithms: Big O Notations
+            <br />
+            (https://roddelaporte.medium.com/introduction-to-algorithms-big-o-notations-d06b22a113f7)
+          </div>
         </div>
       </div>
     );
