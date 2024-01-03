@@ -43,11 +43,54 @@ const TechniquePage = (props: Props) => {
     );
   };
 
+  const BackTrack = () => {
+    return (
+      <div id="backtrack" className="flex">
+        <div className="max-w-4xl m-auto p-8">
+          <h1 className="text-3xl mb-4 mt-4 font-bold">Backtrack</h1>
+          <p className="text-lg mb-4">
+            The backtrack approach is a refined algorithmic technique often
+            applied to solve problems that{" "}
+            <strong className="text-blue-700">
+              require searching for all possible solutions and selecting the
+              ones that meet certain criteria.
+            </strong>{" "}
+            It is used extensively in constraint satisfaction problems, such as
+            puzzles, crosswords, and combinatorial optimization problems.
+          </p>
+          <p className="text-base inline">
+            Here are the steps involved in the divide-and-conquer approach:
+          </p>
+          <ul className="list-decimal ps-5 space-y-2 mb-5 mt-3">
+            <li>
+              <strong>Choose </strong> : Start by choosing an option or path
+              from the current position.
+            </li>
+            <li>
+              <strong>Explore</strong> : Move forward and explore further
+              options to extend the solution.
+            </li>
+            <li>
+              <strong>Evaluate </strong>: After each move, evaluate whether the
+              current path satisfies the constraints of the problem.
+            </li>
+            <li>
+              <strong>Backtrack </strong>: If the current path violates
+              constraints or leads to a dead end, backtrack to the previous step
+              and choose a different option or path.
+            </li>
+          </ul>
+        </div>
+      </div>
+    );
+  };
+
   return (
     <div className="container mx-auto p-8 flex">
       <div className="flex-grow" style={{ flex: "4" }}>
         <div id="time-complexity">
           <DivideAndConquer />
+          <BackTrack />
         </div>
       </div>
 
@@ -62,4 +105,5 @@ export default TechniquePage;
 
 export const anchorLinksData = [
   { href: "#divide-and-conquer", label: "Divide and Conquer" },
+  { href: "#backtrack", label: "Backtrack" },
 ];
