@@ -38,6 +38,11 @@ const TechniquePage = (props: Props) => {
               subproblems to solve the original problem.
             </li>
           </ul>
+          <img
+            src="/images/technique/divide-and-conquer.png"
+            alt="About Divide-and-Conquer"
+            className="mb-5 shadow-lg rounded-lg border"
+          />
         </div>
       </div>
     );
