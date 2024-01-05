@@ -93,10 +93,8 @@ const TechniquePage = (props: Props) => {
   return (
     <div className="container mx-auto p-8 flex">
       <div className="flex-grow" style={{ flex: "4" }}>
-        <div id="time-complexity">
-          <DivideAndConquer />
-          <BackTrack />
-        </div>
+        <DivideAndConquer />
+        <BackTrack />
       </div>
 
       <div className="flex-grow" style={{ flex: "1" }}>
