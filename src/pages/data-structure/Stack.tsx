@@ -1,169 +1,186 @@
-import styled from "@emotion/styled";
-import { useRef } from "react";
+import SyntaxHighlight from "../../components/SyntaxHighlight";
+import AnchorLinks from "../../components/common/AnchorLinks";
 import StackCanvas from "../../visualizer/data-structure/StackCanvas";
-
-type FeatureItemProps = {
-  icon: React.ReactNode;
-  title: string;
-  description: string;
-  onClick: React.MouseEventHandler<HTMLElement>;
-};
-
 const Stack = () => {
-  const refs = {
-    section1: useRef<HTMLDivElement | null>(null),
-    section2: useRef<HTMLDivElement | null>(null),
-    section3: useRef<HTMLDivElement | null>(null),
-  };
-
-  const handleFeatureClick = (section: keyof typeof refs) => () => {
-    const ref = refs[section];
-    if (ref.current) {
-      ref.current.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
-  return (
-    <Container>
-      <Title>Stack</Title>
-
-      <FeaturesContainer>
-        <FeatureItem
-          icon="🔒"
-          title="What is Stack"
-          description="What is a stack, and how is it used in the real world?"
-          onClick={handleFeatureClick("section1")}
-        />
-        <FeatureItem
-          icon="📊"
-          title="Operation"
-          description="How to operate this data structure"
-          onClick={handleFeatureClick("section2")}
-        />
-        <FeatureItem
-          icon="🔄"
-          title="Playground"
-          description="Let's test the stack operations."
-          onClick={handleFeatureClick("section3")}
-        />
-      </FeaturesContainer>
-
-      <Section ref={refs.section1} id="section1">
-        <SectionTitle>What is Stack??</SectionTitle>
-        <SectionDescription>
-          A stack is a linear data structure that follows a particular order in
-          which operations are performed. The order is based on the Last In
-          First Out (LIFO) principle, which means that the last item added to
-          the stack is the first item to be removed.
-        </SectionDescription>
-      </Section>
-
-      <Section ref={refs.section2} id="section2">
-        <SectionTitle>Operation</SectionTitle>
-        <SectionDescription>
-          There are two operations in stack:
-          <ul>
+  //---------------------------------------------------------------------
+  // Sub component
+  //---------------------------------------------------------------------
+  const AboutStack = () => {
+    return (
+      <div id="stack" className="flex justify-start">
+        <div className="max-w-4xl m-auto p-8">
+          <h1 className="text-3xl mb-4 mt-4 font-bold text-left">Stack</h1>
+          <p className="text-lg mb-4 text-left">
+            In computer science, a stack is a linear data structure that follows
+            the Last In, First Out (LIFO) principle. It means that the last
+            element added to the stack is the first one to be removed. The stack
+            is analogous to a stack of plates where you can only take the top
+            plate off.
+          </p>
+          <h5 className="text-lg mb-4 mt-4 font-bold">
+            Real-world examples of stack in action:
+          </h5>
+          <ul className="marker:text-blue-600 list-decimal ps-5 space-y-2">
             <li>
-              Push: Adds an item to the top of the stack. If the stack is full,
-              then it is considered an Overflow condition.
+              <p className="no-underline font-bold">Web Browser History:</p>
+              <p>
+                The backward and forward buttons in web browsers use a stack to
+                keep track of visited pages. Each time you visit a new page, it
+                is added to the stack. Pressing the back button removes the
+                current page (pops) from the stack, and pressing forward adds it
+                back.
+              </p>
             </li>
             <li>
-              Pop: Removes the top item from the stack. If the stack is empty,
-              then it is said to be an Underflow condition.
+              <p className="no-underline font-bold">Memory Management:</p>
+              <p>
+                Call stacks are used in memory management to keep track of
+                function calls and local variables. The stack memory is
+                allocated for each function call, and it is deallocated when the
+                function returns.
+              </p>
+            </li>
+            <li>
+              <p className="no-underline font-bold">
+                Undo Mechanism in Software:
+              </p>
+              <p>
+                As mentioned earlier, the undo feature in software applications
+                often utilizes a stack to keep track of user actions. Each
+                action is pushed onto the stack, and the undo operation pops the
+                most recently performed action.
+              </p>
             </li>
           </ul>
-        </SectionDescription>
-      </Section>
+        </div>
+      </div>
+    );
+  };
 
-      <Section ref={refs.section3} id="section3">
-        <SectionTitle>Playground</SectionTitle>
-        <SectionDescription>
-          You can click the button to add a new node and move it wherever you'd
-          like.
+  const AboutOperation = () => {
+    return (
+      <div id="operation" className="flex">
+        <div className="max-w-4xl m-auto p-8">
+          <h1 className="text-3xl mb-4 font-bold">Operation</h1>
+          <p className="text-lg mb-4">
+            The main operations in a stack are commonly referred to as "push"
+            and "pop." These operations define how elements are added to and
+            removed from a stack:
+          </p>
+          <h5 className="text-lg mb-4 mt-4 font-bold">
+            Operation of Data structure:
+          </h5>
+          <ul className="marker:text-blue-600 list-disc ps-5 space-y-2">
+            <li>
+              <a
+                href="/data-structure/stack"
+                className="no-underline hover:underline hover:text-blue-500 font-bold"
+              >
+                Push
+              </a>
+              <p>
+                The "push" operation involves adding an element to the top of
+                the stack. When an element is pushed onto the stack, it becomes
+                the new top element, and the size of the stack increases.
+              </p>
+            </li>
+            <li>
+              <a
+                href="/data-structure/stack"
+                className="no-underline hover:underline hover:text-blue-500 font-bold"
+              >
+                Pop
+              </a>
+              <p>
+                The "pop" operation involves removing the element from the top
+                of the stack. When an element is popped from the stack, the size
+                of the stack decreases, and the element that was below the
+                popped element becomes the new top element.
+              </p>
+            </li>
+          </ul>
+          <p>Here is a simple example:</p>
+          <SyntaxHighlight codeString={stackCode} language="javascript" />
+        </div>
+      </div>
+    );
+  };
+
+  const PlayGround = () => {
+    return (
+      <div id="#playground" className="flex justify-start">
+        <div className="max-w-4xl m-auto p-8">
+          <h1 className="text-3xl mb-4 mt-4 font-bold text-left">Playground</h1>
           <StackCanvas />
-        </SectionDescription>
-      </Section>
-    </Container>
+        </div>
+      </div>
+    );
+  };
+
+  //---------------------------------------------------------------------
+  // Main component
+  //---------------------------------------------------------------------
+  return (
+    <div className="container mx-auto p-8 flex">
+      <div className="flex-grow" style={{ flex: "4" }}>
+        <AboutStack />
+        <AboutOperation />
+        <PlayGround />
+      </div>
+
+      <div className="flex-grow" style={{ flex: "1" }}>
+        <AnchorLinks links={anchorLinksData} />
+      </div>
+    </div>
   );
 };
 
-const FeatureItem = ({
-  icon,
-  title,
-  description,
-  onClick,
-}: FeatureItemProps) => (
-  <Feature onClick={onClick}>
-    <Icon>{icon}</Icon>
-    <FeatureTitle>{title}</FeatureTitle>
-    <FeatureDescription>{description}</FeatureDescription>
-  </Feature>
-);
+const stackCode = `class Stack {
+  constructor() {
+    this.items = [];
+  }
 
-//---------------------------------------------------------------------
-// Helpers
-//---------------------------------------------------------------------
-const Container = styled.div({
-  maxWidth: "1200px",
-  margin: "0 auto",
-});
+  // Push operation: add an element to the top of the stack
+  push(element) {
+    this.items.push(element);
+  }
 
-const FeaturesContainer = styled.div({
-  display: "flex",
-  justifyContent: "space-between",
-  flexWrap: "nowrap",
-  marginBottom: "20%",
-  margin: "10%",
-});
+  // Pop operation: remove the element from the top of the stack
+  pop() {
+    if (this.items.length === 0) {
+      return "Underflow"; // If the stack is empty
+    }
+    return this.items.pop();
+  }
 
-const Section = styled.div({
-  height: "700px",
-  fontSize: "24px",
-  display: "flex",
-  flexWrap: "wrap",
-  alignItems: "center",
-  justifyContent: "center",
-  margin: "5%",
-});
+  // Peek operation: view the element at the top of the stack without removing it
+  peek() {
+    return this.items[this.items.length - 1];
+  }
+}
 
-const Feature = styled.div({
-  backgroundColor: "#333",
-  color: "white",
-  padding: "20px",
-  margin: "20px 0",
-  borderRadius: "5px",
-  cursor: "pointer",
-  maxWidth: "300px",
-  transition: "transform 0.3s ease-in-out",
-  "&:hover": {
-    transform: "translateY(-10px)",
-  },
-});
+// Example usage:
+const stack = new Stack();
 
-const Icon = styled.div({
-  fontSize: "24px",
-});
+// Pushing elements onto the stack
+stack.push(1);
+stack.push(2);
+stack.push(3);
 
-const Title = styled.h1({
-  color: "black",
-  textAlign: "center",
-  margin: "10%",
-});
+// Peeking at the top element
+console.log("Top element:", stack.peek()); // Output: Top element: 3
 
-const SectionTitle = styled.h2({
-  color: "black",
-});
+// Popping elements from the stack
+console.log("Popped element:", stack.pop()); // Output: Popped element: 3
 
-const FeatureTitle = styled.h3({
-  color: "white",
-});
+// Peeking after pop
+console.log("Top element after pop:", stack.peek()); // Output: Top element after pop: 2
+`;
 
-const FeatureDescription = styled.p({
-  color: "white",
-});
-
-const SectionDescription = styled.p({
-  margin: "10%",
-});
+export const anchorLinksData = [
+  { href: "#stack", label: "About Stack" },
+  { href: "#operation", label: "Operation" },
+  { href: "#playground", label: "Playground" },
+];
 
 export default Stack;
