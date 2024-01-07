@@ -1,173 +1,205 @@
-import styled from "@emotion/styled";
-import { useRef } from "react";
+import SyntaxHighlight from "../../components/SyntaxHighlight";
+import AnchorLinks from "../../components/common/AnchorLinks";
 import QueueCanvas from "../../visualizer/data-structure/QueueCanvas";
-
-type FeatureItemProps = {
-  icon: React.ReactNode;
-  title: string;
-  description: string;
-  onClick: React.MouseEventHandler<HTMLElement>;
-};
-
 const Queue = () => {
-  const refs = {
-    section1: useRef<HTMLDivElement | null>(null),
-    section2: useRef<HTMLDivElement | null>(null),
-    section3: useRef<HTMLDivElement | null>(null),
-  };
-
-  const handleFeatureClick = (section: keyof typeof refs) => () => {
-    const ref = refs[section];
-    if (ref.current) {
-      ref.current.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
-  return (
-    <Container>
-      <Title>Queue</Title>
-
-      <FeaturesContainer>
-        <FeatureItem
-          icon="🔒"
-          title="What is Queue"
-          description="What is a Queue, and how is it used in the real world?"
-          onClick={handleFeatureClick("section1")}
-        />
-        <FeatureItem
-          icon="📊"
-          title="Operation"
-          description="How to operate this data structure"
-          onClick={handleFeatureClick("section2")}
-        />
-        <FeatureItem
-          icon="🔄"
-          title="Playground"
-          description="Let's test the queue operations."
-          onClick={handleFeatureClick("section3")}
-        />
-      </FeaturesContainer>
-
-      <Section ref={refs.section1} id="section1">
-        <SectionTitle>What is Queue??</SectionTitle>
-        <SectionDescription>
-          In computer science, a queue is a linear data structure that
-          represents a collection with two main operations: Enqueue and Dequeue.
-          Importantly, a queue abides by the First-In, First-Out (FIFO)
-          principle, which means that the first element added to the queue will
-          be the first one to be removed. This behavior can be likened to a
-          real-world queue, such as people standing in line at a ticket counter
-          where the first person in line gets served first.
-        </SectionDescription>
-      </Section>
-
-      <Section ref={refs.section2} id="section2">
-        <SectionTitle>Operation</SectionTitle>
-        <SectionDescription>
-          There are two operations in queue
-          <ul>
+  //---------------------------------------------------------------------
+  // Sub component
+  //---------------------------------------------------------------------
+  const AboutQueue = () => {
+    return (
+      <div id="queue" className="flex justify-start">
+        <div className="max-w-4xl m-auto p-8">
+          <h1 className="text-3xl mb-4 mt-4 font-bold text-left">Queue</h1>
+          <p className="text-lg mb-4 text-left">
+            In computer science, a queue is a data structure that follows the
+            First-In-First-Out (FIFO) principle. It operates on the basis that
+            the first element added to the queue will be the first one to be
+            removed.
+          </p>
+          <h5 className="text-lg mb-4 mt-4 font-bold">
+            Real-world examples of queue in action:
+          </h5>
+          <ul className="marker:text-blue-600 list-decimal ps-5 space-y-2">
             <li>
-              Enqueue: Adds an element to the rear of the queue, ensuring it
-              waits its turn to be processed or removed.
+              <p className="no-underline font-bold">
+                Job Queues in Job Scheduling Systems:
+              </p>
+              <p>
+                Job scheduling systems often use queues to manage and prioritize
+                tasks. This is common in systems that need to schedule and
+                execute recurring tasks or batch jobs.
+              </p>
             </li>
             <li>
-              Dequeue: Removes the front element of the queue based on the FIFO
-              principle. If the queue is empty, it usually results in an error
-              or a condition signaling no elements.
+              <p className="no-underline font-bold">
+                Message Queues in Messaging Systems:
+              </p>
+              <p>
+                Messaging systems, like RabbitMQ and Apache Kafka, use queues to
+                manage the asynchronous communication between different parts of
+                a distributed system. Messages are sent to a queue and consumed
+                by subscribers when they are ready.
+              </p>
+            </li>
+            <li>
+              <p className="no-underline font-bold">
+                Request Queues in Web Servers:
+              </p>
+              <p>
+                Web servers often use request queues to manage incoming HTTP
+                requests. The requests are queued up, and the server processes
+                them one by one, ensuring that each request is handled without
+                overwhelming the system.
+              </p>
             </li>
           </ul>
-        </SectionDescription>
-      </Section>
+        </div>
+      </div>
+    );
+  };
 
-      <Section ref={refs.section3} id="section3">
-        <SectionTitle>Playground</SectionTitle>
-        <SectionDescription>
-          You can click the button to add a new node and move it wherever you'd
-          like.
+  const AboutOperation = () => {
+    return (
+      <div id="operation" className="flex">
+        <div className="max-w-4xl m-auto p-8">
+          <h1 className="text-3xl mb-4 font-bold">Operation</h1>
+          <p className="text-lg mb-4">
+            The main operations in a stack are commonly referred to as "push"
+            and "pop." These operations define how elements are added to and
+            removed from a stack:
+          </p>
+          <h5 className="text-lg mb-4 mt-4 font-bold">
+            Operation of Data structure:
+          </h5>
+          <ul className="marker:text-blue-600 list-disc ps-5 space-y-2">
+            <li>
+              <a
+                href="/data-structure/stack"
+                className="no-underline hover:underline hover:text-blue-500 font-bold"
+              >
+                Enqueue (Insert):
+              </a>
+              <p>
+                The enqueue operation is used to add an element to the back or
+                rear of the queue. This operation increases the size of the
+                queue by one. Elements are added to the rear of the queue, and
+                it's often referred to as "enqueue" because new elements are
+                enqueued or inserted.
+              </p>
+            </li>
+            <li>
+              <a
+                href="/data-structure/stack"
+                className="no-underline hover:underline hover:text-blue-500 font-bold"
+              >
+                Dequeue (Delete):
+              </a>
+              <p>
+                The dequeue operation is used to remove an element from the
+                front or head of the queue. This operation decreases the size of
+                the queue by one. Elements are removed from the front of the
+                queue, and it's often referred to as "dequeue" because elements
+                are dequeued or removed.
+              </p>
+            </li>
+          </ul>
+          <p>Here is a simple example:</p>
+          <SyntaxHighlight codeString={stackCode} language="javascript" />
+        </div>
+      </div>
+    );
+  };
+
+  const PlayGround = () => {
+    return (
+      <div id="#playground" className="flex justify-start">
+        <div className="max-w-4xl m-auto p-8">
+          <h1 className="text-3xl mb-4 mt-4 font-bold text-left">Playground</h1>
           <QueueCanvas />
-        </SectionDescription>
-      </Section>
-    </Container>
+        </div>
+      </div>
+    );
+  };
+
+  //---------------------------------------------------------------------
+  // Main component
+  //---------------------------------------------------------------------
+  return (
+    <div className="container mx-auto p-8 flex">
+      <div className="flex-grow" style={{ flex: "4" }}>
+        <AboutQueue />
+        <AboutOperation />
+        <PlayGround />
+      </div>
+
+      <div className="flex-grow" style={{ flex: "1" }}>
+        <AnchorLinks links={anchorLinksData} />
+      </div>
+    </div>
   );
 };
 
-const FeatureItem = ({
-  icon,
-  title,
-  description,
-  onClick,
-}: FeatureItemProps) => (
-  <Feature onClick={onClick}>
-    <Icon>{icon}</Icon>
-    <FeatureTitle>{title}</FeatureTitle>
-    <FeatureDescription>{description}</FeatureDescription>
-  </Feature>
-);
+const stackCode = `class Queue {
+  constructor() {
+      this.items = [];
+  }
 
-//---------------------------------------------------------------------
-// Helpers
-//---------------------------------------------------------------------
-const Container = styled.div({
-  maxWidth: "1200px",
-  margin: "0 auto",
-});
+  enqueue(item) {
+      // Add an element to the rear of the queue.
+      this.items.push(item);
+  }
 
-const FeaturesContainer = styled.div({
-  display: "flex",
-  justifyContent: "space-between",
-  flexWrap: "nowrap",
-  marginBottom: "20%",
-  margin: "10%",
-});
+  dequeue() {
+      // Remove and return the element from the front of the queue.
+      if (!this.isEmpty()) {
+          return this.items.shift();
+      } else {
+          throw new Error("Cannot dequeue from an empty queue");
+      }
+  }
 
-const Section = styled.div({
-  height: "700px",
-  fontSize: "24px",
-  display: "flex",
-  flexWrap: "wrap",
-  alignItems: "center",
-  justifyContent: "center",
-  margin: "5%",
-});
+  front() {
+      // Return the element at the front of the queue without removing it.
+      if (!this.isEmpty()) {
+          return this.items[0];
+      } else {
+          throw new Error("Queue is empty");
+      }
+  }
 
-const Feature = styled.div({
-  backgroundColor: "#333",
-  color: "white",
-  padding: "20px",
-  margin: "20px 0",
-  borderRadius: "5px",
-  cursor: "pointer",
-  maxWidth: "300px",
-  transition: "transform 0.3s ease-in-out",
-  "&:hover": {
-    transform: "translateY(-10px)",
-  },
-});
+  size() {
+      // Return the number of elements in the queue.
+      return this.items.length;
+  }
 
-const Icon = styled.div({
-  fontSize: "24px",
-});
+  isEmpty() {
+      // Check if the queue is empty.
+      return this.items.length === 0;
+  }
+}
 
-const Title = styled.h1({
-  color: "black",
-  textAlign: "center",
-  margin: "10%",
-});
+// Example usage:
+const myQueue = new Queue();
+myQueue.enqueue(10);
+myQueue.enqueue(20);
+myQueue.enqueue(30);
 
-const SectionTitle = styled.h2({
-  color: "black",
-});
+console.log("Front of the queue:", myQueue.front());
+console.log("Queue size:", myQueue.size());
 
-const FeatureTitle = styled.h3({
-  color: "white",
-});
+// Dequeue elements
+while (!myQueue.isEmpty()) {
+  console.log("Dequeued:", myQueue.dequeue());
+}
 
-const FeatureDescription = styled.p({
-  color: "white",
-});
+console.log("Is the queue empty?", myQueue.isEmpty());
 
-const SectionDescription = styled.p({
-  margin: "10%",
-});
+`;
+
+export const anchorLinksData = [
+  { href: "#queue", label: "About Queue" },
+  { href: "#operation", label: "Operation" },
+  { href: "#playground", label: "Playground" },
+];
 
 export default Queue;
