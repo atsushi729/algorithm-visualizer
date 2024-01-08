@@ -103,6 +103,11 @@ const Queue = () => {
               </p>
             </li>
           </ul>
+          <img
+            src="/images/queue/queue.png"
+            alt="About Queue"
+            className="mb-5 shadow-lg rounded-lg border"
+          />
           <p>Here is a simple example:</p>
           <SyntaxHighlight codeString={stackCode} language="javascript" />
         </div>
@@ -112,7 +117,7 @@ const Queue = () => {
 
   const PlayGround = () => {
     return (
-      <div id="#playground" className="flex justify-start">
+      <div id="playground" className="flex justify-start">
         <div className="max-w-4xl m-auto p-8">
           <h1 className="text-3xl mb-4 mt-4 font-bold text-left">Playground</h1>
           <QueueCanvas />
