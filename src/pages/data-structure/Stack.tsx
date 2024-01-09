@@ -99,6 +99,11 @@ const Stack = () => {
               </p>
             </li>
           </ul>
+          <img
+            src="/images/stack/stack.png"
+            alt="About Stack"
+            className="mb-5 shadow-lg rounded-lg border"
+          />
           <p>Here is a simple example:</p>
           <SyntaxHighlight codeString={stackCode} language="javascript" />
         </div>
