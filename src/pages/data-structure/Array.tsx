@@ -5,51 +5,45 @@ const Array = () => {
   //---------------------------------------------------------------------
   // Sub component
   //---------------------------------------------------------------------
-  const AboutQueue = () => {
+  const AboutArray = () => {
     return (
-      <div id="queue" className="flex justify-start">
+      <div id="array" className="flex justify-start">
         <div className="max-w-4xl m-auto p-8">
-          <h1 className="text-3xl mb-4 mt-4 font-bold text-left">Queue</h1>
+          <h1 className="text-3xl mb-4 mt-4 font-bold text-left">Array</h1>
           <p className="text-lg mb-4 text-left">
-            In computer science, a queue is a data structure that follows the
-            First-In-First-Out (FIFO) principle. It operates on the basis that
-            the first element added to the queue will be the first one to be
-            removed.
+            In computer science, an array is a data structure consisting of a
+            collection of elements, each identified by at least one array index
+            or key. An array is stored such that the position of each element
+            can be computed from its index tuple by a mathematical formula. The
+            simplest type of data structure is a linear array, also called
+            one-dimensional array.
           </p>
           <h5 className="text-lg mb-4 mt-4 font-bold">
             Real-world examples of queue in action:
           </h5>
           <ul className="marker:text-blue-600 list-decimal ps-5 space-y-2">
             <li>
-              <p className="no-underline font-bold">
-                Job Queues in Job Scheduling Systems:
-              </p>
+              <p className="no-underline font-bold">Gaming</p>
               <p>
-                Job scheduling systems often use queues to manage and prioritize
-                tasks. This is common in systems that need to schedule and
-                execute recurring tasks or batch jobs.
+                Games use arrays to manage assets like on-screen characters,
+                inventory items, or high scores. Each position in the array can
+                hold data about an individual character or item.
               </p>
             </li>
             <li>
-              <p className="no-underline font-bold">
-                Message Queues in Messaging Systems:
-              </p>
+              <p className="no-underline font-bold">Database Management:</p>
               <p>
-                Messaging systems, like RabbitMQ and Apache Kafka, use queues to
-                manage the asynchronous communication between different parts of
-                a distributed system. Messages are sent to a queue and consumed
-                by subscribers when they are ready.
+                Databases often return query results in the form of arrays (or
+                array-like structures), with each element being a record or row
+                from the database.
               </p>
             </li>
             <li>
-              <p className="no-underline font-bold">
-                Request Queues in Web Servers:
-              </p>
+              <p className="no-underline font-bold">Social Media Feeds:</p>
               <p>
-                Web servers often use request queues to manage incoming HTTP
-                requests. The requests are queued up, and the server processes
-                them one by one, ensuring that each request is handled without
-                overwhelming the system.
+                Social media platforms may use arrays to store feeds of posts or
+                comments. When a user scrolls through their feed, the software
+                fetches the next set of posts from an array.
               </p>
             </li>
           </ul>
@@ -132,7 +126,7 @@ const Array = () => {
   return (
     <div className="container mx-auto p-8 flex">
       <div className="flex-grow" style={{ flex: "4" }}>
-        <AboutQueue />
+        <AboutArray />
         <AboutOperation />
         <PlayGround />
       </div>
@@ -202,7 +196,7 @@ console.log("Is the queue empty?", myQueue.isEmpty());
 `;
 
 export const anchorLinksData = [
-  { href: "#queue", label: "About Queue" },
+  { href: "#array", label: "About Array" },
   { href: "#operation", label: "Operation" },
   { href: "#playground", label: "Playground" },
 ];
