@@ -18,6 +18,29 @@ const Array = () => {
             simplest type of data structure is a linear array, also called
             one-dimensional array.
           </p>
+          <p className="text-base inline">
+            The primary characteristics of an array are:
+          </p>
+          <ul className="list-decimal ps-5 space-y-2 mb-5 mt-3">
+            <li>
+              <strong>Homogeneity </strong> : All elements in an array are of
+              the same data type.
+            </li>
+            <li>
+              <strong>Fixed Size</strong> : The size of an array is defined when
+              it is created and cannot be changed (although dynamic array
+              structures can overcome this limitation).
+            </li>
+            <li>
+              <strong>Random Access</strong> : Elements can be accessed directly
+              by their index in constant time.
+            </li>
+          </ul>
+          <img
+            src="/images/linked-list/linked-list.png"
+            alt="About Algorithm"
+            className="mb-5 shadow-lg rounded-lg border"
+          />
           <h5 className="text-lg mb-4 mt-4 font-bold">
             Real-world examples of queue in action:
           </h5>
