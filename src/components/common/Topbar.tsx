@@ -1,4 +1,4 @@
-import { AppBar, Toolbar, styled, Typography } from "@mui/material";
+import { AppBar, Toolbar, styled } from "@mui/material";
 import colorConfigs from "../../configs/colorConfigs";
 import sizeConfigs from "../../configs/sizeConfigs";
 
@@ -6,7 +6,9 @@ const Topbar = () => {
   return (
     <StyledAppBar position="fixed">
       <Toolbar>
-        <Typography variant="h6">React sidebar with dropdown</Typography>
+        <div className="text-gray-500 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">
+          React
+        </div>
       </Toolbar>
     </StyledAppBar>
   );
