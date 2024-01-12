@@ -1,14 +1,14 @@
-import DashboardPageLayout from "../pages/dashboard/DashboardPageLayout";
-import HomePage from "../pages/home/HomePage";
 import { RouteType } from "./config";
-import AlgorithmPage from "../pages/dashboard/AlgorithmPage";
-import ChangelogPage from "../pages/changelog/ChangelogPage";
-import TimeComplexityPage from "../pages/dashboard/TimeComplexityPage";
-import TechniquePage from "../pages/dashboard/TechniquePage";
 import DashboardOutlinedIcon from "@mui/icons-material/DashboardOutlined";
 import AppsOutlinedIcon from "@mui/icons-material/AppsOutlined";
 import ArticleOutlinedIcon from "@mui/icons-material/ArticleOutlined";
 import FormatListBulletedOutlinedIcon from "@mui/icons-material/FormatListBulletedOutlined";
+import HomePage from "../pages/home/HomePage";
+import DashboardPageLayout from "../pages/dashboard/DashboardPageLayout";
+import AlgorithmPage from "../pages/dashboard/AlgorithmPage";
+import TimeComplexityPage from "../pages/dashboard/TimeComplexityPage";
+import TechniquePage from "../pages/dashboard/TechniquePage";
+import ChangelogPage from "../pages/changelog/ChangelogPage";
 import DataStructure from "../pages/data-structure/DataStructure";
 import Stack from "../pages/data-structure/Stack";
 import Array from "../pages/data-structure/Array";
@@ -19,6 +19,7 @@ import MergeSort from "../pages/sort/MergeSort";
 import QuickSort from "../pages/sort/QuickSort";
 // import InstallationPage from "../pages/installation/InstallationPage";
 // import DocumentationPage from "../pages/documentation/DocumentationPage";
+
 const appRoutes: RouteType[] = [
   {
     index: true,
