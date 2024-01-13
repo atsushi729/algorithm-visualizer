@@ -6,7 +6,7 @@ const colorConfigs = {
     activeBg: "#1e253a",
   },
   topbar: {
-    bg: "#fff",
+    bg: "#EBF1F6",
     color: "#000",
   },
   mainBg: "white",
