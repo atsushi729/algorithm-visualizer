@@ -81,50 +81,39 @@ const Array = () => {
         <div className="max-w-4xl m-auto p-8">
           <h1 className="text-3xl mb-4 font-bold">Operation</h1>
           <p className="text-lg mb-4">
-            The main operations in a stack are commonly referred to as "push"
-            and "pop." These operations define how elements are added to and
-            removed from a stack:
+            Operations with arrays in computer science refer to the various
+            manipulations or actions you can perform on an array, which is a
+            fundamental data structure.
           </p>
           <h5 className="text-lg mb-4 mt-4 font-bold">
             Operation of Data structure:
           </h5>
           <ul className="marker:text-blue-600 list-disc ps-5 space-y-2">
             <li>
-              <a
-                href="/data-structure/stack"
-                className="no-underline hover:underline hover:text-blue-500 font-bold"
-              >
-                Enqueue (Insert):
-              </a>
+              <div className="no-underline font-bold">Insertion</div>
               <p>
-                The enqueue operation is used to add an element to the back or
-                rear of the queue. This operation increases the size of the
-                queue by one. Elements are added to the rear of the queue, and
-                it's often referred to as "enqueue" because new elements are
-                enqueued or inserted.
+                Adding a new element to the array. This can be at any position
+                in the array and often requires shifting the existing elements
+                to accommodate the new one.
               </p>
             </li>
             <li>
-              <a
-                href="/data-structure/stack"
-                className="no-underline hover:underline hover:text-blue-500 font-bold"
-              >
-                Dequeue (Delete):
-              </a>
+              <div className="no-underline font-bold">Deletion</div>
               <p>
-                The dequeue operation is used to remove an element from the
-                front or head of the queue. This operation decreases the size of
-                the queue by one. Elements are removed from the front of the
-                queue, and it's often referred to as "dequeue" because elements
-                are dequeued or removed.
+                Removing an element from the array. Similar to insertion, this
+                may involve shifting elements to fill the gap left by the
+                deleted element.
+              </p>
+            </li>
+            <li>
+              <div className="no-underline font-bold">Searching</div>
+              <p>
+                Finding the position of an element in the array. This can be
+                done using linear search or binary search (if the array is
+                sorted).
               </p>
             </li>
           </ul>
-          <img
-            src="/images/queue/queue.png"
-            alt="About Queue"
-            className="mb-5 shadow-lg rounded-lg border"
-          />
           <p>Here is a simple example:</p>
           <SyntaxHighlight codeString={stackCode} language="javascript" />
         </div>
@@ -161,60 +150,48 @@ const Array = () => {
   );
 };
 
-const stackCode = `class Queue {
-  constructor() {
-      this.items = [];
-  }
+const stackCode = `// Initial array
+let numbers = [10, 20, 30, 40, 50];
 
-  enqueue(item) {
-      // Add an element to the rear of the queue.
-      this.items.push(item);
-  }
+// Traversing the array
+console.log("Traversing:");
+numbers.forEach(function(element) {
+    console.log(element);
+});
 
-  dequeue() {
-      // Remove and return the element from the front of the queue.
-      if (!this.isEmpty()) {
-          return this.items.shift();
-      } else {
-          throw new Error("Cannot dequeue from an empty queue");
-      }
-  }
+// Insertion
+numbers.push(60); // Adds 60 at the end
+numbers.splice(2, 0, 25); // Inserts 25 at index 2
+console.log("After Insertion:", numbers);
 
-  front() {
-      // Return the element at the front of the queue without removing it.
-      if (!this.isEmpty()) {
-          return this.items[0];
-      } else {
-          throw new Error("Queue is empty");
-      }
-  }
+// Deletion
+numbers.pop(); // Removes the last element
+numbers.splice(2, 1); // Removes 1 element at index 2
+console.log("After Deletion:", numbers);
 
-  size() {
-      // Return the number of elements in the queue.
-      return this.items.length;
-  }
+// Searching
+let index = numbers.indexOf(30); // Returns the index of the element 30
+console.log("Index of 30:", index);
 
-  isEmpty() {
-      // Check if the queue is empty.
-      return this.items.length === 0;
-  }
-}
+// Sorting
+numbers.sort((a, b) => a - b); // Sorts the array in ascending order
+console.log("After Sorting:", numbers);
 
-// Example usage:
-const myQueue = new Queue();
-myQueue.enqueue(10);
-myQueue.enqueue(20);
-myQueue.enqueue(30);
+// Updating
+numbers[2] = 35; // Updates the element at index 2 to 35
+console.log("After Updating:", numbers);
 
-console.log("Front of the queue:", myQueue.front());
-console.log("Queue size:", myQueue.size());
+// Merging
+let moreNumbers = [70, 80];
+let mergedArray = numbers.concat(moreNumbers);
+console.log("After Merging:", mergedArray);
 
-// Dequeue elements
-while (!myQueue.isEmpty()) {
-  console.log("Dequeued:", myQueue.dequeue());
-}
+// Splitting
+let firstHalf = numbers.slice(0, numbers.length / 2);
+let secondHalf = numbers.slice(numbers.length / 2);
+console.log("First Half:", firstHalf);
+console.log("Second Half:", secondHalf);
 
-console.log("Is the queue empty?", myQueue.isEmpty());
 
 `;
 
