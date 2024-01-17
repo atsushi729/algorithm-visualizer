@@ -1,6 +1,6 @@
 import SyntaxHighlight from "../../components/SyntaxHighlight";
 import AnchorLinks from "../../components/common/AnchorLinks";
-import QueueCanvas from "../../visualizer/data-structure/QueueCanvas";
+import ArrayCanvas from "../../visualizer/data-structure/Array";
 const Array = () => {
   //---------------------------------------------------------------------
   // Sub component
@@ -126,7 +126,7 @@ const Array = () => {
       <div id="playground" className="flex justify-start">
         <div className="max-w-4xl m-auto p-8">
           <h1 className="text-3xl mb-4 mt-4 font-bold text-left">Playground</h1>
-          <QueueCanvas />
+          <ArrayCanvas />
         </div>
       </div>
     );
