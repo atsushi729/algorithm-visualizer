@@ -1,5 +1,7 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import p5 from "p5";
+import { styled, Container } from "@mui/material";
+import Button from "@mui/material/Button";
 
 const ArrayCanvas = () => {
   const [myArray, setMyArray] = useState([]);
@@ -62,12 +64,40 @@ const ArrayCanvas = () => {
   }, [myArray]);
 
   return (
-    <div>
-      <div ref={canvasRef}></div>
-      <button onClick={addBox}>Add Box</button>
-      <button onClick={removeBox}>Remove Last Box</button>
-    </div>
+    <VisualizeContainer>
+      <div ref={canvasRef} />
+      <ButtonContainer>
+        <StyledButton onClick={addBox} variant="contained" color="primary">
+          Add Box
+        </StyledButton>
+        <StyledButton onClick={removeBox} variant="contained" color="secondary">
+          Remove Box
+        </StyledButton>
+      </ButtonContainer>
+    </VisualizeContainer>
   );
 };
 
 export default ArrayCanvas;
+
+//---------------------------------------------------------------------
+// Styled Components
+//---------------------------------------------------------------------
+const VisualizeContainer = styled(Container)({
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  flexDirection: "column",
+  marginTop: "20px",
+});
+
+const ButtonContainer = styled(Container)({
+  display: "flex",
+  justifyContent: "space-around",
+  width: "100%",
+  marginTop: "20px",
+});
+
+const StyledButton = styled(Button)({
+  margin: "0 10px",
+});
