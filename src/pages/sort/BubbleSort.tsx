@@ -1,201 +1,266 @@
-import styled from "@emotion/styled";
-import { useRef } from "react";
-import BubbleSortCanvas from "../../visualizer/sort/BubbleSort";
-
-type FeatureItemProps = {
-  icon: React.ReactNode;
-  title: string;
-  description: string;
-  onClick: React.MouseEventHandler<HTMLElement>;
-};
-
-const BubbleSort = () => {
-  const refs = {
-    section1: useRef<HTMLDivElement | null>(null),
-    section2: useRef<HTMLDivElement | null>(null),
-    section3: useRef<HTMLDivElement | null>(null),
-  };
-
-  const handleFeatureClick = (section: keyof typeof refs) => () => {
-    const ref = refs[section];
-    if (ref.current) {
-      ref.current.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
-  return (
-    <Container>
-      <Title>BubbleSort</Title>
-
-      <FeaturesContainer>
-        <FeatureItem
-          icon="🔒"
-          title="What is bubble sort"
-          description="What is a bubble sort, and how is it used in the real world?"
-          onClick={handleFeatureClick("section1")}
-        />
-        <FeatureItem
-          icon="📊"
-          title="Time complexity"
-          description="Time complexity of Bubble sort"
-          onClick={handleFeatureClick("section2")}
-        />
-        <FeatureItem
-          icon="🔄"
-          title="Playground"
-          description="Let's test the bubble sort operations."
-          onClick={handleFeatureClick("section3")}
-        />
-      </FeaturesContainer>
-
-      <Section ref={refs.section1} id="section1">
-        <SectionTitle>What is Bubble sort??</SectionTitle>
-        <SectionDescription>
-          Bubble Sort is a simple sorting algorithm that repeatedly steps
-          through the list to be sorted, compares each pair of adjacent items
-          and swaps them if they are in the wrong order.
-        </SectionDescription>
-      </Section>
-
-      <Section ref={refs.section2} id="section2">
-        <SectionTitle>Time complexity</SectionTitle>
-        <SectionDescription>
-          <ul>
+import SyntaxHighlight from "../../components/SyntaxHighlight";
+import AnchorLinks from "../../components/common/AnchorLinks";
+import LinkedListCanvas from "../../visualizer/data-structure/LinkedListCanvas";
+const LinkedList = () => {
+  //---------------------------------------------------------------------
+  // Sub component
+  //---------------------------------------------------------------------
+  const AboutLinkedList = () => {
+    return (
+      <div id="about-algorithm" className="flex justify-start">
+        <div className="max-w-4xl m-auto p-8">
+          <h1 className="text-3xl mb-4 mt-4 font-bold text-left">
+            Linked lists
+          </h1>
+          <p className="text-lg mb-4 text-left">
+            A linked list in computer science is a dynamic data structure for
+            storing a sequence of elements. Unlike arrays, where elements are
+            stored in contiguous memory locations, each element in a linked list
+            is stored in a{" "}
+            <strong className="text-blue-700">separate node.</strong>
+          </p>
+          <p className="text-base inline">Here's how it works:</p>
+          <ul className="list-decimal ps-5 space-y-2 mb-5 mt-3">
             <li>
-              <strong>Best Case (Optimized Version):</strong>
+              <strong>Data </strong> : This holds the actual value of the
+              element (e.g., an integer, string, object).
+            </li>
+            <li>
+              <strong>Next</strong> : This is a pointer that points to the next
+              node in the list. If there are no more elements, this points to
+              null.
+            </li>
+          </ul>
+          <img
+            src="/images/linked-list/linked-list.png"
+            alt="About Algorithm"
+            className="mb-5 shadow-lg rounded-lg border"
+          />
+          <h5 className="text-lg mb-4 mt-4 font-bold">
+            Real-world examples of linked lists in action:
+          </h5>
+          <ul className="marker:text-blue-600 list-decimal ps-5 space-y-2">
+            <li>
+              <p className="no-underline font-bold">Music Player Playlists:</p>
+              <p>
+                Imagine your music player's playlist. Each song is a node in a
+                linked list, containing information like title, artist, and
+                duration. The nodes are linked together, allowing you to easily
+                play songs sequentially, jump to specific songs, or shuffle the
+                playlist.
+              </p>
+            </li>
+            <li>
+              <p className="no-underline font-bold">Web Browser History:</p>
+              <p>
+                When you browse the internet, your browser maintains a history
+                of visited pages. This history is often implemented as a linked
+                list, where each node represents a visited page with its URL,
+                title, and timestamp. You can easily navigate back and forth
+                through your history by traversing this list.
+              </p>
+            </li>
+            <li>
+              <p className="no-underline font-bold">
+                File System Organization:
+              </p>
+              <p>
+                The directory structure on your computer is essentially a linked
+                list. Each folder is a node with references to its subfolders
+                and files. This allows you to easily navigate through your files
+                and folders by following these references.
+              </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    );
+  };
+
+  const AboutOperation = () => {
+    return (
+      <div id="about-data-structure" className="flex">
+        <div className="max-w-4xl m-auto p-8">
+          <h1 className="text-3xl mb-4 font-bold">Operation</h1>
+          <p className="text-lg mb-4">
+            Linked lists are fundamental data structures in computer science,
+            often used due to their efficient insertion and deletion operations
+            compared to arrays. A linked list is a collection of nodes, where
+            each node contains data and a reference (or link) to the next node
+            in the sequence. Here are the primary operations that can be
+            performed on linked lists:
+          </p>
+          <h5 className="text-lg mb-4 mt-4 font-bold">
+            Operation of Data structure:
+          </h5>
+          <ul className="marker:text-blue-600 list-disc ps-5 space-y-2">
+            <li>
+              <a
+                href="/data-structure/stack"
+                className="no-underline hover:underline hover:text-blue-500 font-bold"
+              >
+                Insertion
+              </a>
               <ul>
                 <li>
-                  <strong>Time Complexity:</strong> O(n)
+                  - At the Head (Front): Add a new node at the beginning of the
+                  list.
                 </li>
                 <li>
-                  <strong>Condition:</strong> This occurs when the array is
-                  already sorted. An optimized version of Bubble Sort can detect
-                  this by checking if any swaps were made in the first pass. If
-                  no swaps occur, the algorithm can terminate early, leading to
-                  a linear time complexity.
+                  - At the Tail (End): Add a new node at the end of the list.
+                </li>
+                <li>
+                  - At a Specific Position: Insert a new node at a specified
+                  position in the list.
                 </li>
               </ul>
             </li>
             <li>
-              <strong>Average Case:</strong>
+              <a
+                href="/data-structure/stack"
+                className="no-underline hover:underline hover:text-blue-500 font-bold"
+              >
+                Deletion
+              </a>
               <ul>
                 <li>
-                  <strong>Time Complexity:</strong> O(n<sup>2</sup>)
+                  - From the Head (Front): Remove the first node of the list.
                 </li>
                 <li>
-                  <strong>Condition:</strong> In an average scenario, where the
-                  elements of the array are in a random order, Bubble Sort will
-                  need to perform a significant number of comparisons and swaps,
-                  leading to a quadratic time complexity.
-                </li>
-              </ul>
-            </li>
-            <li>
-              <strong>Worst Case:</strong>
-              <ul>
-                <li>
-                  <strong>Time Complexity:</strong> O(n<sup>2</sup>)
+                  - From the Tail (End): Remove the last node of the list.
                 </li>
                 <li>
-                  <strong>Condition:</strong> This occurs when the array is
-                  sorted in reverse order. In such a case, each element needs to
-                  be compared with every other element, resulting in the maximum
-                  number of swaps and comparisons.
+                  - A Specific Node: Remove a specific node from the list,
+                  usually identified by its value or position.
                 </li>
               </ul>
             </li>
           </ul>
-        </SectionDescription>
-      </Section>
+          <p>Here is a simple example that adds one to the input value:</p>
+          <SyntaxHighlight codeString={linkedListCode} language="javascript" />
+        </div>
+      </div>
+    );
+  };
 
-      <Section ref={refs.section3} id="section3">
-        <SectionTitle>Playground</SectionTitle>
-        <SectionDescription>
-          You can click the button to add a new node and move it wherever you'd
-          like. <BubbleSortCanvas />
-        </SectionDescription>
-      </Section>
-    </Container>
+  const PlayGround = () => {
+    return (
+      <div id="playground" className="flex justify-start">
+        <div className="max-w-4xl m-auto p-8">
+          <h1 className="text-3xl mb-4 mt-4 font-bold text-left">Playground</h1>
+          <LinkedListCanvas />
+        </div>
+      </div>
+    );
+  };
+
+  //---------------------------------------------------------------------
+  // Main component
+  //---------------------------------------------------------------------
+  return (
+    <div className="container mx-auto p-8 flex">
+      <div className="flex-grow" style={{ flex: "4" }}>
+        <AboutLinkedList />
+        <AboutOperation />
+        <PlayGround />
+      </div>
+
+      <div className="flex-grow" style={{ flex: "1" }}>
+        <AnchorLinks links={anchorLinksData} />
+      </div>
+    </div>
   );
 };
 
-const FeatureItem = ({
-  icon,
-  title,
-  description,
-  onClick,
-}: FeatureItemProps) => (
-  <Feature onClick={onClick}>
-    <Icon>{icon}</Icon>
-    <FeatureTitle>{title}</FeatureTitle>
-    <FeatureDescription>{description}</FeatureDescription>
-  </Feature>
-);
+const linkedListCode = `// Define a class for the list node
+class ListNode {
+  constructor(data) {
+    this.data = data; // Data carried by the node
+    this.next = null; // Reference to the next node in the list
+  }
+}
 
-//---------------------------------------------------------------------
-// Helpers
-//---------------------------------------------------------------------
-const Container = styled.div({
-  maxWidth: "1200px",
-  margin: "0 auto",
-});
+// Define a class for the linked list
+class LinkedList {
+  constructor() {
+    this.head = null; // The list initially has no head
+  }
 
-const FeaturesContainer = styled.div({
-  display: "flex",
-  justifyContent: "space-between",
-  flexWrap: "nowrap",
-  marginBottom: "20%",
-  margin: "10%",
-});
+  // Method to add a new node to the end of the list
+  add(data) {
+    const newNode = new ListNode(data); // Create a new node with the given data
+    if (this.head === null) { // If the list is empty
+      this.head = newNode; // Set the new node as the head
+    } else {
+      let current = this.head; // Start at the head
+      while (current.next !== null) { // Traverse to the end of the list
+        current = current.next;
+      }
+      current.next = newNode; // Add the new node at the end
+    }
+  }
 
-const Section = styled.div({
-  height: "700px",
-  fontSize: "24px",
-  display: "flex",
-  flexWrap: "wrap",
-  alignItems: "center",
-  justifyContent: "center",
-  margin: "25% 0 ",
-});
+  // Method to find a node with specified data
+  find(data) {
+    let current = this.head; // Start at the head
+    while (current !== null && current.data !== data) { // Traverse the list
+      current = current.next;
+    }
+    return current; // Return the found node or null
+  }
 
-const Feature = styled.div({
-  backgroundColor: "#333",
-  color: "white",
-  padding: "20px",
-  // margin: "20px 0",
-  borderRadius: "5px",
-  cursor: "pointer",
-  maxWidth: "300px",
-  transition: "transform 0.3s ease-in-out",
-  "&:hover": {
-    transform: "translateY(-10px)",
-  },
-});
+  // Method to remove a node with specified data
+  remove(data) {
+    let current = this.head;
+    let previous = null;
 
-const Icon = styled.div({
-  fontSize: "24px",
-});
+    while (current !== null && current.data !== data) {
+      previous = current; // Keep track of the previous node
+      current = current.next;
+    }
 
-const Title = styled.h1({
-  color: "black",
-  textAlign: "center",
-  margin: "10%",
-});
+    if (current !== null) { // If the node was found
+      if (previous === null) { // If it's the head of the list
+        this.head = current.next; // Remove it by changing the head
+      } else {
+        previous.next = current.next; // Remove it by bypassing it in the chain
+      }
+    }
+  }
 
-const SectionTitle = styled.h2({
-  color: "black",
-});
+  // Helper method to output the list as a string
+  toString() {
+    let result = '';
+    let current = this.head;
+    while (current !== null) {
+      result += current.data;
+      current = current.next;
+    }
+    result += 'null';
+    return result;
+  }
+}
 
-const FeatureTitle = styled.h3({
-  color: "white",
-});
+// Example usage:
+const list = new LinkedList();
+list.add(1);
+list.add(2);
+list.add(3);
 
-const FeatureDescription = styled.p({
-  color: "white",
-});
+console.log(list.toString()); // Outputs: 1 -> 2 -> 3 -> null
 
-const SectionDescription = styled.p({
-  margin: "10%",
-});
+const foundNode = list.find(2);
+console.log(foundNode); // Outputs the node with data 2
 
-export default BubbleSort;
+list.remove(2);
+console.log(list.toString()); // Outputs: 1 -> 3 -> null
+
+`;
+
+export const anchorLinksData = [
+  { href: "#about-algorithm", label: "About Linked list" },
+  { href: "#about-data-structure", label: "Operation" },
+  { href: "#playground", label: "Playground" },
+];
+
+export default LinkedList;
