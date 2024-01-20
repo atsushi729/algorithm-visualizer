@@ -1,23 +1,27 @@
 import SyntaxHighlight from "../../components/SyntaxHighlight";
 import AnchorLinks from "../../components/common/AnchorLinks";
 import LinkedListCanvas from "../../visualizer/data-structure/LinkedListCanvas";
-const LinkedList = () => {
+const BubbleSort = () => {
   //---------------------------------------------------------------------
   // Sub component
   //---------------------------------------------------------------------
-  const AboutLinkedList = () => {
+  const AboutBubbleSort = () => {
     return (
-      <div id="about-algorithm" className="flex justify-start">
+      <div id="about-bubble-sort" className="flex justify-start">
         <div className="max-w-4xl m-auto p-8">
           <h1 className="text-3xl mb-4 mt-4 font-bold text-left">
-            Linked lists
+            Bubble sort
           </h1>
           <p className="text-lg mb-4 text-left">
-            A linked list in computer science is a dynamic data structure for
-            storing a sequence of elements. Unlike arrays, where elements are
-            stored in contiguous memory locations, each element in a linked list
-            is stored in a{" "}
-            <strong className="text-blue-700">separate node.</strong>
+            Bubble Sort is a simple sorting algorithm that repeatedly steps
+            through the list to be sorted,{" "}
+            <strong className="text-blue-700">
+              compares each pair of adjacent items, and swaps them if they are
+              in the wrong order.{" "}
+            </strong>
+            The pass through the list is repeated until no swaps are needed,
+            which means the list is sorted. The algorithm gets its name because
+            smaller elements "bubble" to the top of the list. separate node.
           </p>
           <p className="text-base inline">Here's how it works:</p>
           <ul className="list-decimal ps-5 space-y-2 mb-5 mt-3">
@@ -79,9 +83,9 @@ const LinkedList = () => {
 
   const AboutOperation = () => {
     return (
-      <div id="about-data-structure" className="flex">
+      <div id="time-complexity" className="flex">
         <div className="max-w-4xl m-auto p-8">
-          <h1 className="text-3xl mb-4 font-bold">Operation</h1>
+          <h1 className="text-3xl mb-4 font-bold">Time Complexity</h1>
           <p className="text-lg mb-4">
             Linked lists are fundamental data structures in computer science,
             often used due to their efficient insertion and deletion operations
@@ -160,7 +164,7 @@ const LinkedList = () => {
   return (
     <div className="container mx-auto p-8 flex">
       <div className="flex-grow" style={{ flex: "4" }}>
-        <AboutLinkedList />
+        <AboutBubbleSort />
         <AboutOperation />
         <PlayGround />
       </div>
@@ -258,9 +262,9 @@ console.log(list.toString()); // Outputs: 1 -> 3 -> null
 `;
 
 export const anchorLinksData = [
-  { href: "#about-algorithm", label: "About Linked list" },
-  { href: "#about-data-structure", label: "Operation" },
+  { href: "#about-bubble-sort", label: "About Bubble sort" },
+  { href: "#time-complexity", label: "Time complexity" },
   { href: "#playground", label: "Playground" },
 ];
 
-export default LinkedList;
+export default BubbleSort;
