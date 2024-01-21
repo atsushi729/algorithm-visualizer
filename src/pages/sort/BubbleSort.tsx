@@ -23,57 +23,28 @@ const BubbleSort = () => {
             which means the list is sorted. The algorithm gets its name because
             smaller elements "bubble" to the top of the list. separate node.
           </p>
-          <p className="text-base inline">Here's how it works:</p>
+          <p className="text-base inline">How Bubble sort works:</p>
           <ul className="list-decimal ps-5 space-y-2 mb-5 mt-3">
             <li>
-              <strong>Data </strong> : This holds the actual value of the
-              element (e.g., an integer, string, object).
+              <strong>Starting the Algorithm: </strong> Begin at the start of
+              the array.
             </li>
             <li>
-              <strong>Next</strong> : This is a pointer that points to the next
-              node in the list. If there are no more elements, this points to
-              null.
-            </li>
-          </ul>
-          <img
-            src="/images/linked-list/linked-list.png"
-            alt="About Algorithm"
-            className="mb-5 shadow-lg rounded-lg border"
-          />
-          <h5 className="text-lg mb-4 mt-4 font-bold">
-            Real-world examples of linked lists in action:
-          </h5>
-          <ul className="marker:text-blue-600 list-decimal ps-5 space-y-2">
-            <li>
-              <p className="no-underline font-bold">Music Player Playlists:</p>
-              <p>
-                Imagine your music player's playlist. Each song is a node in a
-                linked list, containing information like title, artist, and
-                duration. The nodes are linked together, allowing you to easily
-                play songs sequentially, jump to specific songs, or shuffle the
-                playlist.
-              </p>
+              <strong>Comparing Adjacent Elements:</strong> : Compare the first
+              two elements of the array. If the first element is greater than
+              the second element, swap them.
             </li>
             <li>
-              <p className="no-underline font-bold">Web Browser History:</p>
-              <p>
-                When you browse the internet, your browser maintains a history
-                of visited pages. This history is often implemented as a linked
-                list, where each node represents a visited page with its URL,
-                title, and timestamp. You can easily navigate back and forth
-                through your history by traversing this list.
-              </p>
+              <strong>Continuing Through the Array:</strong> :Move to the next
+              pair of adjacent elements and repeat the comparison and swap if
+              necessary. Continue this process for each pair of adjacent
+              elements in the array. This completes one full pass through the
+              array.
             </li>
             <li>
-              <p className="no-underline font-bold">
-                File System Organization:
-              </p>
-              <p>
-                The directory structure on your computer is essentially a linked
-                list. Each folder is a node with references to its subfolders
-                and files. This allows you to easily navigate through your files
-                and folders by following these references.
-              </p>
+              <strong>Iterating Until Sorted:</strong> Repeat this process, each
+              time excluding the last sorted elements (since with each pass, the
+              next largest element will settle at its correct position).
             </li>
           </ul>
         </div>
@@ -87,12 +58,11 @@ const BubbleSort = () => {
         <div className="max-w-4xl m-auto p-8">
           <h1 className="text-3xl mb-4 font-bold">Time Complexity</h1>
           <p className="text-lg mb-4">
-            Linked lists are fundamental data structures in computer science,
-            often used due to their efficient insertion and deletion operations
-            compared to arrays. A linked list is a collection of nodes, where
-            each node contains data and a reference (or link) to the next node
-            in the sequence. Here are the primary operations that can be
-            performed on linked lists:
+            It's important to note that while Bubble Sort is simple and easy to
+            understand, its O(n²) time complexity makes it inefficient for large
+            datasets compared to more advanced sorting algorithms like
+            QuickSort, MergeSort, or HeapSort, which have O(n log n) average and
+            worst-case time complexities.
           </p>
           <h5 className="text-lg mb-4 mt-4 font-bold">
             Operation of Data structure:
@@ -103,44 +73,42 @@ const BubbleSort = () => {
                 href="/data-structure/stack"
                 className="no-underline hover:underline hover:text-blue-500 font-bold"
               >
-                Insertion
+                Worst-case Time Complexity (O(n²)):
               </a>
-              <ul>
-                <li>
-                  - At the Head (Front): Add a new node at the beginning of the
-                  list.
-                </li>
-                <li>
-                  - At the Tail (End): Add a new node at the end of the list.
-                </li>
-                <li>
-                  - At a Specific Position: Insert a new node at a specified
-                  position in the list.
-                </li>
-              </ul>
+              <p>
+                This occurs when the array is in reverse order, necessitating
+                the maximum number of swaps. In this case, for each of n
+                elements, the algorithm performs nearly n comparisons, leading
+                to a time complexity of O(n²).
+              </p>
             </li>
             <li>
               <a
                 href="/data-structure/stack"
                 className="no-underline hover:underline hover:text-blue-500 font-bold"
               >
-                Deletion
+                Best-case Time Complexity (O(n)):
               </a>
-              <ul>
-                <li>
-                  - From the Head (Front): Remove the first node of the list.
-                </li>
-                <li>
-                  - From the Tail (End): Remove the last node of the list.
-                </li>
-                <li>
-                  - A Specific Node: Remove a specific node from the list,
-                  usually identified by its value or position.
-                </li>
-              </ul>
+              <p>
+                This occurs when the array is already sorted. The algorithm only
+                needs to make one pass through the array to confirm that no
+                swaps are needed. Therefore, the time complexity is O(n).
+              </p>
+            </li>
+            <li>
+              <a
+                href="/data-structure/stack"
+                className="no-underline hover:underline hover:text-blue-500 font-bold"
+              >
+                Average-case Time Complexity (O(n²))
+              </a>
+              <p>
+                For a randomly ordered array, the average time complexity is
+                also O(n²), similar to the worst-case scenario.
+              </p>
             </li>
           </ul>
-          <p>Here is a simple example that adds one to the input value:</p>
+          <p className="mt-5">Here is a simple example that adds one to the input value:</p>
           <SyntaxHighlight codeString={linkedListCode} language="javascript" />
         </div>
       </div>
