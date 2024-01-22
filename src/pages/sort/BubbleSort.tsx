@@ -108,7 +108,9 @@ const BubbleSort = () => {
               </p>
             </li>
           </ul>
-          <p className="mt-5">Here is a simple example that adds one to the input value:</p>
+          <p className="mt-5">
+            Here is a simple example that adds one to the input value:
+          </p>
           <SyntaxHighlight codeString={linkedListCode} language="javascript" />
         </div>
       </div>
@@ -144,88 +146,36 @@ const BubbleSort = () => {
   );
 };
 
-const linkedListCode = `// Define a class for the list node
-class ListNode {
-  constructor(data) {
-    this.data = data; // Data carried by the node
-    this.next = null; // Reference to the next node in the list
+const linkedListCode = `function bubbleSort(arr) {
+  let n = arr.length;
+  let swapped;
+
+  for (let i = 0; i < n - 1; i++) {
+      swapped = false;
+
+      for (let j = 0; j < n - i - 1; j++) {
+          if (arr[j] > arr[j + 1]) {
+              // Swap the elements
+              let temp = arr[j];
+              arr[j] = arr[j + 1];
+              arr[j + 1] = temp;
+              swapped = true;
+          }
+      }
+
+      // If no two elements were swapped by inner loop, then break
+      if (!swapped) {
+          break;
+      }
   }
+
+  return arr;
 }
 
-// Define a class for the linked list
-class LinkedList {
-  constructor() {
-    this.head = null; // The list initially has no head
-  }
-
-  // Method to add a new node to the end of the list
-  add(data) {
-    const newNode = new ListNode(data); // Create a new node with the given data
-    if (this.head === null) { // If the list is empty
-      this.head = newNode; // Set the new node as the head
-    } else {
-      let current = this.head; // Start at the head
-      while (current.next !== null) { // Traverse to the end of the list
-        current = current.next;
-      }
-      current.next = newNode; // Add the new node at the end
-    }
-  }
-
-  // Method to find a node with specified data
-  find(data) {
-    let current = this.head; // Start at the head
-    while (current !== null && current.data !== data) { // Traverse the list
-      current = current.next;
-    }
-    return current; // Return the found node or null
-  }
-
-  // Method to remove a node with specified data
-  remove(data) {
-    let current = this.head;
-    let previous = null;
-
-    while (current !== null && current.data !== data) {
-      previous = current; // Keep track of the previous node
-      current = current.next;
-    }
-
-    if (current !== null) { // If the node was found
-      if (previous === null) { // If it's the head of the list
-        this.head = current.next; // Remove it by changing the head
-      } else {
-        previous.next = current.next; // Remove it by bypassing it in the chain
-      }
-    }
-  }
-
-  // Helper method to output the list as a string
-  toString() {
-    let result = '';
-    let current = this.head;
-    while (current !== null) {
-      result += current.data;
-      current = current.next;
-    }
-    result += 'null';
-    return result;
-  }
-}
-
-// Example usage:
-const list = new LinkedList();
-list.add(1);
-list.add(2);
-list.add(3);
-
-console.log(list.toString()); // Outputs: 1 -> 2 -> 3 -> null
-
-const foundNode = list.find(2);
-console.log(foundNode); // Outputs the node with data 2
-
-list.remove(2);
-console.log(list.toString()); // Outputs: 1 -> 3 -> null
+// Example usage
+let array = [64, 34, 25, 12, 22, 11, 90];
+console.log("Original Array:", array);
+console.log("Sorted Array:", bubbleSort(array));
 
 `;
 
