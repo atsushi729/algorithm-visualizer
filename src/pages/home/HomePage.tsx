@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const HomePage = () => {
   return (
     <div className="flex flex-col h-screen justify-center items-center bg-purple-700 text-white p-4">
@@ -12,9 +14,11 @@ const HomePage = () => {
           Explore how algorithms can optimize performance and solve complex
           problems.
         </p>
-        <button className="bg-white text-purple-700 py-2 px-6 rounded-full font-semibold hover:bg-purple-300 transition-colors">
-          Get Started
-        </button>
+        <Link to="/dashboard/algorithm">
+          <button className="bg-white text-purple-700 py-2 px-6 rounded-full font-semibold hover:bg-purple-300 transition-colors">
+            Get Started
+          </button>
+        </Link>
       </main>
       <footer className="text-sm">
         Available for Windows, macOS, and Linux.
