@@ -12,10 +12,7 @@ const Topbar = () => {
           </a>
         </div>
         <div className="text-gray-500 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">
-          <a
-            href="https://www.linkedin.com/in/atsushi-hatakeyama/"
-            style={{ textDecoration: "none" }}
-          >
+          <a href="https://bento.me/hatake" style={{ textDecoration: "none" }}>
             About
           </a>
         </div>
