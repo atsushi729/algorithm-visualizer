@@ -8,7 +8,7 @@ const AlgorithmPage = () => {
   const AboutAlgorithm = () => {
     return (
       <div id="about-algorithm" className="flex justify-start">
-        <div className="w-full p-8">
+        <div className="max-w-4xl m-auto p-8">
           <h1 className="text-3xl mb-4 mt-4 font-bold text-left">Algorithm</h1>
           <p className="text-lg mb-4 text-left">
             An algorithm is a general and simple set of step-by-step
