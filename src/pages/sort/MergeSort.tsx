@@ -16,7 +16,7 @@ const MergeSort = () => {
             Merge sort is a popular and efficient sorting algorithm that follows
             the{" "}
             <Link to="/dashboard/technique">
-              <strong className="text-blue-700">
+              <strong className="text-blue-700 link link-underline link-underline-black">
                 divide and conquer strategy.
               </strong>{" "}
             </Link>
