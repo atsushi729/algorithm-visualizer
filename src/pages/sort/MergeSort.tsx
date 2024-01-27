@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import SyntaxHighlight from "../../components/SyntaxHighlight";
 import AnchorLinks from "../../components/common/AnchorLinks";
 import BubbleSortCanvas from "../../visualizer/sort/BubbleSort";
@@ -12,40 +13,47 @@ const MergeSort = () => {
         <div className="max-w-4xl m-auto p-8">
           <h1 className="text-3xl mb-4 mt-4 font-bold text-left">Merge sort</h1>
           <p className="text-lg mb-4 text-left">
-            Bubble Sort is a simple sorting algorithm that repeatedly steps
-            through the list to be sorted,{" "}
-            <strong className="text-blue-700">
-              compares each pair of adjacent items, and swaps them if they are
-              in the wrong order.{" "}
-            </strong>
-            The pass through the list is repeated until no swaps are needed,
-            which means the list is sorted. The algorithm gets its name because
-            smaller elements "bubble" to the top of the list. separate node.
+            Merge sort is a popular and efficient sorting algorithm that follows
+            the{" "}
+            <Link to="/dashboard/technique">
+              <strong className="text-blue-700">
+                divide and conquer strategy.
+              </strong>{" "}
+            </Link>
+            It works by dividing the array into halves, sorting each half, and
+            then merging the two sorted halves back together. The process is
+            recursive, with the base case being arrays of size one, which are
+            inherently sorted. Here's a step-by-step breakdown of how merge sort
+            works:
           </p>
-          <p className="text-base inline">How Bubble sort works:</p>
+          <p className="text-base inline">How Merge sort works:</p>
           <ul className="list-decimal ps-5 space-y-2 mb-5 mt-3">
             <li>
-              <strong>Starting the Algorithm: </strong> Begin at the start of
-              the array.
+              <strong>Divide: </strong> The array is divided into two halves,
+              right down the middle. If the array has an odd number of elements,
+              one of the halves will have one more element than the other.
             </li>
             <li>
-              <strong>Comparing Adjacent Elements:</strong> : Compare the first
-              two elements of the array. If the first element is greater than
-              the second element, swap them.
+              <strong>Conquer:</strong> : Each half is recursively sorted using
+              merge sort. This process continues until the base case of a single
+              element (or no elements) is reached, which is considered sorted by
+              definition.
             </li>
             <li>
-              <strong>Continuing Through the Array:</strong> :Move to the next
-              pair of adjacent elements and repeat the comparison and swap if
-              necessary. Continue this process for each pair of adjacent
-              elements in the array. This completes one full pass through the
-              array.
-            </li>
-            <li>
-              <strong>Iterating Until Sorted:</strong> Repeat this process, each
-              time excluding the last sorted elements (since with each pass, the
-              next largest element will settle at its correct position).
+              <strong>Combine/Merge:</strong> The two sorted halves are then
+              merged together into a single sorted array. This is done by
+              comparing the elements of each half and copying the smaller
+              element into the new array, progressing through both halves until
+              all elements are copied into the merged array.
             </li>
           </ul>
+          <p className="text-lg mb-4 text-left">
+            Merge sort is known for its efficiency and stability. It has a
+            worst-case and average complexity of O(n log n), where n is the
+            number of elements in the array. Its main disadvantage is that it
+            requires additional space proportional to the size of the input
+            array for the merging process, making it not an in-place sort.
+          </p>
         </div>
       </div>
     );
