@@ -65,11 +65,14 @@ const MergeSort = () => {
         <div className="max-w-4xl m-auto p-8">
           <h1 className="text-3xl mb-4 font-bold">Time Complexity</h1>
           <p className="text-lg mb-4">
-            It's important to note that while Bubble Sort is simple and easy to
-            understand, its O(n²) time complexity makes it inefficient for large
-            datasets compared to more advanced sorting algorithms like
-            QuickSort, MergeSort, or HeapSort, which have O(n log n) average and
-            worst-case time complexities.
+            The time complexity of merge sort is O(nlogn) in all cases (worst,
+            average, and best). This is because the merge sort algorithm divides
+            the array into two halves, recursively sorts the two halves, and
+            then merges the two sorted halves. The division of the array into
+            two halves takes logarithmic time (because the size of the array is
+            halved at each level), and the merging of two sorted halves takes
+            linear time in the size of the array. Therefore, the overall time
+            complexity is the product of these two, which is O(nlogn).
           </p>
           <h5 className="text-lg mb-4 mt-4 font-bold">
             Operation of Data structure:
