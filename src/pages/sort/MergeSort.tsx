@@ -75,7 +75,7 @@ const MergeSort = () => {
             complexity is the product of these two, which is O(nlogn).
           </p>
           <h5 className="text-lg mb-4 mt-4 font-bold">
-            Operation of Data structure:
+            Performance of Merge sort:
           </h5>
           <ul className="marker:text-blue-600 list-disc ps-5 space-y-2">
             <li>
@@ -83,13 +83,18 @@ const MergeSort = () => {
                 href="/data-structure/stack"
                 className="no-underline hover:underline hover:text-blue-500 font-bold"
               >
-                Worst-case Time Complexity (O(n²)):
+                Worst-case Time Complexity (O(nlogn)):
               </a>
               <p>
-                This occurs when the array is in reverse order, necessitating
-                the maximum number of swaps. In this case, for each of n
-                elements, the algorithm performs nearly n comparisons, leading
-                to a time complexity of O(n²).
+                The worst case scenario represents the situation where the
+                algorithm performs the maximum number of steps possible for the
+                given input size.
+              </p>
+              <p>
+                For merge sort, the worst case time complexity is O(nlogn) as
+                well. This is because the algorithm's divide-and-conquer
+                approach results in a consistent performance regardless of the
+                input's initial state.
               </p>
             </li>
             <li>
@@ -97,24 +102,38 @@ const MergeSort = () => {
                 href="/data-structure/stack"
                 className="no-underline hover:underline hover:text-blue-500 font-bold"
               >
-                Best-case Time Complexity (O(n)):
+                Best-case Time Complexity (O(nlogn)):
               </a>
               <p>
                 This occurs when the array is already sorted. The algorithm only
                 needs to make one pass through the array to confirm that no
                 swaps are needed. Therefore, the time complexity is O(n).
               </p>
+              <p>
+                For merge sort, the best case time complexity is also O(nlogn).
+                Unlike some other sorting algorithms that can benefit from
+                partially sorted data (like insertion sort), merge sort will
+                perform the same number of operations regardless of the initial
+                order of the elements.
+              </p>
             </li>
             <li>
               <a
                 href="/data-structure/stack"
                 className="no-underline hover:underline hover:text-blue-500 font-bold"
               >
-                Average-case Time Complexity (O(n²))
+                Average-case Time Complexity (O(nlogn))
               </a>
               <p>
-                For a randomly ordered array, the average time complexity is
-                also O(n²), similar to the worst-case scenario.
+                The average case scenario assumes a random distribution of
+                inputs and calculates the expected time complexity across all
+                possible inputs of a given size.
+              </p>
+              <p>
+                For merge sort, the average case time complexity is also
+                O(nlogn). Since merge sort consistently divides the array and
+                merges it, the input's initial order doesn't significantly
+                affect the number of operations.
               </p>
             </li>
           </ul>
