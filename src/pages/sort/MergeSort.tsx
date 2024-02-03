@@ -175,36 +175,44 @@ const MergeSort = () => {
   );
 };
 
-const linkedListCode = `function bubbleSort(arr) {
-  let n = arr.length;
-  let swapped;
-
-  for (let i = 0; i < n - 1; i++) {
-      swapped = false;
-
-      for (let j = 0; j < n - i - 1; j++) {
-          if (arr[j] > arr[j + 1]) {
-              // Swap the elements
-              let temp = arr[j];
-              arr[j] = arr[j + 1];
-              arr[j + 1] = temp;
-              swapped = true;
-          }
-      }
-
-      // If no two elements were swapped by inner loop, then break
-      if (!swapped) {
-          break;
-      }
+const linkedListCode = `function mergeSort(arr) {
+  if (arr.length <= 1) {
+    return arr;
   }
 
-  return arr;
+  const middle = Math.floor(arr.length / 2);
+  const left = arr.slice(0, middle);
+  const right = arr.slice(middle);
+
+  return merge(mergeSort(left), mergeSort(right));
 }
 
-// Example usage
-let array = [64, 34, 25, 12, 22, 11, 90];
-console.log("Original Array:", array);
-console.log("Sorted Array:", bubbleSort(array));
+function merge(left, right) {
+  let resultArray = [], leftIndex = 0, rightIndex = 0;
+
+  // Concatenate values into the resultArray in order
+  while (leftIndex < left.length && rightIndex < right.length) {
+    if (left[leftIndex] < right[rightIndex]) {
+      resultArray.push(left[leftIndex]);
+      leftIndex++; // move left array cursor
+    } else {
+      resultArray.push(right[rightIndex]);
+      rightIndex++; // move right array cursor
+    }
+  }
+
+  // Concatenate any remaining elements
+  // (If we didn't go through all elements in one array)
+  return resultArray
+          .concat(left.slice(leftIndex))
+          .concat(right.slice(rightIndex));
+}
+
+// Example usage:
+const unsortedArray = [34, 7, 23, 32, 5, 62];
+const sortedArray = mergeSort(unsortedArray);
+
+console.log(sortedArray); // Output: [5, 7, 23, 32, 34, 62]
 
 `;
 
