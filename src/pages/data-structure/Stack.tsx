@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import SyntaxHighlight from "../../components/SyntaxHighlight";
 import AnchorLinks from "../../components/common/AnchorLinks";
 import StackCanvas from "../../visualizer/data-structure/StackCanvas";
