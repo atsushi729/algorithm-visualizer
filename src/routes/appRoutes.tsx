@@ -148,7 +148,7 @@ const appRoutes: RouteType[] = [
         element: <QuickSort />,
         state: "sort.quick-sort",
         sidebarProps: {
-          displayText: "Linked List",
+          displayText: "Quick sort",
         },
       },
     ],
