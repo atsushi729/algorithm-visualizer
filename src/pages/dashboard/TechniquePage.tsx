@@ -12,12 +12,10 @@ const TechniquePage = (props: Props) => {
         <div className="max-w-4xl m-auto p-8">
           <h1 className="text-3xl mb-4 mt-4 font-bold">Divide and Conquer</h1>
           <p className="text-lg mb-4">
-            Divide and conquer is a problem-solving technique that{" "}
-            <strong className="text-blue-700">
-              breaks down a large problem into smaller and simpler subproblems.
-            </strong>{" "}
-            These subproblems are then solved individually, and the solutions
-            are combined to arrive at a solution for the original problem. The
+            Divide and conquer is a problem-solving technique that breaks down a
+            large problem into smaller and simpler subproblems. These
+            subproblems are then solved individually, and the solutions are
+            combined to arrive at a solution for the original problem. The
             divide-and-conquer approach is often used in computer science to
             design algorithms. It can be applied to a wide variety of problems,
             including sorting, searching, and graph algorithms.
@@ -55,12 +53,9 @@ const TechniquePage = (props: Props) => {
           <h1 className="text-3xl mb-4 mt-4 font-bold">Backtrack</h1>
           <p className="text-lg mb-4">
             The backtrack approach is a refined algorithmic technique often
-            applied to solve problems that{" "}
-            <strong className="text-blue-700">
-              require searching for all possible solutions and selecting the
-              ones that meet certain criteria.
-            </strong>{" "}
-            It is used extensively in constraint satisfaction problems, such as
+            applied to solve problems that require searching for all possible
+            solutions and selecting the ones that meet certain criteria. It is
+            used extensively in constraint satisfaction problems, such as
             puzzles, crosswords, and combinatorial optimization problems.
           </p>
           <p className="text-base inline">
