@@ -15,14 +15,11 @@ const BubbleSort = () => {
           </h1>
           <p className="text-lg mb-4 text-left">
             Bubble Sort is a simple sorting algorithm that repeatedly steps
-            through the list to be sorted,{" "}
-            <strong className="text-blue-700">
-              compares each pair of adjacent items, and swaps them if they are
-              in the wrong order.{" "}
-            </strong>
-            The pass through the list is repeated until no swaps are needed,
-            which means the list is sorted. The algorithm gets its name because
-            smaller elements "bubble" to the top of the list. separate node.
+            through the list to be sorted, compares each pair of adjacent items,
+            and swaps them if they are in the wrong order. The pass through the
+            list is repeated until no swaps are needed, which means the list is
+            sorted. The algorithm gets its name because smaller elements
+            "bubble" to the top of the list. separate node.
           </p>
           <p className="text-base inline">How Bubble sort works:</p>
           <ul className="list-decimal ps-5 space-y-2 mb-5 mt-3">
@@ -70,12 +67,9 @@ const BubbleSort = () => {
           </h5>
           <ul className="marker:text-blue-600 list-disc ps-5 space-y-2">
             <li>
-              <a
-                href="/data-structure/stack"
-                className="no-underline hover:underline hover:text-blue-500 font-bold"
-              >
+              <p className="no-underline font-bold">
                 Worst-case Time Complexity (O(n²)):
-              </a>
+              </p>
               <p>
                 This occurs when the array is in reverse order, necessitating
                 the maximum number of swaps. In this case, for each of n
@@ -84,12 +78,9 @@ const BubbleSort = () => {
               </p>
             </li>
             <li>
-              <a
-                href="/data-structure/stack"
-                className="no-underline hover:underline hover:text-blue-500 font-bold"
-              >
+              <p className="no-underline font-bold">
                 Best-case Time Complexity (O(n)):
-              </a>
+              </p>
               <p>
                 This occurs when the array is already sorted. The algorithm only
                 needs to make one pass through the array to confirm that no
@@ -97,12 +88,9 @@ const BubbleSort = () => {
               </p>
             </li>
             <li>
-              <a
-                href="/data-structure/stack"
-                className="no-underline hover:underline hover:text-blue-500 font-bold"
-              >
+              <p className="no-underline font-bold">
                 Average-case Time Complexity (O(n²))
-              </a>
+              </p>
               <p>
                 For a randomly ordered array, the average time complexity is
                 also O(n²), similar to the worst-case scenario.

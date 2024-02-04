@@ -79,12 +79,9 @@ const MergeSort = () => {
           </h5>
           <ul className="marker:text-blue-600 list-disc ps-5 space-y-2">
             <li>
-              <a
-                href="/data-structure/stack"
-                className="no-underline hover:underline hover:text-blue-500 font-bold"
-              >
+              <p className="no-underline font-bold">
                 Worst-case Time Complexity (O(nlogn)):
-              </a>
+              </p>
               <p>
                 The worst case scenario represents the situation where the
                 algorithm performs the maximum number of steps possible for the
@@ -98,12 +95,9 @@ const MergeSort = () => {
               </p>
             </li>
             <li>
-              <a
-                href="/data-structure/stack"
-                className="no-underline hover:underline hover:text-blue-500 font-bold"
-              >
+              <p className="no-underline font-bold">
                 Best-case Time Complexity (O(nlogn)):
-              </a>
+              </p>
               <p>
                 This occurs when the array is already sorted. The algorithm only
                 needs to make one pass through the array to confirm that no
@@ -118,12 +112,9 @@ const MergeSort = () => {
               </p>
             </li>
             <li>
-              <a
-                href="/data-structure/stack"
-                className="no-underline hover:underline hover:text-blue-500 font-bold"
-              >
+              <p className="no-underline font-bold">
                 Average-case Time Complexity (O(nlogn))
-              </a>
+              </p>
               <p>
                 The average case scenario assumes a random distribution of
                 inputs and calculates the expected time complexity across all

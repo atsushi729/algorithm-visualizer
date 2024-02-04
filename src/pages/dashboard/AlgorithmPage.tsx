@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import SyntaxHighlight from "../../components/SyntaxHighlight";
 import AnchorLinks from "../../components/common/AnchorLinks";
 
@@ -44,12 +45,11 @@ const AlgorithmPage = () => {
           <h5 className="text-lg mb-4 mt-4 font-bold">Sample of Algorithm:</h5>
           <ul className="marker:text-blue-600 list-disc ps-5 space-y-2">
             <li>
-              <a
-                href="/dashboard/saas"
-                className="no-underline hover:underline hover:text-blue-500 font-bold"
-              >
-                Search Algorithm
-              </a>
+              <Link to="/sort/bubble-sort">
+                <strong className="text-blue-700 link link-underline link-underline-black">
+                  Search Algorithm
+                </strong>
+              </Link>
               <p>
                 A search algorithm is a step-by-step procedure used to locate
                 specific data among a collection of data. It is considered a
@@ -59,12 +59,11 @@ const AlgorithmPage = () => {
               </p>
             </li>
             <li>
-              <a
-                href="/dashboard/saas"
-                className="no-underline hover:underline hover:text-blue-500 font-bold"
-              >
-                Sort Algorithm
-              </a>
+              <Link to="/sort/bubble-sort">
+                <strong className="text-blue-700 link link-underline link-underline-black">
+                  Sort Algorithm
+                </strong>
+              </Link>
               <p>
                 A sort algorithm is a method for arranging elements in lists or
                 sequences into a particular order. The most frequently desired
@@ -132,12 +131,11 @@ const AlgorithmPage = () => {
           </h5>
           <ul className="marker:text-blue-600 list-disc ps-5 space-y-2">
             <li>
-              <a
-                href="/data-structure/stack"
-                className="no-underline hover:underline hover:text-blue-500 font-bold"
-              >
-                Array
-              </a>
+              <Link to="/data-structure/array">
+                <strong className="text-blue-700 link link-underline link-underline-black">
+                  Array
+                </strong>
+              </Link>
               <p>
                 An array in data structures is essentially a linear collection
                 of similar elements stored at contiguous memory locations and
@@ -146,12 +144,11 @@ const AlgorithmPage = () => {
               </p>
             </li>
             <li>
-              <a
-                href="/data-structure/stack"
-                className="no-underline hover:underline hover:text-blue-500 font-bold"
-              >
-                Stack
-              </a>
+              <Link to="/data-structure/stack">
+                <strong className="text-blue-700 link link-underline link-underline-black">
+                  Stack
+                </strong>
+              </Link>
               <p>
                 A stack is a linear data structure that follows the Last In,
                 First Out (LIFO) principle. The last element added to the stack
@@ -160,12 +157,11 @@ const AlgorithmPage = () => {
               </p>
             </li>
             <li>
-              <a
-                href="/data-structure/queue"
-                className="no-underline hover:underline hover:text-blue-500 font-bold"
-              >
-                Queue
-              </a>
+              <Link to="/data-structure/queue">
+                <strong className="text-blue-700 link link-underline link-underline-black">
+                  Queue
+                </strong>
+              </Link>
               <p>
                 A queue is a linear data structure that follows the First In,
                 First Out (FIFO) principle. The first element added will be the
@@ -175,12 +171,11 @@ const AlgorithmPage = () => {
               </p>
             </li>
             <li>
-              <a
-                href="/data-structure/lined-list"
-                className="no-underline hover:underline hover:text-blue-500 font-bold"
-              >
-                Linkd list
-              </a>
+              <Link to="/data-structure/linked-list">
+                <strong className="text-blue-700 link link-underline link-underline-black">
+                  Linked list
+                </strong>
+              </Link>
               <p>
                 A linked list is a linear data structure where each element
                 (commonly called a node) contains a reference (or link) to the

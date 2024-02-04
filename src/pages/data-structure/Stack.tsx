@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import SyntaxHighlight from "../../components/SyntaxHighlight";
 import AnchorLinks from "../../components/common/AnchorLinks";
 import StackCanvas from "../../visualizer/data-structure/StackCanvas";
@@ -72,12 +73,7 @@ const Stack = () => {
           </h5>
           <ul className="marker:text-blue-600 list-disc ps-5 space-y-2">
             <li>
-              <a
-                href="/data-structure/stack"
-                className="no-underline hover:underline hover:text-blue-500 font-bold"
-              >
-                Push
-              </a>
+              <p className="no-underline font-bold">Push</p>
               <p>
                 The "push" operation involves adding an element to the top of
                 the stack. When an element is pushed onto the stack, it becomes
@@ -85,12 +81,7 @@ const Stack = () => {
               </p>
             </li>
             <li>
-              <a
-                href="/data-structure/stack"
-                className="no-underline hover:underline hover:text-blue-500 font-bold"
-              >
-                Pop
-              </a>
+              <p className="no-underline font-bold">Pop</p>
               <p>
                 The "pop" operation involves removing the element from the top
                 of the stack. When an element is popped from the stack, the size

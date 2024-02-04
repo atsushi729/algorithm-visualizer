@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import SyntaxHighlight from "../../components/SyntaxHighlight";
 import AnchorLinks from "../../components/common/AnchorLinks";
 import LinkedListCanvas from "../../visualizer/data-structure/LinkedListCanvas";
@@ -16,8 +17,7 @@ const LinkedList = () => {
             A linked list in computer science is a dynamic data structure for
             storing a sequence of elements. Unlike arrays, where elements are
             stored in contiguous memory locations, each element in a linked list
-            is stored in a{" "}
-            <strong className="text-blue-700">separate node.</strong>
+            is stored in a separate node.
           </p>
           <p className="text-base inline">Here's how it works:</p>
           <ul className="list-decimal ps-5 space-y-2 mb-5 mt-3">
@@ -95,12 +95,7 @@ const LinkedList = () => {
           </h5>
           <ul className="marker:text-blue-600 list-disc ps-5 space-y-2">
             <li>
-              <a
-                href="/data-structure/stack"
-                className="no-underline hover:underline hover:text-blue-500 font-bold"
-              >
-                Insertion
-              </a>
+              <p className="no-underline font-bold">Insertion</p>
               <ul>
                 <li>
                   - At the Head (Front): Add a new node at the beginning of the
@@ -116,12 +111,7 @@ const LinkedList = () => {
               </ul>
             </li>
             <li>
-              <a
-                href="/data-structure/stack"
-                className="no-underline hover:underline hover:text-blue-500 font-bold"
-              >
-                Deletion
-              </a>
+              <p className="no-underline font-bold">Deletion</p>
               <ul>
                 <li>
                   - From the Head (Front): Remove the first node of the list.

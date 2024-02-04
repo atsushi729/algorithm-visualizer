@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import SyntaxHighlight from "../../components/SyntaxHighlight";
 import AnchorLinks from "../../components/common/AnchorLinks";
 import QueueCanvas from "../../visualizer/data-structure/QueueCanvas";
@@ -73,12 +74,7 @@ const Queue = () => {
           </h5>
           <ul className="marker:text-blue-600 list-disc ps-5 space-y-2">
             <li>
-              <a
-                href="/data-structure/stack"
-                className="no-underline hover:underline hover:text-blue-500 font-bold"
-              >
-                Enqueue (Insert):
-              </a>
+              <p className="no-underline font-bold">Enqueue (Insert):</p>
               <p>
                 The enqueue operation is used to add an element to the back or
                 rear of the queue. This operation increases the size of the
@@ -88,12 +84,7 @@ const Queue = () => {
               </p>
             </li>
             <li>
-              <a
-                href="/data-structure/stack"
-                className="no-underline hover:underline hover:text-blue-500 font-bold"
-              >
-                Dequeue (Delete):
-              </a>
+              <p className="no-underline font-bold">Dequeue (Delete):</p>
               <p>
                 The dequeue operation is used to remove an element from the
                 front or head of the queue. This operation decreases the size of
