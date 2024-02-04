@@ -109,9 +109,9 @@ const appRoutes: RouteType[] = [
         },
       },
       {
-        path: "/data-structure/lined-list",
+        path: "/data-structure/linked-list",
         element: <LinkedList />,
-        state: "data-structure.lined-list",
+        state: "data-structure.linked-list",
         sidebarProps: {
           displayText: "Linked List",
         },
