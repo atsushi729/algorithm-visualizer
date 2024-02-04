@@ -85,19 +85,19 @@ const appRoutes: RouteType[] = [
     },
     child: [
       {
-        path: "/data-structure/stack",
-        element: <Stack />,
-        state: "data-structure.stack",
-        sidebarProps: {
-          displayText: "Stack",
-        },
-      },
-      {
         path: "/data-structure/array",
         element: <Array />,
         state: "data-structure.array",
         sidebarProps: {
           displayText: "Array",
+        },
+      },
+      {
+        path: "/data-structure/stack",
+        element: <Stack />,
+        state: "data-structure.stack",
+        sidebarProps: {
+          displayText: "Stack",
         },
       },
       {
