@@ -1,6 +1,6 @@
 import SyntaxHighlight from "../../components/SyntaxHighlight";
 import AnchorLinks from "../../components/common/AnchorLinks";
-import LinkedListCanvas from "../../visualizer/data-structure/LinkedListCanvas";
+import LinkedListCanvas from "../../components/common/visualizer/data-structure/LinkedListCanvas";
 const LinkedList = () => {
   //---------------------------------------------------------------------
   // Sub component

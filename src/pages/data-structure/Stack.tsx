@@ -1,6 +1,6 @@
 import SyntaxHighlight from "../../components/SyntaxHighlight";
 import AnchorLinks from "../../components/common/AnchorLinks";
-import StackCanvas from "../../visualizer/data-structure/StackCanvas";
+import StackCanvas from "../../components/common/visualizer/data-structure/StackCanvas";
 const Stack = () => {
   //---------------------------------------------------------------------
   // Sub component

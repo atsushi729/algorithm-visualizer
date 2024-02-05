@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import SyntaxHighlight from "../../components/SyntaxHighlight";
 import AnchorLinks from "../../components/common/AnchorLinks";
-import BubbleSortCanvas from "../../visualizer/sort/BubbleSort";
+import BubbleSortCanvas from "../../components/common/visualizer/sort/BubbleSort";
 
 const QuickSort = () => {
   //---------------------------------------------------------------------
