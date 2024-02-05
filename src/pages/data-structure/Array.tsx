@@ -1,6 +1,6 @@
 import SyntaxHighlight from "../../components/SyntaxHighlight";
 import AnchorLinks from "../../components/common/AnchorLinks";
-import ArrayCanvas from "../../components/common/visualizer/data-structure/Array";
+import ArrayCanvas from "../../components/visualizer/data-structure/Array";
 const Array = () => {
   //---------------------------------------------------------------------
   // Sub component
