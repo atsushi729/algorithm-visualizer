@@ -9,7 +9,7 @@ const MergeSort = () => {
   //---------------------------------------------------------------------
   const AboutMergeSort = () => {
     return (
-      <div id="about-bubble-sort" className="flex justify-start">
+      <div id="about-merge-sort" className="flex justify-start">
         <div className="max-w-4xl m-auto p-8">
           <h1 className="text-3xl mb-4 mt-4 font-bold text-left">Merge sort</h1>
           <p className="text-lg mb-4 text-left">
@@ -208,7 +208,7 @@ console.log(sortedArray); // Output: [5, 7, 23, 32, 34, 62]
 `;
 
 export const anchorLinksData = [
-  { href: "#about-bubble-sort", label: "About Bubble sort" },
+  { href: "#about-merge-sort", label: "About Merge sort" },
   { href: "#time-complexity", label: "Time complexity" },
   { href: "#playground", label: "Playground" },
 ];
