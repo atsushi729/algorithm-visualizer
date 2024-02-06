@@ -13,46 +13,40 @@ const QuickSort = () => {
         <div className="max-w-4xl m-auto p-8">
           <h1 className="text-3xl mb-4 mt-4 font-bold text-left">Quick sort</h1>
           <p className="text-lg mb-4 text-left">
-            Merge sort is a popular and efficient sorting algorithm that follows
-            the{" "}
+            Quick sort is a highly efficient sorting algorithm used in computer
+            science. It works on the principle of{" "}
             <Link to="/dashboard/technique">
               <strong className="text-blue-700 link link-underline link-underline-black">
-                divide and conquer strategy.
+                divide and conquer,
               </strong>{" "}
             </Link>
-            It works by dividing the array into halves, sorting each half, and
-            then merging the two sorted halves back together. The process is
-            recursive, with the base case being arrays of size one, which are
-            inherently sorted. Here's a step-by-step breakdown of how merge sort
-            works:
+            similar to Merge Sort, but with a different strategy for dividing
+            the array. The steps involved in Quick sort are as follows:
           </p>
-          <p className="text-base inline">How Merge sort works:</p>
           <ul className="list-decimal ps-5 space-y-2 mb-5 mt-3">
             <li>
-              <strong>Divide: </strong> The array is divided into two halves,
-              right down the middle. If the array has an odd number of elements,
-              one of the halves will have one more element than the other.
+              <strong>Choose a Pivot: </strong>The algorithm starts by selecting
+              a 'pivot' element from the array. The choice of pivot can vary -
+              it could be the first element, the last element, the median, or a
+              random element of the array.
             </li>
             <li>
-              <strong>Conquer:</strong> : Each half is recursively sorted using
-              merge sort. This process continues until the base case of a single
-              element (or no elements) is reached, which is considered sorted by
-              definition.
+              <strong>Partitioning:</strong> The array is rearranged so that all
+              elements smaller than the pivot come before the pivot, while all
+              elements greater than the pivot come after it. After partitioning,
+              the pivot is in its final position. This is called the partition
+              operation.
             </li>
             <li>
-              <strong>Combine/Merge:</strong> The two sorted halves are then
-              merged together into a single sorted array. This is done by
-              comparing the elements of each half and copying the smaller
-              element into the new array, progressing through both halves until
-              all elements are copied into the merged array.
+              <strong>Recursively apply:</strong> The above steps are applied
+              recursively to the sub-array of elements with smaller values and
+              separately to the sub-array of elements with greater values.
             </li>
           </ul>
           <p className="text-lg mb-4 text-left">
-            Merge sort is known for its efficiency and stability. It has a
-            worst-case and average complexity of O(n log n), where n is the
-            number of elements in the array. Its main disadvantage is that it
-            requires additional space proportional to the size of the input
-            array for the merging process, making it not an in-place sort.
+            Quick sort is widely used in practice due to its efficiency and
+            simplicity, especially for large datasets, and is implemented in
+            many standard programming libraries.
           </p>
         </div>
       </div>
