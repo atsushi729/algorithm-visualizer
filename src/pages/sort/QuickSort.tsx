@@ -9,7 +9,7 @@ const QuickSort = () => {
   //---------------------------------------------------------------------
   const AboutQuickSort = () => {
     return (
-      <div id="about-bubble-sort" className="flex justify-start">
+      <div id="about-quick-sort" className="flex justify-start">
         <div className="max-w-4xl m-auto p-8">
           <h1 className="text-3xl mb-4 mt-4 font-bold text-left">Quick sort</h1>
           <p className="text-lg mb-4 text-left">
@@ -59,50 +59,27 @@ const QuickSort = () => {
         <div className="max-w-4xl m-auto p-8">
           <h1 className="text-3xl mb-4 font-bold">Time Complexity</h1>
           <p className="text-lg mb-4">
-            The time complexity of merge sort is O(nlogn) in all cases (worst,
-            average, and best). This is because the merge sort algorithm divides
-            the array into two halves, recursively sorts the two halves, and
-            then merges the two sorted halves. The division of the array into
-            two halves takes logarithmic time (because the size of the array is
-            halved at each level), and the merging of two sorted halves takes
-            linear time in the size of the array. Therefore, the overall time
-            complexity is the product of these two, which is O(nlogn).
+            The time complexity of Quick Sort varies depending on the case being
+            considered: worst case, average case, and best case.
           </p>
           <h5 className="text-lg mb-4 mt-4 font-bold">
-            Performance of Merge sort:
+            Performance of Quick sort:
           </h5>
           <ul className="marker:text-blue-600 list-disc ps-5 space-y-2">
             <li>
               <p className="no-underline font-bold">
-                Worst-case Time Complexity (O(nlogn)):
+                Worst-case Time Complexity (O(n²)):
               </p>
               <p>
-                The worst case scenario represents the situation where the
-                algorithm performs the maximum number of steps possible for the
-                given input size.
-              </p>
-              <p>
-                For merge sort, the worst case time complexity is O(nlogn) as
-                well. This is because the algorithm's divide-and-conquer
-                approach results in a consistent performance regardless of the
-                input's initial state.
-              </p>
-            </li>
-            <li>
-              <p className="no-underline font-bold">
-                Best-case Time Complexity (O(nlogn)):
-              </p>
-              <p>
-                This occurs when the array is already sorted. The algorithm only
-                needs to make one pass through the array to confirm that no
-                swaps are needed. Therefore, the time complexity is O(n).
-              </p>
-              <p>
-                For merge sort, the best case time complexity is also O(nlogn).
-                Unlike some other sorting algorithms that can benefit from
-                partially sorted data (like insertion sort), merge sort will
-                perform the same number of operations regardless of the initial
-                order of the elements.
+                The worst-case time complexity of Quick Sort is O(n 2 ). This
+                scenario occurs when the pivot element chosen is always the
+                smallest or largest element of the list. Such a situation leads
+                to very inefficient performance because the list is partitioned
+                into two sublists, one of which is always empty, reducing the
+                size of the list to be sorted by only one element at each
+                recursion. This can happen with certain types of input data,
+                such as a list that is already sorted or sorted in reverse
+                order.
               </p>
             </li>
             <li>
@@ -110,15 +87,14 @@ const QuickSort = () => {
                 Average-case Time Complexity (O(nlogn))
               </p>
               <p>
-                The average case scenario assumes a random distribution of
-                inputs and calculates the expected time complexity across all
-                possible inputs of a given size.
-              </p>
-              <p>
-                For merge sort, the average case time complexity is also
-                O(nlogn). Since merge sort consistently divides the array and
-                merges it, the input's initial order doesn't significantly
-                affect the number of operations.
+                For the average and best cases, the time complexity of Quick
+                Sort is O(nlogn). Quick Sort is highly efficient on average
+                because it divides the list into two roughly equal parts at each
+                step (assuming a good pivot), and then sorts the sublists
+                independently. This division forms a divide-and-conquer
+                approach, leading to a depth of n log n in the recursion tree.
+                Since each level of recursion involves processing n elements in
+                total, the overall time complexity is O(nlogn).
               </p>
             </li>
           </ul>
@@ -202,7 +178,7 @@ console.log(sortedArray); // Output: [5, 7, 23, 32, 34, 62]
 `;
 
 export const anchorLinksData = [
-  { href: "#about-bubble-sort", label: "About Bubble sort" },
+  { href: "#about-quick-sort", label: "About Quick sort" },
   { href: "#time-complexity", label: "Time complexity" },
   { href: "#playground", label: "Playground" },
 ];
