@@ -101,7 +101,7 @@ const QuickSort = () => {
           <p className="mt-5">
             Here is a simple example that adds one to the input value:
           </p>
-          <SyntaxHighlight codeString={linkedListCode} language="javascript" />
+          <SyntaxHighlight codeString={quickSortCode} language="javascript" />
         </div>
       </div>
     );
@@ -136,44 +136,40 @@ const QuickSort = () => {
   );
 };
 
-const linkedListCode = `function mergeSort(arr) {
-  if (arr.length <= 1) {
-    return arr;
+const quickSortCode = `function quickSort(arr, left = 0, right = arr.length - 1) {
+  if (left < right) {
+      // Partitioning index
+      let partitionIndex = partition(arr, left, right);
+
+      // Recursively sort elements before and after partition
+      quickSort(arr, left, partitionIndex - 1);
+      quickSort(arr, partitionIndex + 1, right);
   }
-
-  const middle = Math.floor(arr.length / 2);
-  const left = arr.slice(0, middle);
-  const right = arr.slice(middle);
-
-  return merge(mergeSort(left), mergeSort(right));
+  return arr;
 }
 
-function merge(left, right) {
-  let resultArray = [], leftIndex = 0, rightIndex = 0;
+function partition(arr, left, right) {
+  // Choosing the rightmost element as the pivot
+  const pivot = arr[right];
+  let partitionIndex = left; // Set partition index as left initially
 
-  // Concatenate values into the resultArray in order
-  while (leftIndex < left.length && rightIndex < right.length) {
-    if (left[leftIndex] < right[rightIndex]) {
-      resultArray.push(left[leftIndex]);
-      leftIndex++; // move left array cursor
-    } else {
-      resultArray.push(right[rightIndex]);
-      rightIndex++; // move right array cursor
-    }
+  for (let i = left; i < right; i++) {
+      if (arr[i] < pivot) {
+          // Swapping if element is smaller than pivot
+          [arr[i], arr[partitionIndex]] = [arr[partitionIndex], arr[i]];
+          partitionIndex++;
+      }
   }
 
-  // Concatenate any remaining elements
-  // (If we didn't go through all elements in one array)
-  return resultArray
-          .concat(left.slice(leftIndex))
-          .concat(right.slice(rightIndex));
+  // Swap the pivot element with the element at the partition index
+  [arr[partitionIndex], arr[right]] = [arr[right], arr[partitionIndex]];
+  return partitionIndex;
 }
 
-// Example usage:
-const unsortedArray = [34, 7, 23, 32, 5, 62];
-const sortedArray = mergeSort(unsortedArray);
-
-console.log(sortedArray); // Output: [5, 7, 23, 32, 34, 62]
+// Example usage
+const array = [10, 7, 8, 9, 1, 5];
+quickSort(array);
+console.log(array);
 
 `;
 
