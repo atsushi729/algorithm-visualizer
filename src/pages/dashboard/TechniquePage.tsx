@@ -85,11 +85,52 @@ const TechniquePage = (props: Props) => {
     );
   };
 
+  const Recursion = () => {
+    return (
+      <div id="recursion" className="flex">
+        <div className="max-w-4xl m-auto p-8">
+          <h1 className="text-3xl mb-4 mt-4 font-bold">Recursion</h1>
+          <p className="text-lg mb-4">
+            In computer science, recursion is a method of solving problems where
+            a function calls itself as a subroutine. This technique provides a
+            way to break down complicated problems into simpler ones and solve
+            them incrementally. Recursion involves two main aspects:
+          </p>
+          <p className="text-base inline">
+            Here are the steps involved in the Recursion approach:
+          </p>
+          <ul className="list-decimal ps-5 space-y-2 mb-5 mt-3">
+            <li>
+              <strong>Base Case: </strong> A simple occurrence that can be
+              answered directly. It serves as the termination condition for the
+              recursion, preventing infinite loops.
+            </li>
+            <li>
+              <strong>Recursive Step: </strong>The part of the recursion that
+              breaks down the complex problem into simpler versions of the same
+              problem, calling the same function with different arguments.
+            </li>
+          </ul>
+          <p className="text-lg mb-4">
+            Recursion is commonly used in various computer science domains, such
+            as algorithms, data structures (like tree and graph traversals), and
+            problem-solving techniques. It is particularly powerful for tasks
+            that can naturally be defined in terms of smaller versions of the
+            same task, such as sorting algorithms (like quicksort and
+            mergesort), calculating factorials, Fibonacci numbers, and
+            traversing file directories.
+          </p>
+        </div>
+      </div>
+    );
+  };
+
   return (
     <div className="container mx-auto p-8 flex">
       <div className="flex-grow" style={{ flex: "4" }}>
         <DivideAndConquer />
         <BackTrack />
+        <Recursion />
       </div>
 
       <div className="flex-grow" style={{ flex: "1" }}>
@@ -104,4 +145,5 @@ export default TechniquePage;
 export const anchorLinksData = [
   { href: "#divide-and-conquer", label: "Divide and Conquer" },
   { href: "#backtrack", label: "Backtrack" },
+  { href: "#recursion", label: "Recursion" },
 ];
