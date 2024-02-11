@@ -1,3 +1,4 @@
+import SyntaxHighlight from "../../components/SyntaxHighlight";
 import AnchorLinks from "../../components/common/AnchorLinks";
 
 type Props = {};
@@ -106,7 +107,7 @@ const TechniquePage = (props: Props) => {
               recursion, preventing infinite loops.
             </li>
             <li>
-              <strong>Recursive Step: </strong>The part of the recursion that
+              <strong>Recursive Case: </strong>The part of the recursion that
               breaks down the complex problem into simpler versions of the same
               problem, calling the same function with different arguments.
             </li>
@@ -120,6 +121,7 @@ const TechniquePage = (props: Props) => {
             mergesort), calculating factorials, Fibonacci numbers, and
             traversing file directories.
           </p>
+          <SyntaxHighlight codeString={RecursiveCode} language="javascript" />
         </div>
       </div>
     );
@@ -147,3 +149,17 @@ export const anchorLinksData = [
   { href: "#backtrack", label: "Backtrack" },
   { href: "#recursion", label: "Recursion" },
 ];
+
+const RecursiveCode = `function factorial(n) {
+  // Base case: if n is 0 or 1
+  if (n === 0 || n === 1) {
+      return 1;
+  } else {
+      // Recursive case: n! = n * (n-1)!
+      return n * factorial(n - 1);
+  }
+}
+
+// Example usage
+console.log(factorial(5)); // Outputs: 120
+`;
