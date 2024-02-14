@@ -136,16 +136,43 @@ const TimeComplexityPage = (props: Props) => {
             Best-case and Worst-case
           </h1>
           <p className="text-lg mb-4">
-            Space complexity is a measure used in computer science to describe
-            the amount of memory space required by an algorithm to run as a
-            function of the length of the input. It's a way to quantify the
-            amount of memory an algorithm needs to store data, such as
-            variables, allocated objects, and function calls. The space
-            complexity is analyzed similarly to time complexity, often using Big
-            O notation. This analysis helps in understanding how efficient an
-            algorithm is in terms of memory usage, which is particularly
-            important in environments with limited memory resources.
+            In computer science, we often analyze the performance of algorithms
+            based on different scenarios. Let’s explore the concepts of best
+            case, worst case, and average case:
           </p>
+          <ul className="list-decimal ps-5 space-y-2 mb-5 mt-3">
+            <li>
+              <strong>Best Case:</strong>The best case scenario for an algorithm
+              represents the optimal conditions under which it performs. It
+              corresponds to the minimum resource usage, such as the fewest
+              number of steps or the least amount of time. However, best-case
+              performance is rarely the primary consideration when choosing or
+              developing algorithms. Example: Consider a linear search
+              algorithm. The best case occurs when the desired element is the
+              first element in the list. In this scenario, the algorithm finds
+              the element immediately.
+            </li>
+            <li>
+              <strong>Worst Case:</strong>The worst case scenario represents the
+              maximum resource usage by an algorithm. It provides an upper bound
+              on the algorithm’s performance. Usually, we focus on worst-case
+              time complexity. Example: For the same linear search algorithm,
+              the worst case occurs when the desired element is the last element
+              in the list or not present at all. The algorithm must traverse the
+              entire list to determine this, resulting in the maximum number of
+              steps.
+            </li>
+            <li>
+              <strong>Average Case:</strong>The average case considers the
+              expected resource usage over a range of inputs. It accounts for
+              the distribution of inputs encountered in practice. Determining
+              the average case can be challenging, especially when dealing with
+              complex data structures or real-world data. Example: Suppose we
+              analyze the average case of a sorting algorithm. We consider
+              various input distributions (random, partially sorted, etc.) and
+              calculate the average number of steps needed for each.
+            </li>
+          </ul>
         </div>
       </div>
     );
