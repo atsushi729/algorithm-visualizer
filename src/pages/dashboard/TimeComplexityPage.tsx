@@ -142,35 +142,66 @@ const TimeComplexityPage = (props: Props) => {
           </p>
           <ul className="list-decimal ps-5 space-y-2 mb-5 mt-3">
             <li>
-              <strong>Best Case:</strong>The best case scenario for an algorithm
-              represents the optimal conditions under which it performs. It
-              corresponds to the minimum resource usage, such as the fewest
-              number of steps or the least amount of time. However, best-case
-              performance is rarely the primary consideration when choosing or
-              developing algorithms. Example: Consider a linear search
-              algorithm. The best case occurs when the desired element is the
-              first element in the list. In this scenario, the algorithm finds
-              the element immediately.
+              <strong>Best Case:</strong>
+              <ul className="list-disc ps-5 space-y-2 mb-5 mt-3">
+                <li>
+                  The best case scenario for an algorithm represents the optimal
+                  conditions under which it performs.
+                </li>
+                <li>
+                  It corresponds to the minimum resource usage, such as the
+                  fewest number of steps or the least amount of time. However,
+                  best-case performance is rarely the primary consideration when
+                  choosing or developing algorithms.
+                </li>
+                <li>
+                  Example: Consider a linear search algorithm. The best case
+                  occurs when the desired element is the first element in the
+                  list. In this scenario, the algorithm finds the element
+                  immediately.
+                </li>
+              </ul>
             </li>
             <li>
-              <strong>Worst Case:</strong>The worst case scenario represents the
-              maximum resource usage by an algorithm. It provides an upper bound
-              on the algorithm’s performance. Usually, we focus on worst-case
-              time complexity. Example: For the same linear search algorithm,
-              the worst case occurs when the desired element is the last element
-              in the list or not present at all. The algorithm must traverse the
-              entire list to determine this, resulting in the maximum number of
-              steps.
+              <strong>Worst Case:</strong>
+              <ul className="list-disc ps-5 space-y-2 mb-5 mt-3">
+                <li>
+                  The worst case scenario represents the maximum resource usage
+                  by an algorithm.
+                </li>
+                <li>
+                  It provides an upper bound on the algorithm’s performance.
+                  Usually, we focus on worst-case time complexity.
+                </li>
+                <li>
+                  Example: For the same linear search algorithm, the worst case
+                  occurs when the desired element is the last element in the
+                  list or not present at all. The algorithm must traverse the
+                  entire list to determine this, resulting in the maximum number
+                  of steps.
+                </li>
+              </ul>
             </li>
             <li>
-              <strong>Average Case:</strong>The average case considers the
-              expected resource usage over a range of inputs. It accounts for
-              the distribution of inputs encountered in practice. Determining
-              the average case can be challenging, especially when dealing with
-              complex data structures or real-world data. Example: Suppose we
-              analyze the average case of a sorting algorithm. We consider
-              various input distributions (random, partially sorted, etc.) and
-              calculate the average number of steps needed for each.
+              <strong>Average Case:</strong>
+              <ul className="list-disc ps-5 space-y-2 mb-5 mt-3">
+                <li>
+                  The average case considers the expected resource usage over a
+                  range of inputs.
+                </li>
+                <li>
+                  It accounts for the distribution of inputs encountered in
+                  practice. Determining the average case can be challenging,
+                  especially when dealing with complex data structures or
+                  real-world data.
+                </li>
+                <li>
+                  Example: Suppose we analyze the average case of a sorting
+                  algorithm. We consider various input distributions (random,
+                  partially sorted, etc.) and calculate the average number of
+                  steps needed for each.
+                </li>
+              </ul>
             </li>
           </ul>
         </div>
