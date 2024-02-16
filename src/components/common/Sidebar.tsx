@@ -18,13 +18,18 @@ import SidebarItemCollapse from "./SidebarItemCollapse";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 
-const Sidebar = () => {
+interface SidebarProps {
+  onDrawerToggle: (isOpen: boolean) => void;
+}
+
+const Sidebar = ({ onDrawerToggle }: SidebarProps) => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
+    onDrawerToggle(!mobileOpen);
   };
 
   const drawerContent = (
