@@ -124,7 +124,7 @@ const appRoutes: RouteType[] = [
     state: "sort",
     sidebarProps: {
       displayText: "Sort",
-      icon: <AppsOutlinedIcon />,
+      icon: <FormatListBulletedOutlinedIcon />,
     },
     child: [
       {
