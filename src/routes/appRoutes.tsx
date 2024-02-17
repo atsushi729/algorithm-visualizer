@@ -17,7 +17,6 @@ import LinkedList from "../pages/data-structure/LinkedList";
 import BubbleSort from "../pages/sort/BubbleSort";
 import MergeSort from "../pages/sort/MergeSort";
 import QuickSort from "../pages/sort/QuickSort";
-// import InstallationPage from "../pages/installation/InstallationPage";
 // import DocumentationPage from "../pages/documentation/DocumentationPage";
 
 const appRoutes: RouteType[] = [
@@ -26,15 +25,6 @@ const appRoutes: RouteType[] = [
     element: <HomePage />,
     state: "home",
   },
-  // {
-  //   path: "/installation",
-  //   element: <InstallationPage />,
-  //   state: "installation",
-  //   sidebarProps: {
-  //     displayText: "Installation",
-  //     icon: <FileDownloadOutlinedIcon />
-  //   }
-  // },
   {
     path: "/dashboard",
     element: <DashboardPageLayout />,
