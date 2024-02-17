@@ -9,7 +9,7 @@ import AlgorithmPage from "../pages/dashboard/AlgorithmPage";
 import TimeComplexityPage from "../pages/dashboard/TimeComplexityPage";
 import TechniquePage from "../pages/dashboard/TechniquePage";
 import ChangelogPage from "../pages/changelog/ChangelogPage";
-import DataStructure from "../pages/data-structure/DataStructure";
+import DataStructurePageLayout from "../pages/data-structure/DataStructurePageLayout";
 import Stack from "../pages/data-structure/Stack";
 import Array from "../pages/data-structure/Array";
 import Queue from "../pages/data-structure/Queue";
@@ -77,7 +77,7 @@ const appRoutes: RouteType[] = [
   },
   {
     path: "/data-structure",
-    element: <DataStructure />,
+    element: <DataStructurePageLayout />,
     state: "data-structure",
     sidebarProps: {
       displayText: "Data Structure",
@@ -120,7 +120,7 @@ const appRoutes: RouteType[] = [
   },
   {
     path: "/sort",
-    element: <DataStructure />,
+    element: <DataStructurePageLayout />,
     state: "sort",
     sidebarProps: {
       displayText: "Sort",
@@ -155,7 +155,7 @@ const appRoutes: RouteType[] = [
   },
   {
     path: "/documentation",
-    element: <DataStructure />,
+    element: <DataStructurePageLayout />,
     state: "documentation",
     sidebarProps: {
       displayText: "Documentation",
