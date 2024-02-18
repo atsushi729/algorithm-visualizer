@@ -36,7 +36,7 @@ const AlgorithmPage = () => {
             </li>
           </ul>
           <img
-            src="/images/about-algorithm.png"
+            src="/images/dashboard/about-algorithm.png"
             alt="About Algorithm"
             className="mb-5 shadow-lg rounded-lg border"
           />
@@ -186,7 +186,7 @@ const AlgorithmPage = () => {
             </li>
           </ul>
           <img
-            src="/images/about-datastructure.png"
+            src="/images/dashboard/about-datastructure.png"
             alt="About Datastructure"
             className="mb-5 mt-5 shadow-lg rounded-lg border"
           />
@@ -266,7 +266,7 @@ const AlgorithmPage = () => {
             for input/output, and arrows to show the flow direction.
           </p>
           <img
-            src="/images/about-flowchart.png"
+            src="/images/dashboard/about-flowchart.png"
             alt="About Flowchart"
             className="mb-5 shadow-lg rounded-lg border"
           />

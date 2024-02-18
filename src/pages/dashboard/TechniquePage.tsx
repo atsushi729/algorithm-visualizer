@@ -38,7 +38,7 @@ const TechniquePage = (props: Props) => {
             </li>
           </ul>
           <img
-            src="/images/technique/divide-and-conquer.png"
+            src="/images/dashboard/divide-and-conquer.png"
             alt="About Divide-and-Conquer"
             className="mb-5 shadow-lg rounded-lg border"
           />

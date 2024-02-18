@@ -93,7 +93,7 @@ const TimeComplexityPage = (props: Props) => {
             </tbody>
           </table>
           <img
-            src="/images/time-complexity.png"
+            src="/images/dashboard/time-complexity.png"
             alt="Time-complexity"
             className="mb-5 shadow-lg rounded-lg border"
           />
