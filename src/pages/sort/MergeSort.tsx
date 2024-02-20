@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import SyntaxHighlight from "../../components/SyntaxHighlight";
 import AnchorLinks from "../../components/common/AnchorLinks";
 import BubbleSortCanvas from "../../components/visualizer/sort/BubbleSort";
+import MergeSortCanvas from "../../components/visualizer/sort/MergeSort";
 
 const MergeSort = () => {
   //---------------------------------------------------------------------
@@ -143,8 +144,7 @@ const MergeSort = () => {
         <div className="max-w-4xl m-auto p-8">
           <h1 className="text-3xl mb-4 mt-4 font-bold text-left">Playground</h1>
 
-          {/* TODO : create merge sort canvas */}
-          {/* <BubbleSortCanvas /> */}
+          <MergeSortCanvas />
         </div>
       </div>
     );
