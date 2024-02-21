@@ -17,7 +17,7 @@ import LinkedList from "../pages/data-structure/LinkedList";
 import BubbleSort from "../pages/sort/BubbleSort";
 import MergeSort from "../pages/sort/MergeSort";
 import QuickSort from "../pages/sort/QuickSort";
-// import DocumentationPage from "../pages/documentation/DocumentationPage";
+import ReferencesPage from "../pages/reference/ReferencePage";
 
 const appRoutes: RouteType[] = [
   {
@@ -144,11 +144,11 @@ const appRoutes: RouteType[] = [
     ],
   },
   {
-    path: "/documentation",
-    element: <DataStructurePageLayout />,
-    state: "documentation",
+    path: "/reference",
+    element: <ReferencesPage />,
+    state: "reference",
     sidebarProps: {
-      displayText: "Documentation",
+      displayText: "Reference",
       icon: <ArticleOutlinedIcon />,
     },
   },
