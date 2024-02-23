@@ -1,6 +1,8 @@
 import SyntaxHighlight from "../../components/SyntaxHighlight";
 import AnchorLinks from "../../components/common/AnchorLinks";
 import ArrayCanvas from "../../components/visualizer/data-structure/Array";
+import { arrayCode } from "../../constants/sample-code/code";
+
 const Array = () => {
   //---------------------------------------------------------------------
   // Sub component
@@ -115,7 +117,7 @@ const Array = () => {
             </li>
           </ul>
           <p>Here is a simple example:</p>
-          <SyntaxHighlight codeString={stackCode} language="javascript" />
+          <SyntaxHighlight codeString={arrayCode} language="javascript" />
         </div>
       </div>
     );
@@ -149,51 +151,6 @@ const Array = () => {
     </div>
   );
 };
-
-const stackCode = `// Initial array
-let numbers = [10, 20, 30, 40, 50];
-
-// Traversing the array
-console.log("Traversing:");
-numbers.forEach(function(element) {
-    console.log(element);
-});
-
-// Insertion
-numbers.push(60); // Adds 60 at the end
-numbers.splice(2, 0, 25); // Inserts 25 at index 2
-console.log("After Insertion:", numbers);
-
-// Deletion
-numbers.pop(); // Removes the last element
-numbers.splice(2, 1); // Removes 1 element at index 2
-console.log("After Deletion:", numbers);
-
-// Searching
-let index = numbers.indexOf(30); // Returns the index of the element 30
-console.log("Index of 30:", index);
-
-// Sorting
-numbers.sort((a, b) => a - b); // Sorts the array in ascending order
-console.log("After Sorting:", numbers);
-
-// Updating
-numbers[2] = 35; // Updates the element at index 2 to 35
-console.log("After Updating:", numbers);
-
-// Merging
-let moreNumbers = [70, 80];
-let mergedArray = numbers.concat(moreNumbers);
-console.log("After Merging:", mergedArray);
-
-// Splitting
-let firstHalf = numbers.slice(0, numbers.length / 2);
-let secondHalf = numbers.slice(numbers.length / 2);
-console.log("First Half:", firstHalf);
-console.log("Second Half:", secondHalf);
-
-
-`;
 
 export const anchorLinksData = [
   { href: "#array", label: "About Array" },

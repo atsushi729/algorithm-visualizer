@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import SyntaxHighlight from "../../components/SyntaxHighlight";
 import AnchorLinks from "../../components/common/AnchorLinks";
-import BubbleSortCanvas from "../../components/visualizer/sort/BubbleSort";
+import { quickSortCode } from "../../constants/sample-code/code";
 
 const QuickSort = () => {
   //---------------------------------------------------------------------
@@ -137,43 +137,6 @@ const QuickSort = () => {
     </div>
   );
 };
-
-const quickSortCode = `function quickSort(arr, left = 0, right = arr.length - 1) {
-  if (left < right) {
-      // Partitioning index
-      let partitionIndex = partition(arr, left, right);
-
-      // Recursively sort elements before and after partition
-      quickSort(arr, left, partitionIndex - 1);
-      quickSort(arr, partitionIndex + 1, right);
-  }
-  return arr;
-}
-
-function partition(arr, left, right) {
-  // Choosing the rightmost element as the pivot
-  const pivot = arr[right];
-  let partitionIndex = left; // Set partition index as left initially
-
-  for (let i = left; i < right; i++) {
-      if (arr[i] < pivot) {
-          // Swapping if element is smaller than pivot
-          [arr[i], arr[partitionIndex]] = [arr[partitionIndex], arr[i]];
-          partitionIndex++;
-      }
-  }
-
-  // Swap the pivot element with the element at the partition index
-  [arr[partitionIndex], arr[right]] = [arr[right], arr[partitionIndex]];
-  return partitionIndex;
-}
-
-// Example usage
-const array = [10, 7, 8, 9, 1, 5];
-quickSort(array);
-console.log(array);
-
-`;
 
 export const anchorLinksData = [
   { href: "#about-quick-sort", label: "About Quick sort" },

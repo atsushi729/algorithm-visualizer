@@ -144,22 +144,22 @@ const TechniquePage = (props: Props) => {
 
 export default TechniquePage;
 
-export const anchorLinksData = [
-  { href: "#divide-and-conquer", label: "Divide and Conquer" },
-  { href: "#backtrack", label: "Backtrack" },
-  { href: "#recursion", label: "Recursion" },
-];
-
 const RecursiveCode = `function factorial(n) {
   // Base case: if n is 0 or 1
   if (n === 0 || n === 1) {
-      return 1;
+    return 1;
   } else {
-      // Recursive case: n! = n * (n-1)!
-      return n * factorial(n - 1);
+    // Recursive case: n! = n * (n-1)!
+    return n * factorial(n - 1);
   }
 }
 
 // Example usage
 console.log(factorial(5)); // Outputs: 120
 `;
+
+export const anchorLinksData = [
+  { href: "#divide-and-conquer", label: "Divide and Conquer" },
+  { href: "#backtrack", label: "Backtrack" },
+  { href: "#recursion", label: "Recursion" },
+];

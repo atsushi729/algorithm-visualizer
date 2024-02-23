@@ -1,6 +1,8 @@
 import SyntaxHighlight from "../../components/SyntaxHighlight";
 import AnchorLinks from "../../components/common/AnchorLinks";
 import QueueCanvas from "../../components/visualizer/data-structure/QueueCanvas";
+import { queueCode } from "../../constants/sample-code/code";
+
 const Queue = () => {
   //---------------------------------------------------------------------
   // Sub component
@@ -99,7 +101,7 @@ const Queue = () => {
             className="mb-5 shadow-lg rounded-lg border"
           />
           <p>Here is a simple example:</p>
-          <SyntaxHighlight codeString={stackCode} language="javascript" />
+          <SyntaxHighlight codeString={queueCode} language="javascript" />
         </div>
       </div>
     );
@@ -134,67 +136,10 @@ const Queue = () => {
   );
 };
 
-const stackCode = `class Queue {
-  constructor() {
-      this.items = [];
-  }
-
-  enqueue(item) {
-      // Add an element to the rear of the queue.
-      this.items.push(item);
-  }
-
-  dequeue() {
-      // Remove and return the element from the front of the queue.
-      if (!this.isEmpty()) {
-          return this.items.shift();
-      } else {
-          throw new Error("Cannot dequeue from an empty queue");
-      }
-  }
-
-  front() {
-      // Return the element at the front of the queue without removing it.
-      if (!this.isEmpty()) {
-          return this.items[0];
-      } else {
-          throw new Error("Queue is empty");
-      }
-  }
-
-  size() {
-      // Return the number of elements in the queue.
-      return this.items.length;
-  }
-
-  isEmpty() {
-      // Check if the queue is empty.
-      return this.items.length === 0;
-  }
-}
-
-// Example usage:
-const myQueue = new Queue();
-myQueue.enqueue(10);
-myQueue.enqueue(20);
-myQueue.enqueue(30);
-
-console.log("Front of the queue:", myQueue.front());
-console.log("Queue size:", myQueue.size());
-
-// Dequeue elements
-while (!myQueue.isEmpty()) {
-  console.log("Dequeued:", myQueue.dequeue());
-}
-
-console.log("Is the queue empty?", myQueue.isEmpty());
-
-`;
+export default Queue;
 
 export const anchorLinksData = [
   { href: "#queue", label: "About Queue" },
   { href: "#operation", label: "Operation" },
   { href: "#playground", label: "Playground" },
 ];
-
-export default Queue;

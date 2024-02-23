@@ -1,6 +1,8 @@
 import SyntaxHighlight from "../../components/SyntaxHighlight";
 import AnchorLinks from "../../components/common/AnchorLinks";
 import StackCanvas from "../../components/visualizer/data-structure/StackCanvas";
+import { stackCode } from "../../constants/sample-code/code";
+
 const Stack = () => {
   //---------------------------------------------------------------------
   // Sub component
@@ -129,48 +131,6 @@ const Stack = () => {
     </div>
   );
 };
-
-const stackCode = `class Stack {
-  constructor() {
-    this.items = [];
-  }
-
-  // Push operation: add an element to the top of the stack
-  push(element) {
-    this.items.push(element);
-  }
-
-  // Pop operation: remove the element from the top of the stack
-  pop() {
-    if (this.items.length === 0) {
-      return "Underflow"; // If the stack is empty
-    }
-    return this.items.pop();
-  }
-
-  // Peek operation: view the element at the top of the stack without removing it
-  peek() {
-    return this.items[this.items.length - 1];
-  }
-}
-
-// Example usage:
-const stack = new Stack();
-
-// Pushing elements onto the stack
-stack.push(1);
-stack.push(2);
-stack.push(3);
-
-// Peeking at the top element
-console.log("Top element:", stack.peek()); // Output: Top element: 3
-
-// Popping elements from the stack
-console.log("Popped element:", stack.pop()); // Output: Popped element: 3
-
-// Peeking after pop
-console.log("Top element after pop:", stack.peek()); // Output: Top element after pop: 2
-`;
 
 export const anchorLinksData = [
   { href: "#stack", label: "About Stack" },

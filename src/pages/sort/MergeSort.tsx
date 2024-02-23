@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import SyntaxHighlight from "../../components/SyntaxHighlight";
 import AnchorLinks from "../../components/common/AnchorLinks";
-import BubbleSortCanvas from "../../components/visualizer/sort/BubbleSort";
 import MergeSortCanvas from "../../components/visualizer/sort/MergeSort";
+import { mergeSortCode } from "../../constants/sample-code/code";
 
 const MergeSort = () => {
   //---------------------------------------------------------------------
@@ -132,7 +132,7 @@ const MergeSort = () => {
           <p className="mt-5">
             Here is a simple example that adds one to the input value:
           </p>
-          <SyntaxHighlight codeString={linkedListCode} language="javascript" />
+          <SyntaxHighlight codeString={mergeSortCode} language="javascript" />
         </div>
       </div>
     );
@@ -167,47 +167,6 @@ const MergeSort = () => {
     </div>
   );
 };
-
-const linkedListCode = `function mergeSort(arr) {
-  if (arr.length <= 1) {
-    return arr;
-  }
-
-  const middle = Math.floor(arr.length / 2);
-  const left = arr.slice(0, middle);
-  const right = arr.slice(middle);
-
-  return merge(mergeSort(left), mergeSort(right));
-}
-
-function merge(left, right) {
-  let resultArray = [], leftIndex = 0, rightIndex = 0;
-
-  // Concatenate values into the resultArray in order
-  while (leftIndex < left.length && rightIndex < right.length) {
-    if (left[leftIndex] < right[rightIndex]) {
-      resultArray.push(left[leftIndex]);
-      leftIndex++; // move left array cursor
-    } else {
-      resultArray.push(right[rightIndex]);
-      rightIndex++; // move right array cursor
-    }
-  }
-
-  // Concatenate any remaining elements
-  // (If we didn't go through all elements in one array)
-  return resultArray
-          .concat(left.slice(leftIndex))
-          .concat(right.slice(rightIndex));
-}
-
-// Example usage:
-const unsortedArray = [34, 7, 23, 32, 5, 62];
-const sortedArray = mergeSort(unsortedArray);
-
-console.log(sortedArray); // Output: [5, 7, 23, 32, 34, 62]
-
-`;
 
 export const anchorLinksData = [
   { href: "#about-merge-sort", label: "About Merge sort" },

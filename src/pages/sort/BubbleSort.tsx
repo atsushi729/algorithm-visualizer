@@ -1,6 +1,7 @@
 import SyntaxHighlight from "../../components/SyntaxHighlight";
 import AnchorLinks from "../../components/common/AnchorLinks";
 import BubbleSortCanvas from "../../components/visualizer/sort/BubbleSort";
+import { bubbleSortCode } from "../../constants/sample-code/code";
 
 const BubbleSort = () => {
   //---------------------------------------------------------------------
@@ -100,7 +101,7 @@ const BubbleSort = () => {
           <p className="mt-5">
             Here is a simple example that adds one to the input value:
           </p>
-          <SyntaxHighlight codeString={linkedListCode} language="javascript" />
+          <SyntaxHighlight codeString={bubbleSortCode} language="javascript" />
         </div>
       </div>
     );
@@ -134,39 +135,6 @@ const BubbleSort = () => {
     </div>
   );
 };
-
-const linkedListCode = `function bubbleSort(arr) {
-  let n = arr.length;
-  let swapped;
-
-  for (let i = 0; i < n - 1; i++) {
-      swapped = false;
-
-      for (let j = 0; j < n - i - 1; j++) {
-          if (arr[j] > arr[j + 1]) {
-              // Swap the elements
-              let temp = arr[j];
-              arr[j] = arr[j + 1];
-              arr[j + 1] = temp;
-              swapped = true;
-          }
-      }
-
-      // If no two elements were swapped by inner loop, then break
-      if (!swapped) {
-          break;
-      }
-  }
-
-  return arr;
-}
-
-// Example usage
-let array = [64, 34, 25, 12, 22, 11, 90];
-console.log("Original Array:", array);
-console.log("Sorted Array:", bubbleSort(array));
-
-`;
 
 export const anchorLinksData = [
   { href: "#about-bubble-sort", label: "About Bubble sort" },
