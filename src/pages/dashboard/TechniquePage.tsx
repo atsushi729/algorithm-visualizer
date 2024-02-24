@@ -1,9 +1,8 @@
 import SyntaxHighlight from "../../components/SyntaxHighlight";
 import AnchorLinks from "../../components/common/AnchorLinks";
+import { RecursiveCode } from "../../constants/sample-code/code";
 
-type Props = {};
-
-const TechniquePage = (props: Props) => {
+const TechniquePage = () => {
   //---------------------------------------------------------------------
   // Sub component
   //---------------------------------------------------------------------
@@ -142,24 +141,10 @@ const TechniquePage = (props: Props) => {
   );
 };
 
-export default TechniquePage;
-
-const RecursiveCode = `function factorial(n) {
-  // Base case: if n is 0 or 1
-  if (n === 0 || n === 1) {
-    return 1;
-  } else {
-    // Recursive case: n! = n * (n-1)!
-    return n * factorial(n - 1);
-  }
-}
-
-// Example usage
-console.log(factorial(5)); // Outputs: 120
-`;
-
 export const anchorLinksData = [
   { href: "#divide-and-conquer", label: "Divide and Conquer" },
   { href: "#backtrack", label: "Backtrack" },
   { href: "#recursion", label: "Recursion" },
 ];
+
+export default TechniquePage;

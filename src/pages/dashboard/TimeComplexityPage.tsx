@@ -1,8 +1,9 @@
 import React from "react";
 import { useState } from "react";
-import SyntaxHighlight from "../../components/SyntaxHighlight";
 import ArrowDropDownCircleOutlinedIcon from "@mui/icons-material/ArrowDropDownCircleOutlined";
+import SyntaxHighlight from "../../components/SyntaxHighlight";
 import AnchorLinks from "../../components/common/AnchorLinks";
+import { timeComplexities } from "../../constants/sample-code/code";
 
 type Props = {};
 
@@ -233,128 +234,6 @@ const TimeComplexityPage = (props: Props) => {
 };
 
 export default TimeComplexityPage;
-
-// Define the data as a JavaScript object
-const timeComplexities = [
-  {
-    complexity: "O(1)",
-    time: "Constant Time",
-    description:
-      "The execution time of the algorithm is the same, regardless of the size of the input data. An example is accessing a specific element in an array by index.",
-    code: `function constantTime(arr, index) {
-      return arr[index]; // Constant time access
-    }`,
-  },
-  {
-    complexity: "O(log n)",
-    time: "Logarithmic Time",
-    description:
-      "The execution time of the algorithm increases logarithmically with the input size. A common example is a binary search in a sorted array.",
-    code: `function binarySearch(arr, target) {
-      let left = 0;
-      let right = arr.length - 1;
-      while (left <= right) {
-        const mid = Math.floor((left + right) / 2);
-        if (arr[mid] === target) {
-          return mid;
-        } else if (arr[mid] < target) {
-          left = mid + 1;
-        } else {
-          right = mid - 1;
-        }
-      }
-      return -1;
-    }`,
-  },
-  {
-    complexity: "O(n)",
-    time: "Linear Time",
-    description:
-      "The execution time increases linearly with the input size. For instance, iterating through all elements in an array.",
-    code: `function linearTime(arr) {
-      arr.forEach(element => {
-        // Perform some operation
-      });
-    }`,
-  },
-  {
-    complexity: "O(n log n)",
-    time: "Log-linear Time",
-    description:
-      "More complex than linear time but more efficient than quadratic time, common in efficient sorting algorithms like mergesort and heapsort.",
-    code: `function mergeSort(arr) {
-      if (arr.length <= 1) {
-        return arr;
-      }
-      const mid = Math.floor(arr.length / 2);
-      const left = mergeSort(arr.slice(0, mid));
-      const right = mergeSort(arr.slice(mid));
-      return merge(left, right);
-    }
-    
-    function merge(left, right) {
-      const result = [];
-      let leftIndex = 0;
-      let rightIndex = 0;
-      while (leftIndex < left.length && rightIndex < right.length) {
-        if (left[leftIndex] < right[rightIndex]) {
-          result.push(left[leftIndex]);
-          leftIndex++;
-        } else {
-          result.push(right[rightIndex]);
-          rightIndex++;
-        }
-      }
-      return result.concat(left.slice(leftIndex)).concat(right.slice(rightIndex));
-    }`,
-  },
-  {
-    complexity: "O(n^2)",
-    time: "Quadratic Time",
-    description:
-      "The execution time is proportional to the square of the input size. An example of this is the bubble sort algorithm, where you might have to iterate through the elements multiple times.",
-    code: `function bubbleSort(arr) {
-      const n = arr.length;
-      for (let i = 0; i < n; i++) {
-        for (let j = 0; j < n - i - 1; j++) {
-          if (arr[j] > arr[j + 1]) {
-            [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
-          }
-        }
-      }
-      return arr;
-    }`,
-  },
-  {
-    complexity: "O(2^n)",
-    time: "Exponential Time",
-    description:
-      "The execution time doubles with each addition to the input data set. Algorithms with exponential time complexity become infeasible to run with larger inputs.",
-    code: `function fibonacci(n) {
-      if (n <= 1) {
-        return n;
-      }
-      return fibonacci(n - 1) + fibonacci(n - 2);
-    }`,
-  },
-  {
-    complexity: "O(n!)",
-    time: "Factorial Time",
-    description:
-      "The execution time grows factorially with the input size. An example would be the brute-force solution to the traveling salesman problem using permutation.",
-    code: `function permute(arr, l, r) {
-      if (l === r) {
-        console.log(arr);
-      } else {
-        for (let i = l; i <= r; i++) {
-          [arr[l], arr[i]] = [arr[i], arr[l]];
-          permute(arr, l + 1, r);
-          [arr[l], arr[i]] = [arr[i], arr[l]]; // backtrack
-        }
-      }
-    }`,
-  },
-];
 
 export const anchorLinksData = [
   { href: "#time-complexity", label: "Time Complexity" },

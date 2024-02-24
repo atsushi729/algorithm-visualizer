@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import SyntaxHighlight from "../../components/SyntaxHighlight";
 import AnchorLinks from "../../components/common/AnchorLinks";
+import { code, pseudocode } from "../../constants/sample-code/code";
 
 const AlgorithmPage = () => {
   //---------------------------------------------------------------------
@@ -328,26 +329,6 @@ const AlgorithmPage = () => {
     </div>
   );
 };
-
-const code = `// Secondaly, addOne() get input value and execute function(algorithm).
-function addOne(value: number) {
-  // Finaly, return output value.
-  return value + 1;
-}
-
-// First of all, set input value to addOne().
-const result = addOne(1);
-// Output value is 2
-`;
-
-const pseudocode = `function find_maximum(L):
-    max_num <- L[0]
-    for each n in L:
-        if n > max_num:
-            max_num <- n
-    return max_num
-
-`;
 
 export const anchorLinksData = [
   { href: "#about-algorithm", label: "About Algorithm" },
