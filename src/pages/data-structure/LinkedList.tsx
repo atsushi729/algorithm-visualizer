@@ -1,6 +1,7 @@
 import SyntaxHighlight from "../../components/SyntaxHighlight";
 import AnchorLinks from "../../components/common/AnchorLinks";
 import LinkedListCanvas from "../../components/visualizer/data-structure/LinkedListCanvas";
+import { linkedListAnchorLinks } from "../../constants/common/anchorLink";
 import { linkedListCode } from "../../constants/sample-code/code";
 
 const LinkedList = () => {
@@ -157,16 +158,10 @@ const LinkedList = () => {
       </div>
 
       <div className="flex-grow" style={{ flex: "1" }}>
-        <AnchorLinks links={anchorLinksData} />
+        <AnchorLinks links={linkedListAnchorLinks} />
       </div>
     </div>
   );
 };
 
 export default LinkedList;
-
-export const anchorLinksData = [
-  { href: "#about-algorithm", label: "About Linked list" },
-  { href: "#about-data-structure", label: "Operation" },
-  { href: "#playground", label: "Playground" },
-];

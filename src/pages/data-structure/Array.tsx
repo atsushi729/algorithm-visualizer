@@ -1,6 +1,7 @@
 import SyntaxHighlight from "../../components/SyntaxHighlight";
 import AnchorLinks from "../../components/common/AnchorLinks";
 import ArrayCanvas from "../../components/visualizer/data-structure/Array";
+import { arrayAnchorLinks } from "../../constants/common/anchorLink";
 import { arrayCode } from "../../constants/sample-code/code";
 
 const Array = () => {
@@ -146,16 +147,10 @@ const Array = () => {
       </div>
 
       <div className="flex-grow" style={{ flex: "1" }}>
-        <AnchorLinks links={anchorLinksData} />
+        <AnchorLinks links={arrayAnchorLinks} />
       </div>
     </div>
   );
 };
-
-export const anchorLinksData = [
-  { href: "#array", label: "About Array" },
-  { href: "#operation", label: "Operation" },
-  { href: "#playground", label: "Playground" },
-];
 
 export default Array;

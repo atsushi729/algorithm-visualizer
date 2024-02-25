@@ -1,6 +1,7 @@
 import SyntaxHighlight from "../../components/SyntaxHighlight";
 import AnchorLinks from "../../components/common/AnchorLinks";
 import QueueCanvas from "../../components/visualizer/data-structure/QueueCanvas";
+import { queueAnchorLinks } from "../../constants/common/anchorLink";
 import { queueCode } from "../../constants/sample-code/code";
 
 const Queue = () => {
@@ -130,16 +131,10 @@ const Queue = () => {
       </div>
 
       <div className="flex-grow" style={{ flex: "1" }}>
-        <AnchorLinks links={anchorLinksData} />
+        <AnchorLinks links={queueAnchorLinks} />
       </div>
     </div>
   );
 };
 
 export default Queue;
-
-export const anchorLinksData = [
-  { href: "#queue", label: "About Queue" },
-  { href: "#operation", label: "Operation" },
-  { href: "#playground", label: "Playground" },
-];

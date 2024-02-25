@@ -1,6 +1,7 @@
 import SyntaxHighlight from "../../components/SyntaxHighlight";
 import AnchorLinks from "../../components/common/AnchorLinks";
 import StackCanvas from "../../components/visualizer/data-structure/StackCanvas";
+import { stackAnchorLinks } from "../../constants/common/anchorLink";
 import { stackCode } from "../../constants/sample-code/code";
 
 const Stack = () => {
@@ -126,16 +127,10 @@ const Stack = () => {
       </div>
 
       <div className="flex-grow" style={{ flex: "1" }}>
-        <AnchorLinks links={anchorLinksData} />
+        <AnchorLinks links={stackAnchorLinks} />
       </div>
     </div>
   );
 };
-
-export const anchorLinksData = [
-  { href: "#stack", label: "About Stack" },
-  { href: "#operation", label: "Operation" },
-  { href: "#playground", label: "Playground" },
-];
 
 export default Stack;
