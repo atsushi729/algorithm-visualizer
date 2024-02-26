@@ -1,4 +1,26 @@
 //---------------------------------------------------------------------
+// Dashboard
+//---------------------------------------------------------------------
+export const algorithmAnchorLinks = [
+  { href: "#about-algorithm", label: "About Algorithm" },
+  { href: "#about-data-structure", label: "About Data Structure" },
+  { href: "#about-pseudocode", label: "About Pseudo code" },
+  { href: "#about-flow-chart", label: "About Flow chart" },
+];
+
+export const techniqueAnchorLinks = [
+  { href: "#divide-and-conquer", label: "Divide and Conquer" },
+  { href: "#backtrack", label: "Backtrack" },
+  { href: "#recursion", label: "Recursion" },
+];
+
+export const timeComplexityAnchorLinks = [
+  { href: "#time-complexity", label: "Time Complexity" },
+  { href: "#space-complexity", label: "Space Complexity" },
+  { href: "#case", label: "Best-case and Worst-case" },
+];
+
+//---------------------------------------------------------------------
 // Data structure
 //---------------------------------------------------------------------
 export const queueAnchorLinks = [

@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import SyntaxHighlight from "../../components/SyntaxHighlight";
 import AnchorLinks from "../../components/common/AnchorLinks";
 import { code, pseudocode } from "../../constants/sample-code/code";
+import { algorithmAnchorLinks } from "../../constants/common/anchorLink";
 
 const AlgorithmPage = () => {
   //---------------------------------------------------------------------
@@ -324,17 +325,10 @@ const AlgorithmPage = () => {
       </div>
 
       <div className="flex-grow" style={{ flex: "1" }}>
-        <AnchorLinks links={anchorLinksData} />
+        <AnchorLinks links={algorithmAnchorLinks} />
       </div>
     </div>
   );
 };
-
-export const anchorLinksData = [
-  { href: "#about-algorithm", label: "About Algorithm" },
-  { href: "#about-data-structure", label: "About Data Structure" },
-  { href: "#about-pseudocode", label: "About Pseudo code" },
-  { href: "#about-flow-chart", label: "About Flow chart" },
-];
 
 export default AlgorithmPage;

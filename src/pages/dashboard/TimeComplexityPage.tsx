@@ -4,6 +4,7 @@ import ArrowDropDownCircleOutlinedIcon from "@mui/icons-material/ArrowDropDownCi
 import SyntaxHighlight from "../../components/SyntaxHighlight";
 import AnchorLinks from "../../components/common/AnchorLinks";
 import { timeComplexities } from "../../constants/sample-code/code";
+import { timeComplexityAnchorLinks } from "../../constants/common/anchorLink";
 
 type Props = {};
 
@@ -227,16 +228,10 @@ const TimeComplexityPage = (props: Props) => {
       </div>
 
       <div className="flex-grow" style={{ flex: "1" }}>
-        <AnchorLinks links={anchorLinksData} />
+        <AnchorLinks links={timeComplexityAnchorLinks} />
       </div>
     </div>
   );
 };
 
 export default TimeComplexityPage;
-
-export const anchorLinksData = [
-  { href: "#time-complexity", label: "Time Complexity" },
-  { href: "#space-complexity", label: "Space Complexity" },
-  { href: "#case", label: "Best-case and Worst-case" },
-];

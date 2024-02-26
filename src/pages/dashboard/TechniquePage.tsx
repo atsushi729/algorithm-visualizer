@@ -1,5 +1,6 @@
 import SyntaxHighlight from "../../components/SyntaxHighlight";
 import AnchorLinks from "../../components/common/AnchorLinks";
+import { techniqueAnchorLinks } from "../../constants/common/anchorLink";
 import { RecursiveCode } from "../../constants/sample-code/code";
 
 const TechniquePage = () => {
@@ -135,16 +136,10 @@ const TechniquePage = () => {
       </div>
 
       <div className="flex-grow" style={{ flex: "1" }}>
-        <AnchorLinks links={anchorLinksData} />
+        <AnchorLinks links={techniqueAnchorLinks} />
       </div>
     </div>
   );
 };
-
-export const anchorLinksData = [
-  { href: "#divide-and-conquer", label: "Divide and Conquer" },
-  { href: "#backtrack", label: "Backtrack" },
-  { href: "#recursion", label: "Recursion" },
-];
 
 export default TechniquePage;
