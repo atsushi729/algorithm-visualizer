@@ -12,7 +12,7 @@ const TimeComplexityPage = () => {
   //---------------------------------------------------------------------
   const AboutTimeComplexity = () => {
     return (
-      <div className="flex">
+      <div className="flex" id="time-complexity">
         <div className="max-w-4xl m-auto p-8">
           <h1 className="text-3xl mb-4 mt-4 font-bold">Time complexity</h1>
           <p className="text-lg mb-4">
@@ -109,7 +109,7 @@ const TimeComplexityPage = () => {
 
   const AboutSpaceComplexity = () => {
     return (
-      <div className="flex">
+      <div className="flex" id="space-complexity">
         <div className="max-w-4xl m-auto p-8">
           <h1 className="text-3xl mb-4 mt-4 font-bold">Space complexity</h1>
           <p className="text-lg mb-4">
@@ -215,13 +215,9 @@ const TimeComplexityPage = () => {
   return (
     <div className="container mx-auto p-8 flex">
       <div className="flex-grow" style={{ flex: "4" }}>
-        <div id="time-complexity">
-          <AboutTimeComplexity />
-        </div>
+        <AboutTimeComplexity />
         <TimeComplexityTable />
-        <div id="space-complexity">
-          <AboutSpaceComplexity />
-        </div>
+        <AboutSpaceComplexity />
         <AboutCase />
       </div>
 
