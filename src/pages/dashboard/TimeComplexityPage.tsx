@@ -6,9 +6,7 @@ import AnchorLinks from "../../components/common/AnchorLinks";
 import { timeComplexities } from "../../constants/sample-code/code";
 import { timeComplexityAnchorLinks } from "../../constants/common/anchorLink";
 
-type Props = {};
-
-const TimeComplexityPage = (props: Props) => {
+const TimeComplexityPage = () => {
   //---------------------------------------------------------------------
   // Sub component
   //---------------------------------------------------------------------
