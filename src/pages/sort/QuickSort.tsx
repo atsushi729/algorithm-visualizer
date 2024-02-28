@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import SyntaxHighlight from "../../components/SyntaxHighlight";
 import AnchorLinks from "../../components/common/AnchorLinks";
 import { quickSortCode } from "../../constants/sample-code/code";
+import { quickSortAnchorLinks } from "../../constants/common/anchorLink";
 
 const QuickSort = () => {
   //---------------------------------------------------------------------
@@ -132,16 +133,10 @@ const QuickSort = () => {
       </div>
 
       <div className="flex-grow" style={{ flex: "1" }}>
-        <AnchorLinks links={anchorLinksData} />
+        <AnchorLinks links={quickSortAnchorLinks} />
       </div>
     </div>
   );
 };
-
-export const anchorLinksData = [
-  { href: "#about-quick-sort", label: "About Quick sort" },
-  { href: "#time-complexity", label: "Time complexity" },
-  { href: "#playground", label: "Playground" },
-];
 
 export default QuickSort;

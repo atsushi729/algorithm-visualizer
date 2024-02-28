@@ -1,6 +1,7 @@
 import SyntaxHighlight from "../../components/SyntaxHighlight";
 import AnchorLinks from "../../components/common/AnchorLinks";
 import BubbleSortCanvas from "../../components/visualizer/sort/BubbleSort";
+import { bubbleSortAnchorLinks } from "../../constants/common/anchorLink";
 import { bubbleSortCode } from "../../constants/sample-code/code";
 
 const BubbleSort = () => {
@@ -130,16 +131,10 @@ const BubbleSort = () => {
       </div>
 
       <div className="flex-grow" style={{ flex: "1" }}>
-        <AnchorLinks links={anchorLinksData} />
+        <AnchorLinks links={bubbleSortAnchorLinks} />
       </div>
     </div>
   );
 };
-
-export const anchorLinksData = [
-  { href: "#about-bubble-sort", label: "About Bubble sort" },
-  { href: "#time-complexity", label: "Time complexity" },
-  { href: "#playground", label: "Playground" },
-];
 
 export default BubbleSort;

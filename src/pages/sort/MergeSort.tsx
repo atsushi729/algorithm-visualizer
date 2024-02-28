@@ -3,6 +3,7 @@ import SyntaxHighlight from "../../components/SyntaxHighlight";
 import AnchorLinks from "../../components/common/AnchorLinks";
 import MergeSortCanvas from "../../components/visualizer/sort/MergeSort";
 import { mergeSortCode } from "../../constants/sample-code/code";
+import { mergeSortAnchorLinks } from "../../constants/common/anchorLink";
 
 const MergeSort = () => {
   //---------------------------------------------------------------------
@@ -162,16 +163,10 @@ const MergeSort = () => {
       </div>
 
       <div className="flex-grow" style={{ flex: "1" }}>
-        <AnchorLinks links={anchorLinksData} />
+        <AnchorLinks links={mergeSortAnchorLinks} />
       </div>
     </div>
   );
 };
-
-export const anchorLinksData = [
-  { href: "#about-merge-sort", label: "About Merge sort" },
-  { href: "#time-complexity", label: "Time complexity" },
-  { href: "#playground", label: "Playground" },
-];
 
 export default MergeSort;

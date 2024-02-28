@@ -46,3 +46,24 @@ export const arrayAnchorLinks = [
   { href: "#operation", label: "Operation" },
   { href: "#playground", label: "Playground" },
 ];
+
+//---------------------------------------------------------------------
+// Sort
+//---------------------------------------------------------------------
+export const bubbleSortAnchorLinks = [
+  { href: "#about-bubble-sort", label: "About Bubble sort" },
+  { href: "#time-complexity", label: "Time complexity" },
+  { href: "#playground", label: "Playground" },
+];
+
+export const mergeSortAnchorLinks = [
+  { href: "#about-merge-sort", label: "About Merge sort" },
+  { href: "#time-complexity", label: "Time complexity" },
+  { href: "#playground", label: "Playground" },
+];
+
+export const quickSortAnchorLinks = [
+  { href: "#about-quick-sort", label: "About Quick sort" },
+  { href: "#time-complexity", label: "Time complexity" },
+  { href: "#playground", label: "Playground" },
+];
