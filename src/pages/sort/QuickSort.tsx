@@ -3,6 +3,7 @@ import SyntaxHighlight from "../../components/SyntaxHighlight";
 import AnchorLinks from "../../components/common/AnchorLinks";
 import { quickSortCode } from "../../constants/sample-code/code";
 import { quickSortAnchorLinks } from "../../constants/common/anchorLink";
+import QuickSortCanvas from "../../components/visualizer/sort/QuickSort";
 
 const QuickSort = () => {
   //---------------------------------------------------------------------
@@ -113,9 +114,7 @@ const QuickSort = () => {
       <div id="playground" className="flex justify-start">
         <div className="max-w-4xl m-auto p-8">
           <h1 className="text-3xl mb-4 mt-4 font-bold text-left">Playground</h1>
-
-          {/* TODO : create quick sort canvas */}
-          {/* <BubbleSortCanvas /> */}
+          <QuickSortCanvas />
         </div>
       </div>
     );
