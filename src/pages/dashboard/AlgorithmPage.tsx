@@ -44,6 +44,37 @@ const AlgorithmPage = () => {
           />
           <p>Here is a simple example that adds one to the input value:</p>
           <SyntaxHighlight codeString={code} language="javascript" />
+          <p className="text-base inline mt-5">
+            Generally, algorithms possess the following characteristics:
+          </p>
+          <ul className="list-decimal ps-5 space-y-2 mb-5 mt-3">
+            <li>
+              <strong>Finiteness </strong> : An algorithm must terminate after a
+              finite number of steps. This means that it should proceed through
+              a sequence of steps and ultimately produce a result.
+            </li>
+            <li>
+              <strong>Definiteness</strong> : Each step of an algorithm must be
+              clear and unambiguous. No matter the situation, executing the same
+              steps in the same order should always produce the same outcome.
+            </li>
+            <li>
+              <strong>Input </strong>: An algorithm can take zero or more
+              inputs. These inputs provide the data or conditions necessary to
+              solve the problem.
+            </li>
+            <li>
+              <strong>Output </strong>: An algorithm produces one or more
+              outputs. These outputs are the solutions to the problem or the
+              result of the process.
+            </li>
+            <li>
+              <strong>Effectiveness </strong>: Each step of the algorithm must
+              be feasible and effective. That is, each step should be
+              sufficiently basic and executable with real computational
+              resources.
+            </li>
+          </ul>
           <h5 className="text-lg mb-4 mt-4 font-bold">Sample of Algorithm:</h5>
           <ul className="marker:text-blue-600 list-disc ps-5 space-y-2">
             <li>
