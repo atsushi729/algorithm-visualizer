@@ -14,11 +14,11 @@ const AlgorithmPage = () => {
         <div className="max-w-4xl m-auto p-8">
           <h1 className="text-3xl mb-4 mt-4 font-bold text-left">Algorithm</h1>
           <p className="text-lg mb-4 text-left">
-            An algorithm is a general and simple set of step-by-step
-            instructions that a digital computer can execute to solve problem.
-            For it to be practical, it must accomplish this within a limited
-            number of steps. Thus, An algorithm is defined on specified inputs
-            and generates an output.
+            First of all, What is "Algorithm"? Well, an algorithm is a general
+            and simple set of step-by-step instructions that a digital computer
+            can execute to solve problem. For it to be practical, it must
+            accomplish this within a limited number of steps. Thus, An algorithm
+            is defined on specified inputs and generates an output.
           </p>
           <p className="text-base inline">
             Algorithm is consist of 3 elements.
@@ -117,7 +117,7 @@ const AlgorithmPage = () => {
                 Binary search is an example of how an appropriate algorithm can
                 save time. If you have a list of 1,000,000 numbers, linear
                 search could, in the worst case, require 1,000,000 checks, while
-                binary search would only require a maximum of 20 checks!
+                binary search would only require a maximum of 20 checks! wow!
               </p>
             </li>
             <li>
