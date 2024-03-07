@@ -3,6 +3,7 @@ import DashboardOutlinedIcon from "@mui/icons-material/DashboardOutlined";
 import AppsOutlinedIcon from "@mui/icons-material/AppsOutlined";
 import ArticleOutlinedIcon from "@mui/icons-material/ArticleOutlined";
 import FormatListBulletedOutlinedIcon from "@mui/icons-material/FormatListBulletedOutlined";
+import ContentPasteSearchIcon from "@mui/icons-material/ContentPasteSearch";
 import HomePage from "../pages/home/HomePage";
 import DashboardPageLayout from "../pages/dashboard/DashboardPageLayout";
 import AlgorithmPage from "../pages/dashboard/AlgorithmPage";
@@ -18,6 +19,9 @@ import BubbleSort from "../pages/sort/BubbleSort";
 import MergeSort from "../pages/sort/MergeSort";
 import QuickSort from "../pages/sort/QuickSort";
 import ReferencesPage from "../pages/reference/ReferencePage";
+import BinarySearch from "../pages/search/BinarySearch";
+import LinearSearch from "../pages/search/LinearSearch";
+import HashSearch from "../pages/search/HashSearch";
 
 const appRoutes: RouteType[] = [
   {
@@ -139,6 +143,41 @@ const appRoutes: RouteType[] = [
         state: "sort.quick-sort",
         sidebarProps: {
           displayText: "Quick sort",
+        },
+      },
+    ],
+  },
+  {
+    path: "/search",
+    element: <DataStructurePageLayout />,
+    state: "search",
+    sidebarProps: {
+      displayText: "Search",
+      icon: <ContentPasteSearchIcon />,
+    },
+    child: [
+      {
+        path: "/search/bubble-search",
+        element: <BinarySearch />,
+        state: "search.bubble-search",
+        sidebarProps: {
+          displayText: "Bubble search",
+        },
+      },
+      {
+        path: "/search/merge-search",
+        element: <LinearSearch />,
+        state: "search.merge-search",
+        sidebarProps: {
+          displayText: "Merge search",
+        },
+      },
+      {
+        path: "/search/quick-search",
+        element: <HashSearch />,
+        state: "search.quick-search",
+        sidebarProps: {
+          displayText: "Quick search",
         },
       },
     ],
