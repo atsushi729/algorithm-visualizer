@@ -13,38 +13,60 @@ const BinarySearch = () => {
       <div id="about-bubble-sort" className="flex justify-start">
         <div className="max-w-4xl m-auto p-8">
           <h1 className="text-3xl mb-4 mt-4 font-bold text-left">
-            Bubble sort
+            Binary Search
           </h1>
           <p className="text-lg mb-4 text-left">
-            Bubble Sort is a simple sorting algorithm that repeatedly steps
-            through the list to be sorted, compares each pair of adjacent items,
-            and swaps them if they are in the wrong order. The pass through the
-            list is repeated until no swaps are needed, which means the list is
-            sorted. The algorithm gets its name because smaller elements
-            "bubble" to the top of the list. separate node.
+            Binary search is an efficient algorithm for finding a target value
+            within a sorted array. The algorithm compares the target value to
+            the middle element of the array; if they are not equal, the half in
+            which the target cannot lie is eliminated, and the search continues
+            on the remaining half, again taking the middle element for
+            comparison. This process repeats until the target value is found or
+            the remaining search space is reduced to zero.
           </p>
-          <p className="text-base inline">How Bubble sort works:</p>
+          <p className="text-base inline">How Binary search works:</p>
           <ul className="list-decimal ps-5 space-y-2 mb-5 mt-3">
             <li>
-              <strong>Starting the Algorithm: </strong> Begin at the start of
-              the array.
+              <strong>Initialize: </strong> Start with two pointers representing
+              the bounds of the array segment you're searching in. Typically,
+              the "left" pointer is set to the first index of the array (0) and
+              the "right" pointer is set to the last index of the array (array
+              length - 1).
             </li>
             <li>
-              <strong>Comparing Adjacent Elements:</strong> : Compare the first
-              two elements of the array. If the first element is greater than
-              the second element, swap them.
+              <strong>Find the Middle:</strong> Calculate the middle position of
+              the current segment you're considering. This is usually done by
+              adding the left pointer to the right pointer and dividing by 2 (in
+              some programming languages, care must be taken to avoid overflow).
             </li>
             <li>
-              <strong>Continuing Through the Array:</strong> :Move to the next
-              pair of adjacent elements and repeat the comparison and swap if
-              necessary. Continue this process for each pair of adjacent
-              elements in the array. This completes one full pass through the
-              array.
+              <strong>Compare:</strong> Compare the target value with the value
+              at the middle position. There are three possible outcomes:
+              <ul className="list-disc ps-8 space-y-2 mb-5 mt-3">
+                <li>
+                  <strong className="mr-3">target == middle</strong>
+                  If the target value is equal to the middle element, the
+                  position of the middle element is returned, and the search is
+                  complete!!!
+                </li>
+                <li>
+                  <strong className="mr-3">target &lt;= middle</strong>
+                  If the target value is less than the middle element, repeat
+                  the search on the sub-array to the left of the middle element.
+                </li>
+                <li>
+                  <strong className="mr-3">target &gt;= middle</strong>
+                  If the target value is greater than the middle element, repeat
+                  the search on the sub-array to the right of the middle
+                  element.
+                </li>
+              </ul>
             </li>
             <li>
-              <strong>Iterating Until Sorted:</strong> Repeat this process, each
-              time excluding the last sorted elements (since with each pass, the
-              next largest element will settle at its correct position).
+              <strong>Repeat or Conclude:</strong> This process repeats, each
+              time halving the number of elements to consider, until the target
+              value is found or the sub-array becomes empty (indicating that the
+              target is not in the array).
             </li>
           </ul>
         </div>
