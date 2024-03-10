@@ -157,27 +157,27 @@ const appRoutes: RouteType[] = [
     },
     child: [
       {
-        path: "/search/bubble-search",
+        path: "/search/binary-search",
         element: <BinarySearch />,
-        state: "search.bubble-search",
+        state: "search.binary-search",
         sidebarProps: {
-          displayText: "Bubble search",
+          displayText: "Binary search",
         },
       },
       {
-        path: "/search/merge-search",
+        path: "/search/linear-search",
         element: <LinearSearch />,
-        state: "search.merge-search",
+        state: "search.linear-search",
         sidebarProps: {
-          displayText: "Merge search",
+          displayText: "Linar search",
         },
       },
       {
-        path: "/search/quick-search",
+        path: "/search/hash-search",
         element: <HashSearch />,
-        state: "search.quick-search",
+        state: "search.hash-search",
         sidebarProps: {
-          displayText: "Quick search",
+          displayText: "Hash search",
         },
       },
     ],
