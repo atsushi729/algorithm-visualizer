@@ -8,7 +8,7 @@ const BinarySearch = () => {
   //---------------------------------------------------------------------
   // Sub component
   //---------------------------------------------------------------------
-  const AboutBubbleSort = () => {
+  const AboutBinarySearch = () => {
     return (
       <div id="about-bubble-sort" className="flex justify-start">
         <div className="max-w-4xl m-auto p-8">
@@ -74,50 +74,46 @@ const BinarySearch = () => {
     );
   };
 
-  const AboutOperation = () => {
+  const AboutTimecomplexity = () => {
     return (
       <div id="time-complexity" className="flex">
         <div className="max-w-4xl m-auto p-8">
           <h1 className="text-3xl mb-4 font-bold">Time Complexity</h1>
           <p className="text-lg mb-4">
-            It's important to note that while Bubble Sort is simple and easy to
-            understand, its O(n²) time complexity makes it inefficient for large
-            datasets compared to more advanced sorting algorithms like
-            QuickSort, MergeSort, or HeapSort, which have O(n log n) average and
-            worst-case time complexities.
+            For binary search, the best, average, and worst-case time
+            complexities can be summarized as follows:
           </p>
-          <h5 className="text-lg mb-4 mt-4 font-bold">
-            Operation of Data structure:
-          </h5>
           <ul className="marker:text-blue-600 list-disc ps-5 space-y-2">
             <li>
               <p className="no-underline font-bold">
-                Worst-case Time Complexity (O(n²)):
+                Worst Case: O(log n) and Ω(log n){" "}
               </p>
               <p>
-                This occurs when the array is in reverse order, necessitating
-                the maximum number of swaps. In this case, for each of n
-                elements, the algorithm performs nearly n comparisons, leading
-                to a time complexity of O(n²).
+                The worst-case upper bound for binary search remains O(log n).
+                The lower bound is also Ω(log n), meaning that in the worst-case
+                scenario (like when the target is at the very end of the array
+                or not present), the time complexity can't be better than
+                logarithmic. Given that both the upper and lower bounds are
+                logarithmic, the tight bound for the worst case can also be
+                expressed as Θ(log n).
               </p>
             </li>
             <li>
-              <p className="no-underline font-bold">
-                Best-case Time Complexity (O(n)):
-              </p>
+              <p className="no-underline font-bold">Best Case: Ω(1)</p>
               <p>
-                This occurs when the array is already sorted. The algorithm only
-                needs to make one pass through the array to confirm that no
-                swaps are needed. Therefore, the time complexity is O(n).
+                The best-case lower bound for binary search is constant time,
+                Ω(1), because the target might be found on the first try if it's
+                located at the midpoint of the array.
               </p>
             </li>
             <li>
-              <p className="no-underline font-bold">
-                Average-case Time Complexity (O(n²))
-              </p>
+              <p className="no-underline font-bold">Average Case: Θ(log n)</p>
               <p>
-                For a randomly ordered array, the average time complexity is
-                also O(n²), similar to the worst-case scenario.
+                On average, binary search has a tight bound of Θ(log n),
+                indicating that the number of steps needed to find the target
+                (or determine its absence) grows logarithmically with the size
+                of the array. This is both the average-case upper and lower
+                bound.
               </p>
             </li>
           </ul>
@@ -147,8 +143,8 @@ const BinarySearch = () => {
   return (
     <div className="container mx-auto p-8 flex">
       <div className="flex-grow" style={{ flex: "4" }}>
-        <AboutBubbleSort />
-        <AboutOperation />
+        <AboutBinarySearch />
+        <AboutTimecomplexity />
         <PlayGround />
       </div>
 
