@@ -2,7 +2,7 @@ import SyntaxHighlight from "../../components/SyntaxHighlight";
 import AnchorLinks from "../../components/common/AnchorLinks";
 import BubbleSortCanvas from "../../components/visualizer/sort/BubbleSort";
 import { bubbleSortAnchorLinks } from "../../constants/common/anchorLink";
-import { bubbleSortCode } from "../../constants/sample-code/code";
+import { binarySearch } from "../../constants/sample-code/code";
 
 const BinarySearch = () => {
   //---------------------------------------------------------------------
@@ -120,7 +120,7 @@ const BinarySearch = () => {
           <p className="mt-5">
             Here is a simple example that adds one to the input value:
           </p>
-          <SyntaxHighlight codeString={bubbleSortCode} language="javascript" />
+          <SyntaxHighlight codeString={binarySearch} language="javascript" />
         </div>
       </div>
     );
