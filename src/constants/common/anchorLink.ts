@@ -67,3 +67,13 @@ export const quickSortAnchorLinks = [
   { href: "#time-complexity", label: "Time complexity" },
   { href: "#playground", label: "Playground" },
 ];
+
+//---------------------------------------------------------------------
+// Search
+//---------------------------------------------------------------------
+export const binarySearchAnchorLinks = [
+  { href: "#about-binary-search", label: "About Binary search" },
+  { href: "#time-complexity", label: "Time complexity" },
+  { href: "#playground", label: "Playground" },
+];
+

@@ -1,7 +1,9 @@
 import SyntaxHighlight from "../../components/SyntaxHighlight";
 import AnchorLinks from "../../components/common/AnchorLinks";
 import BubbleSortCanvas from "../../components/visualizer/sort/BubbleSort";
-import { bubbleSortAnchorLinks } from "../../constants/common/anchorLink";
+import {
+  binarySearchAnchorLinks,
+} from "../../constants/common/anchorLink";
 import { binarySearch } from "../../constants/sample-code/code";
 
 const BinarySearch = () => {
@@ -10,7 +12,7 @@ const BinarySearch = () => {
   //---------------------------------------------------------------------
   const AboutBinarySearch = () => {
     return (
-      <div id="about-bubble-sort" className="flex justify-start">
+      <div id="about-binary-search" className="flex justify-start">
         <div className="max-w-4xl m-auto p-8">
           <h1 className="text-3xl mb-4 mt-4 font-bold text-left">
             Binary Search
@@ -22,8 +24,14 @@ const BinarySearch = () => {
             which the target cannot lie is eliminated, and the search continues
             on the remaining half, again taking the middle element for
             comparison. This process repeats until the target value is found or
-            the remaining search space is reduced to zero.
+            the remaining search space is reduced to zero.{" "}
+            <strong>
+              The most crucial condition for binary search is that the dataset
+              (e.g. an array) must be sorted in either ascending or descending
+              order.
+            </strong>
           </p>
+          <p></p>
           <p className="text-base inline">How Binary search works:</p>
           <ul className="list-decimal ps-5 space-y-2 mb-5 mt-3">
             <li>
@@ -149,7 +157,7 @@ const BinarySearch = () => {
       </div>
 
       <div className="flex-grow" style={{ flex: "1" }}>
-        <AnchorLinks links={bubbleSortAnchorLinks} />
+        <AnchorLinks links={binarySearchAnchorLinks} />
       </div>
     </div>
   );
