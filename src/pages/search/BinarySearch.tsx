@@ -1,9 +1,7 @@
 import SyntaxHighlight from "../../components/SyntaxHighlight";
 import AnchorLinks from "../../components/common/AnchorLinks";
-import BubbleSortCanvas from "../../components/visualizer/sort/BubbleSort";
-import {
-  binarySearchAnchorLinks,
-} from "../../constants/common/anchorLink";
+import BinarySearchCanvas from "../../components/visualizer/search/BinarySearch";
+import { binarySearchAnchorLinks } from "../../constants/common/anchorLink";
 import { binarySearch } from "../../constants/sample-code/code";
 
 const BinarySearch = () => {
@@ -139,7 +137,7 @@ const BinarySearch = () => {
       <div id="playground" className="flex justify-start">
         <div className="max-w-4xl m-auto p-8">
           <h1 className="text-3xl mb-4 mt-4 font-bold text-left">Playground</h1>
-          <BubbleSortCanvas />
+          <BinarySearchCanvas />
         </div>
       </div>
     );
