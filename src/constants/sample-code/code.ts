@@ -549,3 +549,30 @@ console.log(result); // Output: 3 (because arr[3] is 7)
 
 
 `;
+
+export const linearSearch = `const linearSearch = function(array, value) {
+  // Loop through each element in the array
+  for (let i = 0; i < array.length; i++) {
+    // Check if the current element matches the value we're searching for
+    if (array[i] === value) {
+      return i; // Return the index of the element that matches the value
+    }
+  }
+  // If the value is not found, return -1
+  return -1;
+}
+
+// Export the linearSearch function
+export { linearSearch };
+
+// Example usage:
+const myArray = [2, 5, 7, 9, 11, 15, 20];
+const target = 9;
+const index = linearSearch(myArray, target);
+
+if (index !== -1) {
+  console.log("found);
+} else {
+  console.log("not found);
+}
+`;
