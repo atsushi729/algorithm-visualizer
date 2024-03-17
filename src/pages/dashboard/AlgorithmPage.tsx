@@ -78,7 +78,7 @@ const AlgorithmPage = () => {
           <h5 className="text-lg mb-4 mt-4 font-bold">Sample of Algorithm:</h5>
           <ul className="marker:text-blue-600 list-disc ps-5 space-y-2">
             <li>
-              <Link to="/sort/bubble-sort">
+              <Link to="/search/binary-search">
                 <strong className="text-blue-700 link link-underline link-underline-black">
                   Search Algorithm
                 </strong>
