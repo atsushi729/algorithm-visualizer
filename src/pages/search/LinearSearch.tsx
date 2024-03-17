@@ -13,66 +13,39 @@ const LinearSearch = () => {
       <div id="about-binary-search" className="flex justify-start">
         <div className="max-w-4xl m-auto p-8">
           <h1 className="text-3xl mb-4 mt-4 font-bold text-left">
-            Binary Search
+            Linear search
           </h1>
           <p className="text-lg mb-4 text-left">
-            Binary search is an efficient algorithm for finding a target value
-            within a sorted array. The algorithm compares the target value to
-            the middle element of the array; if they are not equal, the half in
-            which the target cannot lie is eliminated, and the search continues
-            on the remaining half, again taking the middle element for
-            comparison. This process repeats until the target value is found or
-            the remaining search space is reduced to zero.{" "}
-            <strong>
-              The most crucial condition for binary search is that the dataset
-              (e.g. an array) must be sorted in either ascending or descending
-              order.
-            </strong>
+            Linear search, also known as sequential search, is a simple
+            searching algorithm that checks every element in a list or array one
+            by one until the desired element is found or the end of the list is
+            reached. It's used on lists that are either unsorted or have an
+            unknown order because it doesn't rely on the elements being arranged
+            in any particular way.
           </p>
           <p></p>
           <p className="text-base inline">How Binary search works:</p>
           <ul className="list-decimal ps-5 space-y-2 mb-5 mt-3">
+            <li>Start from the first element of the list or array.</li>
             <li>
-              <strong>Initialize: </strong> Start with two pointers representing
-              the bounds of the array segment you're searching in. Typically,
-              the "left" pointer is set to the first index of the array (0) and
-              the "right" pointer is set to the last index of the array (array
-              length - 1).
+              Compare the current element with the target element you're
+              searching for.
             </li>
             <li>
-              <strong>Find the Middle:</strong> Calculate the middle position of
-              the current segment you're considering. This is usually done by
-              adding the left pointer to the right pointer and dividing by 2 (in
-              some programming languages, care must be taken to avoid overflow).
+              If the current element matches the target, return the index of
+              this element, indicating that the target has been found.
             </li>
             <li>
-              <strong>Compare:</strong> Compare the target value with the value
-              at the middle position. There are three possible outcomes:
-              <ul className="list-disc ps-8 space-y-2 mb-5 mt-3">
-                <li>
-                  <strong className="mr-3">target == middle</strong>
-                  If the target value is equal to the middle element, the
-                  position of the middle element is returned, and the search is
-                  complete!!!
-                </li>
-                <li>
-                  <strong className="mr-3">target &lt;= middle</strong>
-                  If the target value is less than the middle element, repeat
-                  the search on the sub-array to the left of the middle element.
-                </li>
-                <li>
-                  <strong className="mr-3">target &gt;= middle</strong>
-                  If the target value is greater than the middle element, repeat
-                  the search on the sub-array to the right of the middle
-                  element.
-                </li>
-              </ul>
+              If the current element does not match the target, move to the next
+              element in the list.
             </li>
             <li>
-              <strong>Repeat or Conclude:</strong> This process repeats, each
-              time halving the number of elements to consider, until the target
-              value is found or the sub-array becomes empty (indicating that the
-              target is not in the array).
+              Repeat steps 2-4 until either the target is found or the end of
+              the list is reached.
+            </li>
+            <li>
+              If the end of the list is reached without finding the target,
+              indicate that the target is not in the list.
             </li>
           </ul>
         </div>
