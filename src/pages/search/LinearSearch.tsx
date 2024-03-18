@@ -59,40 +59,45 @@ const LinearSearch = () => {
         <div className="max-w-4xl m-auto p-8">
           <h1 className="text-3xl mb-4 font-bold">Time Complexity</h1>
           <p className="text-lg mb-4">
-            For binary search, the best, average, and worst-case time
+            For linear search, the best, average, and worst-case time
             complexities can be summarized as follows:
           </p>
           <ul className="marker:text-blue-600 list-disc ps-5 space-y-2">
             <li>
               <p className="no-underline font-bold">
-                Worst Case: O(log n) and Ω(log n){" "}
+                Worst Case: O(n) and Ω(n)
               </p>
               <p>
-                The worst-case upper bound for binary search remains O(log n).
-                The lower bound is also Ω(log n), meaning that in the worst-case
-                scenario (like when the target is at the very end of the array
-                or not present), the time complexity can't be better than
-                logarithmic. Given that both the upper and lower bounds are
-                logarithmic, the tight bound for the worst case can also be
-                expressed as Θ(log n).
+                The worst-case upper bound for linear search is O(n), meaning
+                that in the worst-case scenario (like when the target is at the
+                very end of the array or not present), the algorithm may need to
+                check every element, leading to a linear time complexity. The
+                lower bound in this scenario is also Ω(n), indicating that the
+                algorithm cannot perform better than linear time in the
+                worst-case scenario. Since both the upper and lower bounds are
+                linear, the tight bound for the worst case can be expressed as
+                Θ(n).
               </p>
             </li>
             <li>
               <p className="no-underline font-bold">Best Case: Ω(1)</p>
               <p>
-                The best-case lower bound for binary search is constant time,
-                Ω(1), because the target might be found on the first try if it's
-                located at the midpoint of the array.
+                The best-case lower bound for linear search is Ω(1), which
+                occurs when the target element is the first element of the
+                array, allowing the algorithm to find the target on the first
+                comparison.
               </p>
             </li>
             <li>
-              <p className="no-underline font-bold">Average Case: Θ(log n)</p>
+              <p className="no-underline font-bold">Average Case: Θ(n)</p>
               <p>
-                On average, binary search has a tight bound of Θ(log n),
-                indicating that the number of steps needed to find the target
-                (or determine its absence) grows logarithmically with the size
-                of the array. This is both the average-case upper and lower
-                bound.
+                On average, the tight bound for linear search is Θ(n). This
+                takes into account that the target element could be anywhere in
+                the array, and on average, the algorithm might need to check
+                around half of the elements. However, since we consider the
+                growth rate for large n, the constant factor (like 1/2) is
+                disregarded, leading to a linear Θ(n) complexity. This
+                represents both the average-case upper and lower bounds.
               </p>
             </li>
           </ul>
