@@ -77,3 +77,8 @@ export const binarySearchAnchorLinks = [
   { href: "#playground", label: "Playground" },
 ];
 
+export const linearSearchAnchorLinks = [
+  { href: "#about-linear-search", label: "About Linear search" },
+  { href: "#time-complexity", label: "Time complexity" },
+  { href: "#playground", label: "Playground" },
+];

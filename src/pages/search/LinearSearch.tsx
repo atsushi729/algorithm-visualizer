@@ -1,14 +1,14 @@
 import SyntaxHighlight from "../../components/SyntaxHighlight";
 import AnchorLinks from "../../components/common/AnchorLinks";
 import BubbleSortCanvas from "../../components/visualizer/sort/BubbleSort";
-import { binarySearchAnchorLinks } from "../../constants/common/anchorLink";
+import { linearSearchAnchorLinks } from "../../constants/common/anchorLink";
 import { linearSearch } from "../../constants/sample-code/code";
 
 const LinearSearch = () => {
   //---------------------------------------------------------------------
   // Sub component
   //---------------------------------------------------------------------
-  const AboutBinarySearch = () => {
+  const AboutLinearSearch = () => {
     return (
       <div id="about-binary-search" className="flex justify-start">
         <div className="max-w-4xl m-auto p-8">
@@ -127,13 +127,13 @@ const LinearSearch = () => {
   return (
     <div className="container mx-auto p-8 flex">
       <div className="flex-grow" style={{ flex: "4" }}>
-        <AboutBinarySearch />
+        <AboutLinearSearch />
         <AboutTimecomplexity />
         <PlayGround />
       </div>
 
       <div className="flex-grow" style={{ flex: "1" }}>
-        <AnchorLinks links={binarySearchAnchorLinks} />
+        <AnchorLinks links={linearSearchAnchorLinks} />
       </div>
     </div>
   );
