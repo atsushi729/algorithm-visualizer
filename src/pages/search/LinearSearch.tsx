@@ -1,6 +1,6 @@
 import SyntaxHighlight from "../../components/SyntaxHighlight";
 import AnchorLinks from "../../components/common/AnchorLinks";
-import BubbleSortCanvas from "../../components/visualizer/sort/BubbleSort";
+import LinearSearchCanvas from "../../components/visualizer/search/LinearSearch";
 import { linearSearchAnchorLinks } from "../../constants/common/anchorLink";
 import { linearSearch } from "../../constants/sample-code/code";
 
@@ -115,7 +115,7 @@ const LinearSearch = () => {
       <div id="playground" className="flex justify-start">
         <div className="max-w-4xl m-auto p-8">
           <h1 className="text-3xl mb-4 mt-4 font-bold text-left">Playground</h1>
-          <BubbleSortCanvas />
+          <LinearSearchCanvas />
         </div>
       </div>
     );
