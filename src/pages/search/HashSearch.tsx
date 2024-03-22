@@ -4,50 +4,67 @@ import LinearSearchCanvas from "../../components/visualizer/search/LinearSearch"
 import { linearSearchAnchorLinks } from "../../constants/common/anchorLink";
 import { linearSearch } from "../../constants/sample-code/code";
 
-const LinearSearch = () => {
+const HashSearch = () => {
   //---------------------------------------------------------------------
   // Sub component
   //---------------------------------------------------------------------
-  const AboutLinearSearch = () => {
+  const AboutHashSearch = () => {
     return (
       <div id="about-binary-search" className="flex justify-start">
         <div className="max-w-4xl m-auto p-8">
           <h1 className="text-3xl mb-4 mt-4 font-bold text-left">
-            Linear search
+            Hash search
           </h1>
           <p className="text-lg mb-4 text-left">
-            Linear search, also known as sequential search, is a simple
-            searching algorithm that checks every element in a list or array one
-            by one until the desired element is found or the end of the list is
-            reached. It's used on lists that are either unsorted or have an
-            unknown order because it doesn't rely on the elements being arranged
-            in any particular way.
+            In computer science, hash search, also known as hash lookup or hash
+            table lookup, refers to the process of finding a value or an item in
+            a hash table data structure using a key. A hash table is a data
+            structure that stores key-value pairs and allows for efficient
+            retrieval of values based on their keys.
           </p>
           <p></p>
-          <p className="text-base inline">How Binary search works:</p>
+          <p className="text-base inline">How Hash search works:</p>
           <ul className="list-decimal ps-5 space-y-2 mb-5 mt-3">
-            <li>Start from the first element of the list or array.</li>
             <li>
-              Compare the current element with the target element you're
-              searching for.
+              <strong>Hashing: </strong> A hash function is applied to the key
+              to compute a hash value or hash code. The hash function maps the
+              key to a specific index or bucket within the hash table.
             </li>
             <li>
-              If the current element matches the target, return the index of
-              this element, indicating that the target has been found.
+              <strong>Indexing:</strong> The computed hash value serves as an
+              index into the hash table's array (or buckets). This index
+              determines the position where the key-value pair should be stored
+              or searched for.
             </li>
             <li>
-              If the current element does not match the target, move to the next
-              element in the list.
+              <strong>Collision Handling:</strong> Since different keys may hash
+              to the same index (known as a collision), hash tables employ
+              various collision resolution techniques. Common techniques include
+              separate chaining (using a linked list or another data structure
+              to store multiple key-value pairs at the same index) and open
+              addressing (probing for the next available slot in case of a
+              collision).
             </li>
             <li>
-              Repeat steps 2-4 until either the target is found or the end of
-              the list is reached.
-            </li>
-            <li>
-              If the end of the list is reached without finding the target,
-              indicate that the target is not in the list.
+              <strong>Search:</strong> To search for a value in the hash table,
+              the key is hashed using the same hash function to compute the hash
+              value. The hash table is then accessed at the index corresponding
+              to this hash value. If the key-value pair is found at that index
+              (or in the associated data structure, in case of separate
+              chaining), the value is retrieved. If not found, the search
+              concludes that the key-value pair is not present in the hash
+              table.
             </li>
           </ul>
+          <p>
+            The main advantage of hash search is its average-case time
+            complexity of O(1), which means that the time required to find a
+            value is constant and independent of the number of elements in the
+            hash table, assuming a good hash function and proper handling of
+            collisions. This makes hash tables highly efficient for lookup
+            operations, especially in scenarios where the number of keys is
+            large.
+          </p>
         </div>
       </div>
     );
@@ -127,7 +144,7 @@ const LinearSearch = () => {
   return (
     <div className="container mx-auto p-8 flex">
       <div className="flex-grow" style={{ flex: "4" }}>
-        <AboutLinearSearch />
+        <AboutHashSearch />
         <AboutTimecomplexity />
         <PlayGround />
       </div>
@@ -139,4 +156,4 @@ const LinearSearch = () => {
   );
 };
 
-export default LinearSearch;
+export default HashSearch;
