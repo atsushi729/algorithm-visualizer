@@ -13,6 +13,7 @@ const LinearSearchCanvas = () => {
       let target;
       let index = 0;
       let state = "searching"; // 'searching', 'found', 'not found'
+      let count = 0;
 
       p.setup = () => {
         p.createCanvas(800, 200);
@@ -38,6 +39,9 @@ const LinearSearchCanvas = () => {
             linearSearchStep();
           }
         }
+        if (state === "found") {
+          displayFinish();
+        }
 
         displayTarget();
       };
@@ -48,7 +52,7 @@ const LinearSearchCanvas = () => {
           p.stroke(0);
           p.fill(180);
           if (i === index) {
-            p.fill(state === "found" ? "#F4EF4C" : "red");
+            p.fill(state === "found" ? "green" : "red");
           }
           p.rect(i * boxWidth, p.height / 2 - 20, boxWidth - 2, 40);
 
@@ -66,6 +70,13 @@ const LinearSearchCanvas = () => {
         p.text(`Target: ${target}`, p.width / 2, 20);
       }
 
+      const displayFinish = () => {
+        p.fill("green");
+        p.textSize(20);
+        p.textAlign(p.CENTER, p.TOP + 200);
+        p.text(`Found with ${count} step`, p.width / 2, 150);
+      };
+
       function linearSearchStep() {
         if (values[index] === target) {
           state = "found";
@@ -75,6 +86,7 @@ const LinearSearchCanvas = () => {
             state = "not found";
           }
         }
+        count += 1;
       }
 
       p.restartSearch = () => {
