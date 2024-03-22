@@ -20,9 +20,12 @@ const HashSearch = () => {
             table lookup, refers to the process of finding a value or an item in
             a hash table data structure using a key. A hash table is a data
             structure that stores key-value pairs and allows for efficient
-            retrieval of values based on their keys.
+            retrieval of values based on their keys. Hash search is widely used
+            in various applications, such as database indexing, caching systems,
+            compiler symbol tables, and many other scenarios where fast lookup
+            of key-value pairs is crucial for efficient data retrieval and
+            processing.
           </p>
-          <p></p>
           <p className="text-base inline">How Hash search works:</p>
           <ul className="list-decimal ps-5 space-y-2 mb-5 mt-3">
             <li>
