@@ -79,45 +79,45 @@ const HashSearch = () => {
         <div className="max-w-4xl m-auto p-8">
           <h1 className="text-3xl mb-4 font-bold">Time Complexity</h1>
           <p className="text-lg mb-4">
-            For linear search, the best, average, and worst-case time
-            complexities can be summarized as follows:
+            For Hash search, the best, average, and worst-case time complexities
+            can be summarized as follows:
           </p>
           <ul className="marker:text-blue-600 list-disc ps-5 space-y-2">
             <li>
-              <p className="no-underline font-bold">
-                Worst Case: O(n) and Ω(n)
-              </p>
+              <p className="no-underline font-bold">Worst Case: O(n)</p>
               <p>
-                The worst-case upper bound for linear search is O(n), meaning
-                that in the worst-case scenario (like when the target is at the
-                very end of the array or not present), the algorithm may need to
-                check every element, leading to a linear time complexity. The
-                lower bound in this scenario is also Ω(n), indicating that the
-                algorithm cannot perform better than linear time in the
-                worst-case scenario. Since both the upper and lower bounds are
-                linear, the tight bound for the worst case can be expressed as
-                Θ(n).
+                The worst-case scenario for hash search occurs when all keys
+                hash to the same index or bucket, leading to a single linked
+                list or cluster in the hash table. In this situation, the time
+                complexity degenerates to O(n), where n is the number of
+                elements in the hash table. This worst-case scenario can occur
+                if the hash function is poorly designed or if there is a
+                systematic clustering of keys due to their distribution.
+                However, with a well-designed hash function and appropriate
+                collision resolution techniques, this worst-case scenario is
+                highly unlikely and is often considered an edge case.
               </p>
             </li>
             <li>
               <p className="no-underline font-bold">Best Case: Ω(1)</p>
               <p>
-                The best-case lower bound for linear search is Ω(1), which
-                occurs when the target element is the first element of the
-                array, allowing the algorithm to find the target on the first
-                comparison.
+                The best case scenario for hash search occurs when there are no
+                collisions in the hash table, meaning that every key maps to a
+                unique index or bucket. In this situation, the time complexity
+                of searching for a key in the hash table is constant, or Ω(1),
+                because it only requires a single operation to compute the hash
+                value and access the corresponding index.
               </p>
             </li>
             <li>
-              <p className="no-underline font-bold">Average Case: Θ(n)</p>
+              <p className="no-underline font-bold">Average Case: Θ(1) + α</p>
               <p>
-                On average, the tight bound for linear search is Θ(n). This
-                takes into account that the target element could be anywhere in
-                the array, and on average, the algorithm might need to check
-                around half of the elements. However, since we consider the
-                growth rate for large n, the constant factor (like 1/2) is
-                disregarded, leading to a linear Θ(n) complexity. This
-                represents both the average-case upper and lower bounds.
+                The average time complexity for hash table search, assuming a
+                good hash function and efficient collision handling, is O(1), or
+                constant time. This includes a small additional cost (α) for
+                managing collisions, with the exact value of α varying based on
+                the collision resolution method used, like separate chaining or
+                open addressing.
               </p>
             </li>
           </ul>
