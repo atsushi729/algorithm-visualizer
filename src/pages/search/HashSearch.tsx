@@ -2,7 +2,7 @@ import SyntaxHighlight from "../../components/SyntaxHighlight";
 import AnchorLinks from "../../components/common/AnchorLinks";
 import LinearSearchCanvas from "../../components/visualizer/search/LinearSearch";
 import { linearSearchAnchorLinks } from "../../constants/common/anchorLink";
-import { linearSearch } from "../../constants/sample-code/code";
+import { hashSearch } from "../../constants/sample-code/code";
 
 const HashSearch = () => {
   //---------------------------------------------------------------------
@@ -124,7 +124,7 @@ const HashSearch = () => {
           <p className="mt-5">
             Here is a simple example that adds one to the input value:
           </p>
-          <SyntaxHighlight codeString={linearSearch} language="javascript" />
+          <SyntaxHighlight codeString={hashSearch} language="javascript" />
         </div>
       </div>
     );

@@ -576,3 +576,74 @@ if (index !== -1) {
   console.log("not found);
 }
 `;
+
+export const hashSearch = `// Define the HashTable class
+class HashTable {
+  constructor(size = 7) {
+    this.data = new Array(size);
+  }
+
+  // Simple hash function to map keys to array indices
+  _hash(key) {
+    let hash = 0;
+    for (let i = 0; i < key.length; i++) {
+      hash = (hash + key.charCodeAt(i) * i) % this.data.length;
+    }
+    return hash;
+  }
+
+  // Set a key-value pair in the hash table
+  set(key, value) {
+    const address = this._hash(key);
+    if (!this.data[address]) {
+      this.data[address] = [];
+    }
+    this.data[address].push([key, value]);
+    return this;
+  }
+
+  // Get the value associated with a key
+  get(key) {
+    const address = this._hash(key);
+    const currentBucket = this.data[address];
+    if (currentBucket) {
+      for (let i = 0; i < currentBucket.length; i++) {
+        if (currentBucket[i][0] === key) {
+          return currentBucket[i][1];
+        }
+      }
+    }
+    return undefined;
+  }
+
+  // Remove a key-value pair from the hash table
+  remove(key) {
+    const address = this._hash(key);
+    const currentBucket = this.data[address];
+    if (currentBucket) {
+      for (let i = 0; i < currentBucket.length; i++) {
+        if (currentBucket[i][0] === key) {
+          currentBucket.splice(i, 1);
+          return true;
+        }
+      }
+    }
+    return false;
+  }
+}
+
+// Example usage
+const myHashTable = new HashTable();
+
+// Set key-value pairs
+myHashTable.set('name', 'John');
+myHashTable.set('age', 30);
+myHashTable.set('city', 'New York');
+
+// Get values by keys
+console.log(myHashTable.get('name')); // Output: 'John'
+console.log(myHashTable.get('age')); // Output: 30
+
+// Remove a key-value pair
+myHashTable.remove('age');
+console.log(myHashTable.get('age')); // Output: undefined`;
