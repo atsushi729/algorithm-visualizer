@@ -1,7 +1,7 @@
 import SyntaxHighlight from "../../components/SyntaxHighlight";
 import AnchorLinks from "../../components/common/AnchorLinks";
 import LinearSearchCanvas from "../../components/visualizer/search/LinearSearch";
-import { linearSearchAnchorLinks } from "../../constants/common/anchorLink";
+import { hashSearchAnchorLinks } from "../../constants/common/anchorLink";
 import { hashSearch } from "../../constants/sample-code/code";
 
 const HashSearch = () => {
@@ -10,7 +10,7 @@ const HashSearch = () => {
   //---------------------------------------------------------------------
   const AboutHashSearch = () => {
     return (
-      <div id="about-binary-search" className="flex justify-start">
+      <div id="about-hash-search" className="flex justify-start">
         <div className="max-w-4xl m-auto p-8">
           <h1 className="text-3xl mb-4 mt-4 font-bold text-left">
             Hash search
@@ -153,7 +153,7 @@ const HashSearch = () => {
       </div>
 
       <div className="flex-grow" style={{ flex: "1" }}>
-        <AnchorLinks links={linearSearchAnchorLinks} />
+        <AnchorLinks links={hashSearchAnchorLinks} />
       </div>
     </div>
   );

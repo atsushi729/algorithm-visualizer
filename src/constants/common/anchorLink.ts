@@ -82,3 +82,9 @@ export const linearSearchAnchorLinks = [
   { href: "#time-complexity", label: "Time complexity" },
   { href: "#playground", label: "Playground" },
 ];
+
+export const hashSearchAnchorLinks = [
+  { href: "#about-hash-search", label: "About Hash search" },
+  { href: "#time-complexity", label: "Time complexity" },
+  { href: "#playground", label: "Playground" },
+];
