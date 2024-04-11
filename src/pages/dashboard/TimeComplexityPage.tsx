@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import ArrowDropDownCircleOutlinedIcon from "@mui/icons-material/ArrowDropDownCircleOutlined";
-import SyntaxHighlight from "../../components/SyntaxHighlight";
+import SyntaxHighlight from "../../components/common/SyntaxHighlight";
 import AnchorLinks from "../../components/common/AnchorLinks";
 import { timeComplexities } from "../../constants/sample-code/code";
 import { timeComplexityAnchorLinks } from "../../constants/common/anchorLink";

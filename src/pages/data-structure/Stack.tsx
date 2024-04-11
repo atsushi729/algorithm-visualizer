@@ -1,4 +1,4 @@
-import SyntaxHighlight from "../../components/SyntaxHighlight";
+import SyntaxHighlight from "../../components/common/SyntaxHighlight";
 import AnchorLinks from "../../components/common/AnchorLinks";
 import StackCanvas from "../../components/visualizer/data-structure/StackCanvas";
 import { stackAnchorLinks } from "../../constants/common/anchorLink";

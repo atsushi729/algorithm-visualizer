@@ -1,4 +1,4 @@
-import SyntaxHighlight from "../../components/SyntaxHighlight";
+import SyntaxHighlight from "../../components/common/SyntaxHighlight";
 import AnchorLinks from "../../components/common/AnchorLinks";
 import LinearSearchCanvas from "../../components/visualizer/search/LinearSearch";
 import { linearSearchAnchorLinks } from "../../constants/common/anchorLink";

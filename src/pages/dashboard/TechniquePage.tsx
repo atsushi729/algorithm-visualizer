@@ -1,4 +1,4 @@
-import SyntaxHighlight from "../../components/SyntaxHighlight";
+import SyntaxHighlight from "../../components/common/SyntaxHighlight";
 import AnchorLinks from "../../components/common/AnchorLinks";
 import { techniqueAnchorLinks } from "../../constants/common/anchorLink";
 import { RecursiveCode } from "../../constants/sample-code/code";

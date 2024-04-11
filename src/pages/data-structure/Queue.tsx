@@ -1,4 +1,4 @@
-import SyntaxHighlight from "../../components/SyntaxHighlight";
+import SyntaxHighlight from "../../components/common/SyntaxHighlight";
 import AnchorLinks from "../../components/common/AnchorLinks";
 import QueueCanvas from "../../components/visualizer/data-structure/QueueCanvas";
 import { queueAnchorLinks } from "../../constants/common/anchorLink";

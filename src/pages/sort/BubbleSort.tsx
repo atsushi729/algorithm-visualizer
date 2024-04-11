@@ -1,4 +1,4 @@
-import SyntaxHighlight from "../../components/SyntaxHighlight";
+import SyntaxHighlight from "../../components/common/SyntaxHighlight";
 import AnchorLinks from "../../components/common/AnchorLinks";
 import BubbleSortCanvas from "../../components/visualizer/sort/BubbleSort";
 import { bubbleSortAnchorLinks } from "../../constants/common/anchorLink";

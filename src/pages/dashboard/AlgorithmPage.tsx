@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import SyntaxHighlight from "../../components/SyntaxHighlight";
+import SyntaxHighlight from "../../components/common/SyntaxHighlight";
 import AnchorLinks from "../../components/common/AnchorLinks";
 import { code, pseudocode } from "../../constants/sample-code/code";
 import { algorithmAnchorLinks } from "../../constants/common/anchorLink";

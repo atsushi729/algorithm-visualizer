@@ -1,4 +1,4 @@
-import SyntaxHighlight from "../../components/SyntaxHighlight";
+import SyntaxHighlight from "../../components/common/SyntaxHighlight";
 import AnchorLinks from "../../components/common/AnchorLinks";
 import LinkedListCanvas from "../../components/visualizer/data-structure/LinkedListCanvas";
 import { linkedListAnchorLinks } from "../../constants/common/anchorLink";
