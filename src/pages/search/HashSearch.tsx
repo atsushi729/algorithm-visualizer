@@ -1,6 +1,6 @@
 import SyntaxHighlight from "../../components/SyntaxHighlight";
 import AnchorLinks from "../../components/common/AnchorLinks";
-import LinearSearchCanvas from "../../components/visualizer/search/LinearSearch";
+import HashSearchCanvas from "../../components/visualizer/search/HashSearch";
 import { hashSearchAnchorLinks } from "../../constants/common/anchorLink";
 import { hashSearch } from "../../constants/sample-code/code";
 
@@ -135,7 +135,7 @@ const HashSearch = () => {
       <div id="playground" className="flex justify-start">
         <div className="max-w-4xl m-auto p-8">
           <h1 className="text-3xl mb-4 mt-4 font-bold text-left">Playground</h1>
-          <LinearSearchCanvas />
+          <HashSearchCanvas />
         </div>
       </div>
     );
