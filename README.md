@@ -18,7 +18,7 @@ To install the app, follow these simple steps:
 git clone https://github.com/atsushi729/algorithm-visualizer
 
 # Navigate to the app directory
-cd algorithm-app
+cd algorithm-visualizer
 
 # Install dependencies
 npm install
