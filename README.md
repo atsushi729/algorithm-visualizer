@@ -15,7 +15,7 @@ To install the app, follow these simple steps:
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/algorithm-app.git
+git clone https://github.com/atsushi729/algorithm-visualizer
 
 # Navigate to the app directory
 cd algorithm-app
