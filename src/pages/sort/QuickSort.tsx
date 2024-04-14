@@ -70,7 +70,7 @@ const QuickSort = () => {
           <ul className="marker:text-blue-600 list-disc ps-5 space-y-2">
             <li>
               <p className="no-underline font-bold">
-                Worst-case Time Complexity (O(n²)):
+                Worst-case Time Complexity : O(n²)
               </p>
               <p>
                 The worst-case time complexity of Quick Sort is O(n 2 ). This
@@ -86,7 +86,7 @@ const QuickSort = () => {
             </li>
             <li>
               <p className="no-underline font-bold">
-                Average-case Time Complexity (O(nlogn))
+                Average-case Time Complexity : O(nlogn)
               </p>
               <p>
                 For the average and best cases, the time complexity of Quick

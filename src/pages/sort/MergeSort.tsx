@@ -82,7 +82,7 @@ const MergeSort = () => {
           <ul className="marker:text-blue-600 list-disc ps-5 space-y-2">
             <li>
               <p className="no-underline font-bold">
-                Worst-case Time Complexity (O(nlogn)):
+                Worst-case Time Complexity : O(nlogn)
               </p>
               <p>
                 The worst case scenario represents the situation where the
@@ -98,7 +98,7 @@ const MergeSort = () => {
             </li>
             <li>
               <p className="no-underline font-bold">
-                Best-case Time Complexity (O(nlogn)):
+                Best-case Time Complexity : O(nlogn)
               </p>
               <p>
                 This occurs when the array is already sorted. The algorithm only
@@ -115,7 +115,7 @@ const MergeSort = () => {
             </li>
             <li>
               <p className="no-underline font-bold">
-                Average-case Time Complexity (O(nlogn))
+                Average-case Time Complexity : O(nlogn)
               </p>
               <p>
                 The average case scenario assumes a random distribution of

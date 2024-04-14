@@ -70,7 +70,7 @@ const BubbleSort = () => {
           <ul className="marker:text-blue-600 list-disc ps-5 space-y-2">
             <li>
               <p className="no-underline font-bold">
-                Worst-case Time Complexity (O(n²)):
+                Worst-case Time Complexity : O(n²)
               </p>
               <p>
                 This occurs when the array is in reverse order, necessitating
@@ -81,7 +81,7 @@ const BubbleSort = () => {
             </li>
             <li>
               <p className="no-underline font-bold">
-                Best-case Time Complexity (O(n)):
+                Best-case Time Complexity : O(n)
               </p>
               <p>
                 This occurs when the array is already sorted. The algorithm only
@@ -91,7 +91,7 @@ const BubbleSort = () => {
             </li>
             <li>
               <p className="no-underline font-bold">
-                Average-case Time Complexity (O(n²))
+                Average-case Time Complexity : O(n²)
               </p>
               <p>
                 For a randomly ordered array, the average time complexity is
