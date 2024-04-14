@@ -1,14 +1,6 @@
 // prettier-ignore
 export const references = [
   {
-    author: "Smith, J.",
-    year: "2020",
-    title: "An overview of React for web development",
-    journal: "Journal of Web Development",
-    volume: "15",
-    pages: "112-123",
-  },
-  {
     author: "Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest, Clifford Stein",
     year: "2009",
     title: "Introduction to Algorithms, 3rd Edition (MIT Press)",
