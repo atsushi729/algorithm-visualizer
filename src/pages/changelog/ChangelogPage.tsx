@@ -1,10 +1,7 @@
-
-type Props = {}
+type Props = {};
 
 const changelogPage = (props: Props) => {
-  return (
-    <div>changelogPage</div>
-  )
-}
+  return <div>First edition</div>;
+};
 
-export default changelogPage
+export default changelogPage;
