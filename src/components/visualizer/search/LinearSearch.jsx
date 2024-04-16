@@ -27,6 +27,7 @@ const LinearSearchCanvas = () => {
         }
         target = values[p.floor(p.random(values.length))];
         index = 0;
+        count = 0;
         state = "searching";
       };
 
