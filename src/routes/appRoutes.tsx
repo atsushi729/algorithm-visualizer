@@ -22,6 +22,7 @@ import ReferencesPage from "../pages/reference/ReferencePage";
 import BinarySearch from "../pages/search/BinarySearch";
 import LinearSearch from "../pages/search/LinearSearch";
 import HashSearch from "../pages/search/HashSearch";
+import Tree from "../pages/data-structure/Tree";
 
 const appRoutes: RouteType[] = [
   {
@@ -108,6 +109,14 @@ const appRoutes: RouteType[] = [
         state: "data-structure.linked-list",
         sidebarProps: {
           displayText: "Linked List",
+        },
+      },
+      {
+        path: "/data-structure/tree",
+        element: <Tree />,
+        state: "data-structure.tree",
+        sidebarProps: {
+          displayText: "Tree",
         },
       },
     ],
