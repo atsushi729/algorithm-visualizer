@@ -14,29 +14,39 @@ const Tree = () => {
         <div className="max-w-4xl m-auto p-8">
           <h1 className="text-3xl mb-4 mt-4 font-bold text-left">Tree</h1>
           <p className="text-lg mb-4 text-left">
-            In computer science, an array is a data structure consisting of a
-            collection of elements, each identified by at least one array index
-            or key. An array is stored such that the position of each element
-            can be computed from its index tuple by a mathematical formula. The
-            simplest type of data structure is a linear array, also called
-            one-dimensional array.
+            In computer science, a tree is a widely-used abstract data structure
+            that simulates a hierarchical tree structure with a set of linked
+            nodes. Here’s a breakdown of the essential concepts and
+            characteristics of trees:
           </p>
-          <p className="text-base inline">
-            The primary characteristics of an array are:
-          </p>
+          <p className="text-base inline">Basic Concepts</p>
           <ul className="list-decimal ps-5 space-y-2 mb-5 mt-3">
             <li>
-              <strong>Homogeneity </strong> : All elements in an array are of
-              the same data type.
+              <strong>Node </strong> : Each element of a tree is called a node.
+              A node typically contains data and references to other nodes (its
+              children).
             </li>
             <li>
-              <strong>Fixed Size</strong> : The size of an array is defined when
-              it is created and cannot be changed (although dynamic array
-              structures can overcome this limitation).
+              <strong>Root</strong> : The top node in a tree, from which all
+              other nodes descend. There is exactly one root per tree.
             </li>
             <li>
-              <strong>Random Access</strong> : Elements can be accessed directly
-              by their index in constant time.
+              <strong>Parent and Child</strong> : In a tree, any node (except
+              the root) has exactly one parent node and zero or more child
+              nodes.
+            </li>
+            <li>
+              <strong>Leaves</strong> : Nodes without any children are called
+              leaves or leaf nodes.
+            </li>
+            <li>
+              <strong>Edges</strong> : The connections between nodes are called
+              edges. In a tree, each connection represents a parent-child
+              relationship.
+            </li>
+            <li>
+              <strong>Path</strong> : A sequence of nodes and edges connecting a
+              node with a descendant.
             </li>
           </ul>
           <img
