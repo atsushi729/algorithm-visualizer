@@ -50,7 +50,7 @@ const Tree = () => {
             </li>
           </ul>
           <img
-            src="/images/linked-list/linked-list.png"
+            src="/images/tree/tree.png"
             alt="About Algorithm"
             className="mb-5 shadow-lg rounded-lg border"
           />
