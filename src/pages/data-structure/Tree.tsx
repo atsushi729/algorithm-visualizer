@@ -55,31 +55,35 @@ const Tree = () => {
             className="mb-5 shadow-lg rounded-lg border"
           />
           <h5 className="text-lg mb-4 mt-4 font-bold">
-            Real-world examples of queue in action:
+            Real-world examples of Tree:
           </h5>
           <ul className="marker:text-blue-600 list-decimal ps-5 space-y-2">
             <li>
-              <p className="no-underline font-bold">Gaming</p>
+              <p className="no-underline font-bold">Database Indexing:</p>
               <p>
-                Games use arrays to manage assets like on-screen characters,
-                inventory items, or high scores. Each position in the array can
-                hold data about an individual character or item.
+                Many databases use tree structures, like B-Trees and B+ Trees,
+                for indexing. This speeds up data retrieval by allowing quick
+                access to records through their keys, similar to looking up
+                words in a dictionary.
               </p>
             </li>
             <li>
-              <p className="no-underline font-bold">Database Management:</p>
+              <p className="no-underline font-bold">
+                DOM (Document Object Model):
+              </p>
               <p>
-                Databases often return query results in the form of arrays (or
-                array-like structures), with each element being a record or row
-                from the database.
+                Web browsers use a tree structure to represent the hierarchy of
+                elements on a webpage, making it possible to traverse and
+                manipulate the structure with languages like JavaScript.
               </p>
             </li>
             <li>
-              <p className="no-underline font-bold">Social Media Feeds:</p>
+              <p className="no-underline font-bold">Decision Trees:</p>
               <p>
-                Social media platforms may use arrays to store feeds of posts or
-                comments. When a user scrolls through their feed, the software
-                fetches the next set of posts from an array.
+                In machine learning, decision trees are used for classification
+                and regression. They model decisions and their possible
+                consequences as a tree, where each node represents a feature to
+                be tested, and each branch represents the outcome of that test.
               </p>
             </li>
           </ul>
