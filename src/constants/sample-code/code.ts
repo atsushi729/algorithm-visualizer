@@ -402,6 +402,64 @@ export const linkedListCode = `// Define a class for the list node
   
   `;
 
+export const treeCode = `
+  class TreeNode {
+      constructor(value) {
+          this.value = value;
+          this.children = [];
+      }
+  
+      addChild(childValue) {
+          const newChild = new TreeNode(childValue);
+          this.children.push(newChild);
+          return newChild;
+      }
+  
+      static findNode(root, value) {
+          if (root === null) {
+              return null;
+          }
+          const queue = [root];
+          while (queue.length > 0) {
+              const current = queue.shift();
+              if (current.value === value) {
+                  return current;
+              }
+              queue.push(...current.children);
+          }
+          return null;
+      }
+  
+      static printTree(root, level = 0) {
+          if (root !== null) {
+              console.log(' '.repeat(level * 4) + \`- \${root.value}\`);
+              root.children.forEach(child => TreeNode.printTree(child, level + 1));
+          }
+      }
+  }
+  
+  // Example Usage
+  const root = new TreeNode("Root");
+  const childA = root.addChild("Child A");
+  const childB = root.addChild("Child B");
+  childA.addChild("Grandchild A1");
+  childB.addChild("Grandchild B1");
+  childB.addChild("Grandchild B2");
+  
+  // Print tree
+  console.log("Tree structure:");
+  TreeNode.printTree(root);
+  
+  // Search for a node
+  const searchValue = "Grandchild B1";
+  const foundNode = TreeNode.findNode(root, searchValue);
+  if (foundNode) {
+      console.log(\`\\nNode '\${searchValue}' found.\`);
+  } else {
+      console.log(\`\\nNode '\${searchValue}' not found.\`);
+  }
+  `;
+
 //---------------------------------------------------------------------
 // Sort
 //---------------------------------------------------------------------
@@ -646,4 +704,5 @@ console.log(myHashTable.get('age')); // Output: 30
 
 // Remove a key-value pair
 myHashTable.remove('age');
-console.log(myHashTable.get('age')); // Output: undefined`;
+console.log(myHashTable.get('age')); // Output: undefined
+`;
