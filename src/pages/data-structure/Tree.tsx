@@ -2,7 +2,7 @@ import SyntaxHighlight from "../../components/common/SyntaxHighlight";
 import AnchorLinks from "../../components/common/AnchorLinks";
 import ArrayCanvas from "../../components/visualizer/data-structure/Array";
 import { arrayAnchorLinks } from "../../constants/common/anchorLink";
-import { arrayCode, treeCode } from "../../constants/sample-code/code";
+import { treeCode } from "../../constants/sample-code/code";
 
 const Tree = () => {
   //---------------------------------------------------------------------
@@ -19,8 +19,8 @@ const Tree = () => {
             nodes. Here’s a breakdown of the essential concepts and
             characteristics of trees:
           </p>
-          <p className="text-base inline">Basic Concepts</p>
-          <ul className="list-decimal ps-5 space-y-2 mb-5 mt-3">
+          <h5 className="text-lg mb-4 mt-4 font-bold">Basic concept</h5>
+          <ul className="marker:text-blue-600 list-decimal ps-5 space-y-2">
             <li>
               <strong>Node </strong> : Each element of a tree is called a node.
               A node typically contains data and references to other nodes (its
@@ -52,7 +52,7 @@ const Tree = () => {
           <img
             src="/images/tree/tree.png"
             alt="About Algorithm"
-            className="mb-5 shadow-lg rounded-lg border"
+            className="mt-5 shadow-lg rounded-lg border"
           />
           <h5 className="text-lg mb-4 mt-4 font-bold">
             Real-world examples of Tree:
@@ -98,9 +98,8 @@ const Tree = () => {
         <div className="max-w-4xl m-auto p-8">
           <h1 className="text-3xl mb-4 font-bold">Operation</h1>
           <p className="text-lg mb-4">
-            Operations with arrays in computer science refer to the various
-            manipulations or actions you can perform on an array, which is a
-            fundamental data structure.
+            Tree data structures are fundamental in computer science and are
+            used to organize information in a hierarchical manner.
           </p>
           <h5 className="text-lg mb-4 mt-4 font-bold">
             Operation of Data structure:
@@ -109,26 +108,70 @@ const Tree = () => {
             <li>
               <div className="no-underline font-bold">Insertion</div>
               <p>
-                Adding a new element to the array. This can be at any position
-                in the array and often requires shifting the existing elements
-                to accommodate the new one.
+                Adding a node to the tree. The position where the node is added
+                depends on the specific type of tree. For example, in a binary
+                search tree, nodes are added in a way that maintains the
+                property that all nodes to the left of a parent node have
+                smaller values, and all nodes to the right have larger values.
               </p>
             </li>
             <li>
               <div className="no-underline font-bold">Deletion</div>
               <p>
-                Removing an element from the array. Similar to insertion, this
-                may involve shifting elements to fill the gap left by the
-                deleted element.
+                Removing a node from the tree. This can be more complex than
+                insertion, as it might require reorganizing part of the tree to
+                preserve its properties. For instance, deleting a node with two
+                children in a binary search tree often involves finding a
+                successor to replace the deleted node.
               </p>
             </li>
             <li>
               <div className="no-underline font-bold">Searching</div>
               <p>
-                Finding the position of an element in the array. This can be
-                done using linear search or binary search (if the array is
-                sorted).
+                Checking whether a particular value or node is present in the
+                tree. This is typically done by traversing the tree from the
+                root, making decisions at each node based on comparison of
+                values.
               </p>
+            </li>
+            <li>
+              <div className="no-underline font-bold">Traversal</div>
+              <p>
+                Visiting all the nodes in the tree in a particular order. Common
+                tree traversal methods include:
+              </p>
+              <ol className="list-decimal ml-10 sublist">
+                <li>
+                  <div className="font-bold">Pre-order</div>
+                  <p>
+                    Visit the root node first, then recursively do a pre-order
+                    traversal of the left subtree, followed by the right
+                    subtree.
+                  </p>
+                </li>
+                <li>
+                  <div className="font-bold">In-order</div>
+                  <p>
+                    Recursively do an in-order traversal of the left subtree,
+                    visit the root node, then do an in-order traversal of the
+                    right subtree.
+                  </p>
+                </li>
+                <li>
+                  <div className="font-bold">Post-order</div>
+                  <p>
+                    Recursively do a post-order traversal of the left and right
+                    subtrees, and then visit the root node.
+                  </p>
+                </li>
+                <li>
+                  <div className="font-bold">Level-order (Breadth-first)</div>
+                  <p>
+                    Visit all nodes at the current depth before moving on to
+                    nodes at the next level.
+                  </p>
+                </li>
+              </ol>
             </li>
           </ul>
           <p>Here is a simple example:</p>
