@@ -2,7 +2,7 @@ import SyntaxHighlight from "../../components/common/SyntaxHighlight";
 import AnchorLinks from "../../components/common/AnchorLinks";
 import ArrayCanvas from "../../components/visualizer/data-structure/Array";
 import { arrayAnchorLinks } from "../../constants/common/anchorLink";
-import { arrayCode } from "../../constants/sample-code/code";
+import { arrayCode, treeCode } from "../../constants/sample-code/code";
 
 const Tree = () => {
   //---------------------------------------------------------------------
@@ -132,7 +132,7 @@ const Tree = () => {
             </li>
           </ul>
           <p>Here is a simple example:</p>
-          <SyntaxHighlight codeString={arrayCode} language="javascript" />
+          <SyntaxHighlight codeString={treeCode} language="javascript" />
         </div>
       </div>
     );
