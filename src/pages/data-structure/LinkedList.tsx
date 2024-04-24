@@ -10,7 +10,7 @@ const LinkedList = () => {
   //---------------------------------------------------------------------
   const AboutLinkedList = () => {
     return (
-      <div id="about-algorithm" className="flex justify-start">
+      <div id="linked-list" className="flex justify-start">
         <div className="max-w-4xl m-auto p-8">
           <h1 className="text-3xl mb-4 mt-4 font-bold text-left">
             Linked lists
@@ -81,7 +81,7 @@ const LinkedList = () => {
 
   const AboutOperation = () => {
     return (
-      <div id="about-data-structure" className="flex">
+      <div id="operation" className="flex">
         <div className="max-w-4xl m-auto p-8">
           <h1 className="text-3xl mb-4 font-bold">Operation</h1>
           <p className="text-lg mb-4">

@@ -42,8 +42,8 @@ export const queueAnchorLinks = [
 ];
 
 export const linkedListAnchorLinks = [
-  { href: "#about-algorithm", label: "About Linked list" },
-  { href: "#about-data-structure", label: "Operation" },
+  { href: "#linked-list", label: "About Linked list" },
+  { href: "#operation", label: "Operation" },
   { href: "#playground", label: "Playground" },
 ];
 
