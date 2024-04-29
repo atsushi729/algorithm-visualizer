@@ -115,6 +115,17 @@ const Stack = () => {
     );
   };
 
+  const VideoPlayer = () => {
+    return (
+      <div className="flex justify-center">
+        <video width="720" height="340" controls>
+          <source src="/video/StackVisualization.mp4" type="video/mp4" />
+          Your browser does not support video player.
+        </video>
+      </div>
+    );
+  };
+
   //---------------------------------------------------------------------
   // Main component
   //---------------------------------------------------------------------
@@ -124,6 +135,7 @@ const Stack = () => {
         <AboutStack />
         <AboutOperation />
         <PlayGround />
+        <VideoPlayer />
       </div>
 
       <div className="flex-grow" style={{ flex: "1" }}>
