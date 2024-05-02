@@ -135,6 +135,17 @@ const Array = () => {
     );
   };
 
+  const VideoPlayer = () => {
+    return (
+      <div className="flex justify-center">
+        <video width="720" height="340" controls>
+          <source src="/video/ArrayVisualization.mp4" type="video/mp4" />
+          Your browser does not support video player.
+        </video>
+      </div>
+    );
+  };
+
   //---------------------------------------------------------------------
   // Main component
   //---------------------------------------------------------------------
@@ -144,6 +155,7 @@ const Array = () => {
         <AboutArray />
         <AboutOperation />
         <PlayGround />
+        <VideoPlayer />
       </div>
 
       <div className="flex-grow" style={{ flex: "1" }}>
