@@ -146,6 +146,17 @@ const LinkedList = () => {
     );
   };
 
+  const VideoPlayer = () => {
+    return (
+      <div className="flex justify-center">
+        <video width="720" height="340" controls>
+          <source src="/video/LinkedListVisualization.mp4" type="video/mp4" />
+          Your browser does not support video player.
+        </video>
+      </div>
+    );
+  };
+
   //---------------------------------------------------------------------
   // Main component
   //---------------------------------------------------------------------
@@ -155,6 +166,7 @@ const LinkedList = () => {
         <AboutLinkedList />
         <AboutOperation />
         <PlayGround />
+        <VideoPlayer />
       </div>
 
       <div className="flex-grow" style={{ flex: "1" }}>
