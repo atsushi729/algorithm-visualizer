@@ -137,11 +137,16 @@ const Array = () => {
 
   const VideoPlayer = () => {
     return (
-      <div className="flex justify-center">
-        <video width="720" height="340" controls>
-          <source src="/video/ArrayVisualization.mp4" type="video/mp4" />
-          Your browser does not support video player.
-        </video>
+      <div id="vizualization" className="flex justify-start">
+        <div className="max-w-4xl m-auto p-8">
+          <h1 className="text-3xl mb-4 mt-4 font-bold text-left">
+            Vizualization
+          </h1>
+          <video width="820" height="340" controls>
+            <source src="/video/ArrayVisualization.mp4" type="video/mp4" />
+            Your browser does not support video player.
+          </video>
+        </div>
       </div>
     );
   };
