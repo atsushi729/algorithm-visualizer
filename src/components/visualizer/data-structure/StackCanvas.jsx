@@ -102,7 +102,8 @@ const VisualizeContainer = styled(Container)({
   justifyContent: "center",
   alignItems: "center",
   flexDirection: "column",
-  maxWidth: "300px",
+  maxWidth: "900px",
+  marginTop: "30px",
 });
 
 const ButtonContainer = styled(Container)({
