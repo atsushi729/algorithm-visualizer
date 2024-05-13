@@ -285,7 +285,7 @@ const AlgorithmPage = () => {
       <div id="about-flow-chart" className="flex">
         <div className="max-w-4xl m-auto p-8">
           <h1 className="text-3xl mb-4 font-bold">
-            Flowcharts in Computer Science
+            Flowchart
           </h1>
           <p className="text-lg mb-4">
             A flowchart is a diagrammatic representation used to illustrate the
