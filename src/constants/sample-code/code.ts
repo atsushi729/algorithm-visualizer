@@ -158,62 +158,59 @@ export const timeComplexities = [
 //---------------------------------------------------------------------
 // Data structure
 //---------------------------------------------------------------------
-export const stackCode = `class Queue {
-    constructor() {
-        this.items = [];
-    }
-  
-    enqueue(item) {
-        // Add an element to the rear of the queue.
-        this.items.push(item);
-    }
-  
-    dequeue() {
-        // Remove and return the element from the front of the queue.
-        if (!this.isEmpty()) {
-            return this.items.shift();
-        } else {
-            throw new Error("Cannot dequeue from an empty queue");
-        }
-    }
-  
-    front() {
-        // Return the element at the front of the queue without removing it.
-        if (!this.isEmpty()) {
-            return this.items[0];
-        } else {
-            throw new Error("Queue is empty");
-        }
-    }
-  
-    size() {
-        // Return the number of elements in the queue.
-        return this.items.length;
-    }
-  
-    isEmpty() {
-        // Check if the queue is empty.
-        return this.items.length === 0;
-    }
+export const stackCode = `class Stack {
+  constructor() {
+      this.items = []; // Array to hold stack items
   }
-  
-  // Example usage:
-  const myQueue = new Queue();
-  myQueue.enqueue(10);
-  myQueue.enqueue(20);
-  myQueue.enqueue(30);
-  
-  console.log("Front of the queue:", myQueue.front());
-  console.log("Queue size:", myQueue.size());
-  
-  // Dequeue elements
-  while (!myQueue.isEmpty()) {
-    console.log("Dequeued:", myQueue.dequeue());
+
+  // Push an item onto the stack
+  push(item) {
+      this.items.push(item);
   }
-  
-  console.log("Is the queue empty?", myQueue.isEmpty());
-  
-  `;
+
+  // Pop an item from the stack
+  pop() {
+      if (this.items.length === 0) {
+          return "Underflow"; // Return underflow if the stack is empty
+      }
+      return this.items.pop();
+  }
+
+  // View the top item of the stack
+  peek() {
+      return this.items[this.items.length - 1];
+  }
+
+  // Check if the stack is empty
+  isEmpty() {
+      return this.items.length === 0;
+  }
+
+  // Get the size of the stack
+  size() {
+      return this.items.length;
+  }
+
+  // Print stack contents
+  printStack() {
+      let str = "";
+      for (let i = 0; i < this.items.length; i++) {
+          str += this.items[i] + " ";
+      }
+      return str;
+  }
+}
+
+// Example usage
+const stack = new Stack();
+stack.push(10);
+stack.push(20);
+stack.push(30);
+console.log(stack.printStack()); // Output: 10 20 30
+console.log("Top element is: " + stack.peek()); // Output: Top element is: 30
+console.log("Popped element: " + stack.pop()); // Output: Popped element: 30
+console.log("Stack after pop: " + stack.printStack()); // Output: 10 20
+`;
 
 export const queueCode = `class Queue {
     constructor() {
