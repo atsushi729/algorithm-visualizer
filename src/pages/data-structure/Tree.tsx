@@ -1,8 +1,8 @@
 import SyntaxHighlight from "../../components/common/SyntaxHighlight";
 import AnchorLinks from "../../components/common/AnchorLinks";
-import ArrayCanvas from "../../components/visualizer/data-structure/Array";
 import { treeAnchorLinks } from "../../constants/common/anchorLink";
 import { treeCode } from "../../constants/sample-code/code";
+import TreeVisualizer from "../../components/visualizer/data-structure/Tree";
 
 const Tree = () => {
   //---------------------------------------------------------------------
@@ -186,7 +186,7 @@ const Tree = () => {
       <div id="playground" className="flex justify-start">
         <div className="max-w-4xl m-auto p-8">
           <h1 className="text-3xl mb-4 mt-4 font-bold text-left">Playground</h1>
-          <ArrayCanvas />
+          <TreeVisualizer />
         </div>
       </div>
     );
