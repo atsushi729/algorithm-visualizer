@@ -58,10 +58,14 @@ const TreeVisualizer = () => {
           p.textStyle(p.BOLD);
           if (foundNode) {
             p.fill(26, 188, 156);
-            p.text(`Node ${searchValue} found !!`, p.width / 2, p.height - 20);
+            p.text(`Node ${searchValue} found !!`, p.width / 2, p.height - 50);
           } else {
             p.fill(255, 0, 0);
-            p.text(`Node ${searchValue} not found`, p.width / 2, p.height - 50);
+            p.text(
+              `Node ${searchValue} not found...`,
+              p.width / 2,
+              p.height - 50
+            );
           }
         }
       };
