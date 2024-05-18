@@ -400,61 +400,176 @@ export const linkedListCode = `// Define a class for the list node
   `;
 
 export const treeCode = `
-  class TreeNode {
-      constructor(value) {
-          this.value = value;
-          this.children = [];
-      }
-  
-      addChild(childValue) {
-          const newChild = new TreeNode(childValue);
-          this.children.push(newChild);
-          return newChild;
-      }
-  
-      static findNode(root, value) {
-          if (root === null) {
-              return null;
-          }
-          const queue = [root];
-          while (queue.length > 0) {
-              const current = queue.shift();
-              if (current.value === value) {
-                  return current;
-              }
-              queue.push(...current.children);
-          }
-          return null;
-      }
-  
-      static printTree(root, level = 0) {
-          if (root !== null) {
-              console.log(' '.repeat(level * 4) + \`- \${root.value}\`);
-              root.children.forEach(child => TreeNode.printTree(child, level + 1));
-          }
-      }
+class Node {
+  constructor(value) {
+    this.value = value;
+    this.left = null;
+    this.right = null;
   }
-  
-  // Example Usage
-  const root = new TreeNode("Root");
-  const childA = root.addChild("Child A");
-  const childB = root.addChild("Child B");
-  childA.addChild("Grandchild A1");
-  childB.addChild("Grandchild B1");
-  childB.addChild("Grandchild B2");
-  
-  // Print tree
-  console.log("Tree structure:");
-  TreeNode.printTree(root);
-  
-  // Search for a node
-  const searchValue = "Grandchild B1";
-  const foundNode = TreeNode.findNode(root, searchValue);
-  if (foundNode) {
-      console.log(\`\\nNode '\${searchValue}' found.\`);
-  } else {
-      console.log(\`\\nNode '\${searchValue}' not found.\`);
+}
+
+class BinarySearchTree {
+  constructor() {
+    this.root = null;
   }
+
+  // Insertion
+  insert(value) {
+    const newNode = new Node(value);
+    if (this.root === null) {
+      this.root = newNode;
+    } else {
+      this.insertNode(this.root, newNode);
+    }
+  }
+
+  insertNode(node, newNode) {
+    if (newNode.value < node.value) {
+      if (node.left === null) {
+        node.left = newNode;
+      } else {
+        this.insertNode(node.left, newNode);
+      }
+    } else {
+      if (node.right === null) {
+        node.right = newNode;
+      } else {
+        this.insertNode(node.right, newNode);
+      }
+    }
+  }
+
+  // Deletion
+  remove(value) {
+    this.root = this.removeNode(this.root, value);
+  }
+
+  removeNode(node, value) {
+    if (node === null) {
+      return null;
+    }
+    if (value < node.value) {
+      node.left = this.removeNode(node.left, value);
+      return node;
+    } else if (value > node.value) {
+      node.right = this.removeNode(node.right, value);
+      return node;
+    } else {
+      // Node with no children (leaf node)
+      if (node.left === null && node.right === null) {
+        node = null;
+        return node;
+      }
+      // Node with one child
+      if (node.left === null) {
+        node = node.right;
+        return node;
+      } else if (node.right === null) {
+        node = node.left;
+        return node;
+      }
+      // Node with two children
+      const aux = this.findMinNode(node.right);
+      node.value = aux.value;
+      node.right = this.removeNode(node.right, aux.value);
+      return node;
+    }
+  }
+
+  findMinNode(node) {
+    if (node.left === null) {
+      return node;
+    } else {
+      return this.findMinNode(node.left);
+    }
+  }
+
+  // Searching
+  search(node, value) {
+    if (node === null) {
+      return null;
+    }
+    if (value < node.value) {
+      return this.search(node.left, value);
+    } else if (value > node.value) {
+      return this.search(node.right, value);
+    } else {
+      return node;
+    }
+  }
+
+  // Pre-order Traversal
+  preOrder(node, result = []) {
+    if (node !== null) {
+      result.push(node.value);
+      this.preOrder(node.left, result);
+      this.preOrder(node.right, result);
+    }
+    return result;
+  }
+
+  // In-order Traversal
+  inOrder(node, result = []) {
+    if (node !== null) {
+      this.inOrder(node.left, result);
+      result.push(node.value);
+      this.inOrder(node.right, result);
+    }
+    return result;
+  }
+
+  // Post-order Traversal
+  postOrder(node, result = []) {
+    if (node !== null) {
+      this.postOrder(node.left, result);
+      this.postOrder(node.right, result);
+      result.push(node.value);
+    }
+    return result;
+  }
+
+  // Level-order Traversal (Breadth-first)
+  levelOrder() {
+    const result = [];
+    const queue = [];
+    if (this.root !== null) {
+      queue.push(this.root);
+    }
+    while (queue.length > 0) {
+      const node = queue.shift();
+      result.push(node.value);
+      if (node.left !== null) {
+        queue.push(node.left);
+      }
+      if (node.right !== null) {
+        queue.push(node.right);
+      }
+    }
+    return result;
+  }
+}
+
+// Example usage
+const bst = new BinarySearchTree();
+bst.insert(15);
+bst.insert(25);
+bst.insert(10);
+bst.insert(7);
+bst.insert(22);
+bst.insert(17);
+bst.insert(13);
+bst.insert(5);
+bst.insert(9);
+bst.insert(27);
+
+console.log("In-order: ", bst.inOrder(bst.root)); // In-order traversal
+console.log("Pre-order: ", bst.preOrder(bst.root)); // Pre-order traversal
+console.log("Post-order: ", bst.postOrder(bst.root)); // Post-order traversal
+console.log("Level-order: ", bst.levelOrder()); // Level-order traversal
+
+console.log("Search 22: ", bst.search(bst.root, 22) ? "Found" : "Not Found"); // Search node
+bst.remove(22); // Remove node
+console.log("In-order after deletion: ", bst.inOrder(bst.root)); // In-order traversal after deletion
   `;
 
 //---------------------------------------------------------------------
